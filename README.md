@@ -1,8 +1,45 @@
-# Senate age tables
+# Senate ages by Congress
 
 Age of every sitting senator on the day each Congress convened, 1789–2025.
 Not the incoming class — the whole chamber, so a senator serving thirty years
 contributes fifteen observations at fifteen different ages.
+
+## The chart
+
+`index.html` + `app.js` + `config.js`. ES modules and `fetch`, so serve it:
+
+```bash
+python3 -m http.server 8000
+```
+
+Two layers on **one shared count axis**, which is the whole idea:
+
+- a **grey silhouette** — the number of seats you have selected, distributed
+  the way some comparison population was. What the chamber would look like if
+  it were ordinary.
+- **dots** — one per senator actually sitting, coloured by party. What it
+  looked like.
+
+There is no second y axis and no normalisation trick. Both layers count
+senators; the silhouette is simply the comparison population's shares
+multiplied by however many seats are selected, so the two are directly
+readable against each other.
+
+**Drag the timeline** at the bottom to select a run of Congresses, or click it
+for a single one. The strip plots median chamber age, so you are brushing over
+the trend rather than over a bare slider. Hovering any dot gives the senator's
+name, party, state and age.
+
+**Compare with** switches the silhouette between all 119 Congresses and the 20
+immediately preceding the selection. This matters more than it sounds: the
+1831–1883 Senate reads as *young* against all of history (median 50 against
+55) and as *old* against the twenty Congresses before it (50 against 46).
+Which one is right depends on the question you are asking.
+
+Within an age bin, dots are blocked by party, then ordered by exact age. When a
+selection is large the bin packs **k dots per row** rather than letting the
+column go thin — the age axis stays fixed so shapes remain comparable between
+a single Congress and a whole era.
 
 ```bash
 python3 build_senate_ages.py            # first run downloads ~15 MB into data/

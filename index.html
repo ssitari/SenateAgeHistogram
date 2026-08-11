@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Senate Ages by Congress</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #edecea;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      color: #222;
+    }
+
+    /* ── Toolbar ── */
+    #toolbar {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 0 14px;
+      height: 44px;
+      background: #fff;
+      border-bottom: 0.5px solid #ddd;
+      flex-shrink: 0;
+      z-index: 200;
+    }
+    #toolbar h1 { font-size: 13px; font-weight: 600; white-space: nowrap; }
+    .ctrl-group { display: flex; align-items: center; gap: 5px; }
+    .ctrl-label { font-size: 11px; color: #888; white-space: nowrap; }
+    .spacer { flex: 1; }
+
+    select, button {
+      font-family: inherit;
+      font-size: 12px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      padding: 3px 6px;
+      border: 0.5px solid #ccc;
+      border-radius: 4px;
+      background: #fafafa;
+      color: #222;
+      cursor: pointer;
+      height: 26px;
+    }
+    select:hover, button:hover { border-color: #999; }
+    select:focus, button:focus { outline: none; border-color: #4466cc; }
+
+    #readout {
+      font-size: 11px;
+      color: #666;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+    #readout b { color: #222; font-weight: 600; }
+
+    /* ── Panels ── */
+    #main { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+    #chart {
+      flex: 1;
+      min-height: 0;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    #chart svg { display: block; }
+
+    #timeline {
+      flex-shrink: 0;
+      background: #fff;
+      border-top: 0.5px solid #ddd;
+    }
+    #timeline svg { display: block; }
+
+    .axis-line { stroke: #c9c7c2; stroke-width: 1; shape-rendering: crispEdges; }
+    .tick-mark { stroke: #d4d2ce; stroke-width: 1; shape-rendering: crispEdges; }
+    .tick-label { font-size: 10px; fill: #888; text-anchor: middle; }
+    .count-label { font-size: 10px; fill: #aaa; text-anchor: end; dominant-baseline: middle; }
+    .count-rule { stroke: #e3e1dd; stroke-width: 1; shape-rendering: crispEdges; }
+    .axis-title { font-size: 11px; fill: #666; }
+
+    .dot-hit { fill: transparent; cursor: pointer; }
+    .dot-ring { fill: none; stroke-width: 1.75; }
+
+    .annot {
+      font-size: 10px;
+      fill: #8a8880;
+      paint-order: stroke fill;
+      stroke: #edecea;
+      stroke-width: 3px;
+      stroke-linejoin: round;
+    }
+    .annot-line { stroke: #ccc; stroke-width: 1; stroke-dasharray: 2 2; }
+
+    /* ── Timeline strip ── */
+    .tl-label { font-size: 10px; fill: #999; }
+    .tl-title { font-size: 10px; fill: #999; }
+    .tl-brush .selection {
+      fill: #4466cc;
+      fill-opacity: 0.10;
+      stroke: #4466cc;
+      stroke-opacity: 0.5;
+      shape-rendering: crispEdges;
+    }
+    .tl-brush .handle { fill: #4466cc; fill-opacity: 0.35; }
+    .tl-hit { cursor: crosshair; }
+
+    /* ── Table view ── */
+    #table-wrap { flex: 1; min-height: 0; overflow: auto; background: #fff; display: none; }
+    table { border-collapse: collapse; font-size: 12px; width: 100%; }
+    th, td {
+      text-align: left;
+      padding: 5px 12px;
+      border-bottom: 0.5px solid #eee;
+      white-space: nowrap;
+    }
+    th {
+      position: sticky; top: 0;
+      background: #fafafa;
+      font-size: 11px; font-weight: 600; color: #555;
+      border-bottom: 0.5px solid #ddd;
+    }
+    td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .swatch {
+      display: inline-block;
+      width: 8px; height: 8px;
+      border-radius: 2px;
+      margin-right: 6px;
+    }
+
+    /* ── Party key ── */
+    #party-key {
+      display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+      padding: 6px 14px;
+      background: #fff;
+      border-top: 0.5px solid #eee;
+      flex-shrink: 0;
+    }
+    #party-key .key-item {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 11px; color: #555;
+    }
+    #party-key .key-item.is-out { opacity: 0.3; }
+    #key-note { font-size: 10.5px; color: #999; margin-left: auto; }
+
+    /* ── Tooltip ── */
+    #tooltip {
+      position: absolute;
+      display: none;
+      pointer-events: none;
+      background: rgba(255,255,255,0.98);
+      border: 0.5px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.13);
+      padding: 8px 10px;
+      font-size: 11.5px;
+      line-height: 1.45;
+      max-width: 290px;
+      z-index: 500;
+    }
+    #tooltip .tt-name { font-weight: 600; font-size: 12.5px; }
+    #tooltip .tt-sub { color: #777; font-size: 10.5px; margin-bottom: 5px; }
+    #tooltip .tt-stat b { font-variant-numeric: tabular-nums; }
+    #tooltip .tt-meta { color: #888; font-size: 10.5px; margin-top: 4px; }
+
+    #loading {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; color: #999;
+    }
+    #loading.err { color: #b3261e; padding: 0 40px; text-align: center; line-height: 1.5; }
+
+    @media (max-width: 1080px) { #key-note { display: none; } }
+    @media (max-width: 900px)  { .ctrl-label { display: none; } }
+  </style>
+</head>
+<body>
+
+  <div id="toolbar">
+    <h1>Senate Ages by Congress</h1>
+
+    <div class="ctrl-group">
+      <span class="ctrl-label">Compare with</span>
+      <select id="baseline">
+        <option value="all">All 119 Congresses</option>
+        <option value="prior">The 20 Congresses before</option>
+      </select>
+    </div>
+
+    <div class="ctrl-group">
+      <span class="ctrl-label">View</span>
+      <select id="view">
+        <option value="chart">Chart</option>
+        <option value="table">Table</option>
+      </select>
+    </div>
+
+    <div class="spacer"></div>
+    <span id="readout"></span>
+  </div>
+
+  <div id="main">
+    <div id="chart">
+      <svg id="chart-svg"></svg>
+      <div id="loading">Loading…</div>
+    </div>
+    <div id="table-wrap"><table id="table"></table></div>
+    <div id="timeline"><svg id="tl-svg"></svg></div>
+  </div>
+
+  <div id="party-key"></div>
+  <div id="tooltip"></div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
