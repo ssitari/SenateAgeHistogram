@@ -1,0 +1,139 @@
+congress,convened,bioguide,name,state,senate_class,party,party_raw
+1,1789-03-04,G000403,William Grayson,VA,1,Democratic-Republican,Anti-Administration
+1,1789-03-04,I000053,Ralph Izard,SC,3,Federalist,Pro-Administration
+1,1789-03-04,H000508,John Henry,MD,3,Federalist,Pro-Administration
+2,1791-10-24,I000053,Ralph Izard,SC,3,Federalist,Pro-Administration
+2,1791-10-24,H000508,John Henry,MD,3,Federalist,Pro-Administration
+3,1793-12-02,I000053,Ralph Izard,SC,3,Federalist,Pro-Administration
+3,1793-12-02,E000075,John Edwards,KY,3,Democratic-Republican,Anti-Administration
+3,1793-12-02,M000166,Alexander Martin,NC,2,Republican,Republican
+3,1793-12-02,H000508,John Henry,MD,3,Federalist,Pro-Administration
+4,1795-12-07,M000166,Alexander Martin,NC,2,Republican,Republican
+4,1795-12-07,W000114,George Walton,GA,2,Federalist,Federalist
+4,1795-12-07,B000563,Timothy Bloodworth,NC,3,Republican,Republican
+4,1795-12-07,H000508,John Henry,MD,3,Federalist,Federalist
+4,1795-12-07,M000155,Humphrey Marshall,KY,3,Federalist,Federalist
+4,1795-12-07,R000092,Jacob Read,SC,3,Federalist,Federalist
+5,1797-05-15,M000166,Alexander Martin,NC,2,Republican,Republican
+5,1797-05-15,B000563,Timothy Bloodworth,NC,3,Republican,Republican
+5,1797-05-15,H000508,John Henry,MD,3,Federalist,Federalist
+5,1797-05-15,M000155,Humphrey Marshall,KY,3,Federalist,Federalist
+5,1797-05-15,R000092,Jacob Read,SC,3,Federalist,Federalist
+5,1797-05-15,H000982,John Hunter,SC,2,Republican,Republican
+5,1797-05-15,L000120,John Laurance,NY,3,Federalist,Federalist
+5,1797-05-15,T000052,Josiah Tattnall,GA,2,Republican,Republican
+5,1797-05-15,L000377,James Lloyd,MD,3,Federalist,Federalist
+6,1799-12-02,B000563,Timothy Bloodworth,NC,3,Republican,Republican
+6,1799-12-02,M000155,Humphrey Marshall,KY,3,Federalist,Federalist
+6,1799-12-02,R000092,Jacob Read,SC,3,Federalist,Federalist
+6,1799-12-02,L000120,John Laurance,NY,3,Federalist,Federalist
+6,1799-12-02,L000377,James Lloyd,MD,3,Federalist,Federalist
+6,1799-12-02,C000572,William Cocke,TN,2,Republican,Republican
+7,1801-12-07,C000572,William Cocke,TN,2,Republican,Republican
+7,1801-12-07,C000627,John Ewing Colhoun,SC,3,Republican,Republican
+7,1801-12-07,W000392,Samuel White,DE,1,Federalist,Federalist
+8,1803-10-17,C000572,William Cocke,TN,2,Republican,Republican
+8,1803-10-17,S000567,John Smith,OH,1,Republican,Republican
+8,1803-10-17,W000392,Samuel White,DE,1,Federalist,Federalist
+9,1805-12-02,S000567,John Smith,OH,1,Republican,Republican
+9,1805-12-02,W000392,Samuel White,DE,1,Federalist,Federalist
+9,1805-12-02,M000891,Andrew Moore,VA,1,Republican,Republican
+10,1807-10-26,S000567,John Smith,OH,1,Republican,Republican
+10,1807-10-26,W000392,Samuel White,DE,1,Federalist,Federalist
+10,1807-10-26,M000891,Andrew Moore,VA,1,Republican,Republican
+10,1807-10-26,M000712,John Milledge,GA,3,Republican,Republican
+10,1807-10-26,R000125,Philip Reed,MD,3,Republican,Republican
+10,1807-10-26,P000431,John Pope,KY,3,Republican,Republican
+11,1809-05-22,M000712,John Milledge,GA,3,Republican,Republican
+11,1809-05-22,B000802,Richard Brent,VA,1,Republican,Republican
+11,1809-05-22,C000076,Alexander Campbell,OH,3,Republican,Republican
+11,1809-05-22,W000411,Jenkin Whiteside,TN,2,Republican,Republican
+11,1809-05-22,R000125,Philip Reed,MD,3,Republican,Republican
+11,1809-05-22,L000378,James Lloyd,MA,1,Federalist,Federalist
+11,1809-05-22,P000431,John Pope,KY,3,Republican,Republican
+12,1811-11-04,B000802,Richard Brent,VA,1,Republican,Republican
+12,1811-11-04,C000076,Alexander Campbell,OH,3,Republican,Republican
+12,1811-11-04,R000125,Philip Reed,MD,3,Republican,Republican
+12,1811-11-04,L000378,James Lloyd,MA,1,Federalist,Federalist
+12,1811-11-04,P000431,John Pope,KY,3,Republican,Republican
+13,1813-05-24,B000802,Richard Brent,VA,1,Republican,Republican
+13,1813-05-24,B001051,William Bellinger Bulloch,GA,2,Republican,Republican
+13,1813-05-24,F000389,Eligius Fromentin,LA,3,Republican,Republican
+14,1815-12-04,F000389,Eligius Fromentin,LA,3,Republican,Republican
+14,1815-12-04,W000595,James Jefferson Wilson,NJ,1,Republican,Republican
+14,1815-12-04,T000017,Isham Talbot,KY,3,Republican,Republican
+15,1817-12-01,F000389,Eligius Fromentin,LA,3,Republican,Republican
+15,1817-12-01,W000595,James Jefferson Wilson,NJ,1,Republican,Republican
+15,1817-12-01,C000408,William Charles Cole Claiborne,LA,2,Democratic-Republican,Democratic Republican
+15,1817-12-01,T000102,Waller Taylor,IN,3,Republican,Republican
+15,1817-12-01,T000017,Isham Talbot,KY,3,Republican,Republican
+15,1817-12-01,S000628,William Smith,SC,2,Republican,Republican
+16,1819-12-06,W000595,James Jefferson Wilson,NJ,1,Republican,Republican
+16,1819-12-06,T000102,Waller Taylor,IN,3,Republican,Republican
+16,1819-12-06,T000171,Jesse Burgess Thomas,IL,2,Republican,Republican
+16,1819-12-06,S000628,William Smith,SC,2,Republican,Republican
+17,1821-12-03,T000102,Waller Taylor,IN,3,Republican,Republican
+17,1821-12-03,T000017,Isham Talbot,KY,3,Republican,Republican
+17,1821-12-03,T000171,Jesse Burgess Thomas,IL,2,Republican,Republican
+17,1821-12-03,S000628,William Smith,SC,2,Republican,Republican
+18,1823-12-01,T000102,Waller Taylor,IN,3,Republican,Republican
+18,1823-12-01,T000017,Isham Talbot,KY,3,Republican,Republican
+18,1823-12-01,L000378,James Lloyd,MA,2,Whig,Adams
+18,1823-12-01,E000070,Henry Waggaman Edwards,CT,1,Democratic,Jackson
+18,1823-12-01,T000171,Jesse Burgess Thomas,IL,2,Whig,Adams
+19,1825-12-05,L000378,James Lloyd,MA,2,Whig,Adams
+19,1825-12-05,E000070,Henry Waggaman Edwards,CT,1,Democratic,Jackson
+19,1825-12-05,T000171,Jesse Burgess Thomas,IL,2,Whig,Adams
+19,1825-12-05,C000553,Thomas Willis Cobb,GA,2,Democratic,Jackson
+19,1825-12-05,C000499,Thomas Clayton,DE,1,Whig,Adams
+20,1827-12-03,T000171,Jesse Burgess Thomas,IL,2,Whig,Adams
+20,1827-12-03,C000553,Thomas Willis Cobb,GA,2,Democratic,Jackson
+20,1827-12-03,S000628,William Smith,SC,3,Democratic,Jackson
+21,1829-12-07,S000628,William Smith,SC,3,Democratic,Jackson
+22,1831-12-05,P000402,George Poindexter,MS,2,Democratic,Jackson
+22,1831-12-05,B001030,Alexander Buckner,MO,3,Democratic,Jackson
+22,1831-12-05,M000898,Gabriel Moore,AL,3,Democratic,Jackson
+22,1831-12-05,W000017,George Augustus Waggaman,LA,2,Whig,Anti-Jacksonian
+23,1833-12-02,P000402,George Poindexter,MS,2,Democratic,Jackson
+23,1833-12-02,B001030,Alexander Buckner,MO,3,Democratic,Jackson
+23,1833-12-02,M000898,Gabriel Moore,AL,3,Democratic,Jackson
+23,1833-12-02,W000017,George Augustus Waggaman,LA,2,Whig,Anti-Jacksonian
+24,1835-12-07,M000898,Gabriel Moore,AL,3,Democratic,Jackson
+25,1837-09-04,N000085,Robert Carter Nicholas,LA,2,Democratic,Democrat
+25,1837-09-04,C000499,Thomas Clayton,DE,2,Whig,Whig
+26,1839-12-02,N000085,Robert Carter Nicholas,LA,2,Democratic,Democrat
+26,1839-12-02,C000499,Thomas Clayton,DE,2,Whig,Whig
+27,1841-05-31,C000499,Thomas Clayton,DE,2,Whig,Whig
+28,1843-12-04,C000499,Thomas Clayton,DE,2,Whig,Whig
+28,1843-12-04,B000030,Arthur Pendleton Bagby,AL,3,Democratic,Democrat
+28,1843-12-04,J000059,Spencer Jarnagin,TN,2,Whig,Whig
+29,1845-12-01,C000499,Thomas Clayton,DE,2,Whig,Whig
+29,1845-12-01,B000030,Arthur Pendleton Bagby,AL,3,Democratic,Democrat
+29,1845-12-01,J000059,Spencer Jarnagin,TN,2,Whig,Whig
+29,1845-12-01,C000273,Joseph Williams Chalmers,MS,2,Democratic,Democrat
+30,1847-12-06,B000030,Arthur Pendleton Bagby,AL,3,Democratic,Democrat
+30,1847-12-06,D000476,Solomon Weathersbee Downs,LA,2,Democratic,Democrat
+31,1849-12-03,D000476,Solomon Weathersbee Downs,LA,2,Democratic,Democrat
+31,1849-12-03,S000216,William King Sebastian,AR,2,Democratic,Democrat
+31,1849-12-03,S000362,James Shields,IL,3,Democratic,Democrat
+32,1851-12-01,D000476,Solomon Weathersbee Downs,LA,2,Democratic,Democrat
+32,1851-12-01,M000084,Stephen Russell Mallory,FL,1,Democratic,Democrat
+32,1851-12-01,S000216,William King Sebastian,AR,2,Democratic,Democrat
+32,1851-12-01,S000362,James Shields,IL,3,Democratic,Democrat
+33,1853-12-05,S000487,John Slidell,LA,3,Democratic,Democrat
+33,1853-12-05,M000084,Stephen Russell Mallory,FL,1,Democratic,Democrat
+33,1853-12-05,S000216,William King Sebastian,AR,2,Democratic,Democrat
+33,1853-12-05,S000362,James Shields,IL,3,Democratic,Democrat
+34,1855-12-03,S000487,John Slidell,LA,3,Democratic,Democrat
+34,1855-12-03,M000084,Stephen Russell Mallory,FL,1,Democratic,Democrat
+34,1855-12-03,S000216,William King Sebastian,AR,2,Democratic,Democrat
+35,1857-12-07,S000487,John Slidell,LA,3,Democratic,Democrat
+35,1857-12-07,M000084,Stephen Russell Mallory,FL,1,Democratic,Democrat
+35,1857-12-07,S000216,William King Sebastian,AR,2,Democratic,Democrat
+36,1859-12-05,S000487,John Slidell,LA,3,Democratic,Democrat
+36,1859-12-05,M000084,Stephen Russell Mallory,FL,1,Democratic,Democrat
+36,1859-12-05,S000216,William King Sebastian,AR,2,Democratic,Democrat
+37,1861-07-04,S000216,William King Sebastian,AR,2,Democratic,Democrat
+38,1863-12-07,W000609,Robert Wilson,MO,3,Other,Unionist
+39,1865-12-04,R000239,George Read Riddle,DE,1,Democratic,Democrat
+40,1867-03-04,R000239,George Read Riddle,DE,1,Democratic,Democrat
