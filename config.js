@@ -28,9 +28,16 @@ export const FIELDS = {
   partyRaw: 'party_raw',
   age:      'age_years',
   ageExact: 'age_exact',
-  seats:    'seats',
-  median:   'median_age',
+  seats:        'seats',            // seats filled on the convening date
+  seatsWithAge: 'seats_with_age',   // ...of which we know a birth date
+  missing:      'missing_birthday',
+  median:       'median_age',
 };
+
+// Below this share of seats with a known birth date, the coverage note is
+// promoted from a quiet aside to a warning. Coverage is complete from the
+// 41st Congress (1869) on; the shortfall is almost entirely pre-1830.
+export const COVERAGE_WARN = 0.97;
 
 // ============================================================
 //  DEFAULTS

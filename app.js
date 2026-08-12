@@ -7,7 +7,7 @@ import {
   AGES_FILE, CONGRESS_FILE, FIELDS,
   DEFAULT_SELECTION, DEFAULT_BASELINE, BASELINE_WINDOW,
   PARTY_COLORS, SILHOUETTE_FILL, SILHOUETTE_STROKE, HOVER_COLOR, TREND_COLOR,
-  DOT_GAP, DOT_MIN, DOT_MAX, TIMELINE_HEIGHT,
+  DOT_GAP, DOT_MIN, DOT_MAX, TIMELINE_HEIGHT, COVERAGE_WARN,
 } from './config.js';
 
 const F = FIELDS;
@@ -71,6 +71,7 @@ function shape(ageRows, congressRows) {
     year:     +r[F.year],
     convened: r[F.convened],
     seats:    +r[F.seats],
+    missing:  +r[F.missing] || 0,
     median:   r[F.median] === '' ? null : +r[F.median],
   })).sort((a, b) => a.n - b.n);
 
@@ -87,6 +88,29 @@ function shape(ageRows, congressRows) {
 }
 
 const selection = () => all.filter(d => d.congress >= state.lo && d.congress <= state.hi);
+
+/**
+ * Seats the selection actually had, against the ones we can draw.
+ *
+ * A senator with no recorded birth date has no age, so there is nowhere on
+ * this axis to put them — they are simply absent from the chart. That is
+ * invisible unless we say so, and before 1830 it runs to one seat in eight.
+ */
+function coverage() {
+  const inSel = congresses.filter(c => c.n >= state.lo && c.n <= state.hi);
+  const seats = d3.sum(inSel, c => c.seats);
+  const missing = d3.sum(inSel, c => c.missing);
+  return { seats, missing, shown: seats - missing, share: seats ? (seats - missing) / seats : 1 };
+}
+
+function coverageNote() {
+  const { seats, missing, shown } = coverage();
+  if (!missing) return null;
+  const pct = d3.format('.0%')(missing / seats);
+  return `${fmtInt(missing)} of ${fmtInt(seats)} seats (${pct}) have no recorded birth date. ` +
+         `They cannot be placed on an age axis, so they are not drawn, and the grey shape ` +
+         `is scaled to the ${fmtInt(shown)} shown.`;
+}
 
 /**
  * Shares of the comparison population, keyed by integer age.
@@ -108,8 +132,15 @@ function baselineShares() {
   return out;
 }
 
-/** Median integer age of a share-weighted profile, for comparison with d3.median. */
-function medianOfShares(shares) {
+/**
+ * The age bin holding the 50th percentile.
+ *
+ * Used for both layers on purpose. d3.median would interpolate to 43.5 on an
+ * even-sized selection while a share-weighted profile can only ever name a
+ * whole bin, and comparing those two would put a half-year of slop into the
+ * one number the chart states outright.
+ */
+function medianBin(shares) {
   let cum = 0;
   for (const a of ageDomain) {
     cum += shares.get(a) ?? 0;
@@ -118,11 +149,19 @@ function medianOfShares(shares) {
   return null;
 }
 
+/** Share-weighted profile of a set of observations, keyed by integer age. */
+function sharesOf(rows) {
+  const tally = d3.rollup(rows, v => v.length, d => d.age);
+  return new Map(ageDomain.map(a => [a, (tally.get(a) ?? 0) / rows.length]));
+}
+
 // ============================================================
 //  CHART
 // ============================================================
 
-const MARGIN = { top: 30, right: 24, bottom: 46, left: 50 };
+// Top margin carries two stacked annotation lines plus the median labels that
+// sit just above the plot, so it is deeper than it looks like it needs to be.
+const MARGIN = { top: 52, right: 24, bottom: 46, left: 50 };
 let chartPaint = () => {};
 
 function renderChart() {
@@ -272,8 +311,8 @@ function renderChart() {
 
   // ── Median markers, the one comparison worth stating outright.
   //    Both are medians of the integer age, so they are like for like.
-  const medSel = d3.median(sel, d => d.age);
-  const medBase = medianOfShares(shares);
+  const medSel = sel.length ? medianBin(sharesOf(sel)) : null;
+  const medBase = medianBin(shares);
 
   // When the two medians are close their labels would collide, so the
   // comparison one steps down and reads away from the selection's line.
@@ -302,9 +341,17 @@ function renderChart() {
 
   svg.append('text')
     .attr('class', 'annot')
-    .attr('x', left).attr('y', MARGIN.top - 12)
+    .attr('x', left).attr('y', 16)
     .text('Grey shape: the same number of seats, aged the way the comparison population was. ' +
           'Dots: the senators actually sitting.');
+
+  const note = coverageNote();
+  if (note) {
+    svg.append('text')
+      .attr('class', coverage().share < COVERAGE_WARN ? 'annot warn' : 'annot')
+      .attr('x', left).attr('y', 30)
+      .text(note);
+  }
 }
 
 // ============================================================
@@ -489,10 +536,15 @@ function updateReadout() {
   const span = state.lo === state.hi
     ? `<b>${ordinal(state.lo)} Congress</b> (${a.year})`
     : `<b>${ordinal(state.lo)}–${ordinal(state.hi)}</b> (${a.year}–${b.year})`;
-  const med = d3.median(sel, d => d.age);
+  const med = sel.length ? medianBin(sharesOf(sel)) : null;
+  const { missing, share } = coverage();
   el.readout.innerHTML =
     `${span} · ${fmtInt(sel.length)} senator${sel.length === 1 ? '' : 's'}` +
-    (med ? ` · median age <b>${med}</b>` : '');
+    (med ? ` · median age <b>${med}</b>` : '') +
+    (missing
+      ? ` · <span class="${share < COVERAGE_WARN ? 'warn' : 'muted'}">` +
+        `${fmtInt(missing)} without a birth date</span>`
+      : '');
 }
 
 function renderPartyKey() {

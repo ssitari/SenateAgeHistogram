@@ -58,6 +58,8 @@
       font-variant-numeric: tabular-nums;
     }
     #readout b { color: #222; font-weight: 600; }
+    #readout .warn { color: #a05a1e; font-weight: 600; }
+    #readout .muted { color: #999; }
 
     /* ── Panels ── */
     #main { flex: 1; display: flex; flex-direction: column; min-height: 0; }
@@ -96,6 +98,7 @@
       stroke-linejoin: round;
     }
     .annot-line { stroke: #ccc; stroke-width: 1; stroke-dasharray: 2 2; }
+    .annot.warn { fill: #a05a1e; }
 
     /* ── Timeline strip ── */
     .tl-label { font-size: 10px; fill: #999; }

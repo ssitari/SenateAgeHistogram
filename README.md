@@ -102,11 +102,19 @@ recorded correctly in each Congress. Five families plus Other:
 | Family | Folded in |
 |---|---|
 | Federalist | Pro-Administration |
-| Democratic-Republican | Anti-Administration, Crawford Republican |
+| Democratic-Republican | Anti-Administration, Crawford Republican, **Republican through the 19th Congress** |
 | Whig | Anti-Jacksonian, Adams |
 | Democratic | Jackson |
-| Republican | — |
+| Republican | Republican, 34th Congress onward |
 | Other | Independents and everything else |
+
+**`"Republican"` names two unrelated parties in this source**, and getting it
+wrong is not subtle — it puts Andrew Jackson in the modern Republican Party. It
+is the bare label for Jefferson's Democratic-Republicans through the 19th
+Congress (1825), then does not appear *at all* for fourteen Congresses, then
+returns in the 34th (1855) as the party we know. That gap is what makes the
+cutoff a fact about the data rather than a judgment call; `fold_party()` in the
+build script applies it.
 
 The early-republic folds are conventional but they are a historiographical
 convenience, not a fact about how these men described themselves. Everything
@@ -128,6 +136,13 @@ chart can honestly reach:
 51 senators lack a birth date, costing 138 observations, and they are almost
 entirely pre-1830 — the 5th Congress is missing 9 of 35 seats. Everything from
 the 41st Congress (1869) forward is complete.
+
+**The chart says so on screen.** A senator with no birth date has no age, so
+there is nowhere on the axis to put them and they are simply absent — which is
+invisible unless stated. Any selection with a gap gets a note giving the count
+and share, in amber below 97% coverage, and the readout carries a short version.
+Selecting the 5th Congress reads *"9 of 35 seats (26%) have no recorded birth
+date."*
 
 ## Known artifacts
 

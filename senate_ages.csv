@@ -28,7 +28,7 @@ congress,convened,bioguide,name,state,senate_class,party,party_raw,birthday,age_
 2,1791-10-24,L000201,Richard Henry Lee,VA,2,Democratic-Republican,Anti-Administration,1732-01-20,59,277,59.7589
 2,1791-10-24,M000985,Robert Morris,PA,3,Federalist,Pro-Administration,1734-01-20,57,277,57.7589
 2,1791-10-24,D000324,Philemon Dickinson,NJ,2,Federalist,Pro-Administration,1739-04-05,52,202,52.5519
-2,1791-10-24,B001133,Aaron Burr,NY,1,Republican,Republican,1756-02-06,35,260,35.7123
+2,1791-10-24,B001133,Aaron Burr,NY,1,Democratic-Republican,Republican,1756-02-06,35,260,35.7123
 2,1791-10-24,C000009,George Cabot,MA,1,Federalist,Federalist,1752-12-03,38,325,38.8904
 2,1791-10-24,C000185,Charles Carroll,MD,1,Other,,1737-09-19,54,35,54.0956
 2,1791-10-24,E000147,Oliver Ellsworth,CT,1,Federalist,Federalist,1745-04-29,46,178,46.4863
@@ -48,7 +48,7 @@ congress,convened,bioguide,name,state,senate_class,party,party_raw,birthday,age_
 2,1791-10-24,K000212,Rufus King,NY,3,Federalist,Federalist,1755-03-24,36,214,36.5847
 3,1793-12-02,H000368,Benjamin Hawkins,NC,3,Federalist,Pro-Administration,1754-08-15,39,109,39.2986
 3,1793-12-02,M000985,Robert Morris,PA,3,Federalist,Pro-Administration,1734-01-20,59,316,59.8658
-3,1793-12-02,B001133,Aaron Burr,NY,1,Republican,Republican,1756-02-06,37,299,37.8192
+3,1793-12-02,B001133,Aaron Burr,NY,1,Democratic-Republican,Republican,1756-02-06,37,299,37.8192
 3,1793-12-02,C000009,George Cabot,MA,1,Federalist,Federalist,1752-12-03,40,364,40.9973
 3,1793-12-02,E000147,Oliver Ellsworth,CT,1,Federalist,Federalist,1745-04-29,48,217,48.5945
 3,1793-12-02,R000091,George Read,DE,1,Other,,1733-09-18,60,75,60.2055
@@ -64,15 +64,15 @@ congress,convened,bioguide,name,state,senate_class,party,party_raw,birthday,age_
 3,1793-12-02,L000067,John Langdon,NH,3,Democratic-Republican,Democratic Republican,1741-06-26,52,159,52.4356
 3,1793-12-02,F000313,Theodore Foster,RI,1,Federalist,Federalist,1752-04-29,41,217,41.5945
 3,1793-12-02,R000550,John Rutherfurd,NJ,1,Federalist,Federalist,1760-09-20,33,73,33.2
-3,1793-12-02,B000929,John Brown,KY,2,Republican,Republican,1757-09-12,36,81,36.2219
+3,1793-12-02,B000929,John Brown,KY,2,Democratic-Republican,Republican,1757-09-12,36,81,36.2219
 3,1793-12-02,L000364,Samuel Livermore,NH,2,Federalist,Federalist,1732-05-14,61,202,61.5534
-3,1793-12-02,J000017,James Jackson,GA,2,Republican,Republican,1757-09-21,36,72,36.1973
-3,1793-12-02,B001186,Pierce Butler,SC,2,Republican,Republican,1744-07-11,49,144,49.3945
+3,1793-12-02,J000017,James Jackson,GA,2,Democratic-Republican,Republican,1757-09-21,36,72,36.1973
+3,1793-12-02,B001186,Pierce Butler,SC,2,Democratic-Republican,Republican,1744-07-11,49,144,49.3945
 3,1793-12-02,B000745,Stephen Row Bradley,VT,3,Other,,1754-02-20,39,285,39.7808
 3,1793-12-02,M000858,James Monroe,VA,1,Democratic-Republican,Anti-Administration,1758-04-28,35,218,35.5973
 3,1793-12-02,K000212,Rufus King,NY,3,Federalist,Federalist,1755-03-24,38,253,38.6932
 3,1793-12-02,T000086,John Taylor,VA,2,Other,,1753-12-19,39,348,39.9534
-4,1795-12-07,B001133,Aaron Burr,NY,1,Republican,Republican,1756-02-06,39,304,39.8329
+4,1795-12-07,B001133,Aaron Burr,NY,1,Democratic-Republican,Republican,1756-02-06,39,304,39.8329
 4,1795-12-07,C000009,George Cabot,MA,1,Federalist,Federalist,1752-12-03,43,4,43.0109
 4,1795-12-07,E000147,Oliver Ellsworth,CT,1,Federalist,Federalist,1745-04-29,50,222,50.6066
 4,1795-12-07,R000350,Moses Robinson,VT,1,Democratic-Republican,Anti-Administration,1741-03-22,54,260,54.7104
@@ -81,477 +81,477 @@ congress,convened,bioguide,name,state,senate_class,party,party_raw,birthday,age_
 4,1795-12-07,F000368,Frederick Frelinghuysen,NJ,2,Federalist,Federalist,1753-04-13,42,238,42.6503
 4,1795-12-07,S001009,Caleb Strong,MA,2,Federalist,Federalist,1745-01-09,50,332,50.9096
 4,1795-12-07,V000104,John Vining,DE,2,Federalist,Federalist,1758-12-23,36,349,36.9562
-4,1795-12-07,T000107,Henry Tazewell,VA,2,Republican,Republican,1753-11-27,42,10,42.0273
+4,1795-12-07,T000107,Henry Tazewell,VA,2,Democratic-Republican,Republican,1753-11-27,42,10,42.0273
 4,1795-12-07,B000474,William Bingham,PA,3,Federalist,Federalist,1752-03-08,43,274,43.7486
 4,1795-12-07,G000526,James Gunn,GA,3,Federalist,Federalist,1753-03-13,42,269,42.735
-4,1795-12-07,L000067,John Langdon,NH,3,Republican,Republican,1741-06-26,54,164,54.4481
+4,1795-12-07,L000067,John Langdon,NH,3,Democratic-Republican,Republican,1741-06-26,54,164,54.4481
 4,1795-12-07,P000026,Elijah Paine,VT,3,Federalist,Federalist,1757-01-21,38,320,38.8767
 4,1795-12-07,T000389,Jonathan Trumbull,CT,3,Federalist,Federalist,1740-03-26,55,256,55.6995
 4,1795-12-07,F000313,Theodore Foster,RI,1,Federalist,Federalist,1752-04-29,43,222,43.6066
 4,1795-12-07,L000115,Henry Latimer,DE,1,Federalist,Federalist,1752-04-24,43,227,43.6202
-4,1795-12-07,M000226,Stevens Thomson Mason,VA,1,Republican,Republican,1760-12-29,34,343,34.9397
+4,1795-12-07,M000226,Stevens Thomson Mason,VA,1,Democratic-Republican,Republican,1760-12-29,34,343,34.9397
 4,1795-12-07,R000448,James Ross,PA,1,Federalist,Federalist,1762-07-12,33,148,33.4044
 4,1795-12-07,R000550,John Rutherfurd,NJ,1,Federalist,Federalist,1760-09-20,35,78,35.2131
-4,1795-12-07,B000929,John Brown,KY,2,Republican,Republican,1757-09-12,38,86,38.235
+4,1795-12-07,B000929,John Brown,KY,2,Democratic-Republican,Republican,1757-09-12,38,86,38.235
 4,1795-12-07,L000364,Samuel Livermore,NH,2,Federalist,Federalist,1732-05-14,63,207,63.5656
-4,1795-12-07,J000017,James Jackson,GA,2,Republican,Republican,1757-09-21,38,77,38.2104
-4,1795-12-07,B001186,Pierce Butler,SC,2,Republican,Republican,1744-07-11,51,149,51.4071
+4,1795-12-07,J000017,James Jackson,GA,2,Democratic-Republican,Republican,1757-09-21,38,77,38.2104
+4,1795-12-07,B001186,Pierce Butler,SC,2,Democratic-Republican,Republican,1744-07-11,51,149,51.4071
 4,1795-12-07,K000212,Rufus King,NY,3,Federalist,Federalist,1755-03-24,40,258,40.7049
 5,1797-05-15,B000739,William Bradford,RI,2,Federalist,Federalist,1729-11-04,67,192,67.526
 5,1797-05-15,V000104,John Vining,DE,2,Federalist,Federalist,1758-12-23,38,143,38.3918
-5,1797-05-15,T000107,Henry Tazewell,VA,2,Republican,Republican,1753-11-27,43,169,43.463
+5,1797-05-15,T000107,Henry Tazewell,VA,2,Democratic-Republican,Republican,1753-11-27,43,169,43.463
 5,1797-05-15,B000474,William Bingham,PA,3,Federalist,Federalist,1752-03-08,45,68,45.1863
 5,1797-05-15,G000526,James Gunn,GA,3,Federalist,Federalist,1753-03-13,44,63,44.1726
-5,1797-05-15,L000067,John Langdon,NH,3,Republican,Republican,1741-06-26,55,323,55.8849
+5,1797-05-15,L000067,John Langdon,NH,3,Democratic-Republican,Republican,1741-06-26,55,323,55.8849
 5,1797-05-15,P000026,Elijah Paine,VT,3,Federalist,Federalist,1757-01-21,40,114,40.3123
-5,1797-05-15,B000570,William Blount,TN,2,Republican,Republican,1749-03-26,48,50,48.137
+5,1797-05-15,B000570,William Blount,TN,2,Democratic-Republican,Republican,1749-03-26,48,50,48.137
 5,1797-05-15,G000286,Benjamin Goodhue,MA,1,Federalist,Federalist,1748-09-20,48,237,48.6493
 5,1797-05-15,H000841,John Eager Howard,MD,1,Federalist,Federalist,1752-06-04,44,345,44.9452
 5,1797-05-15,C000369,Nathaniel Chipman,VT,1,Federalist,Federalist,1752-11-15,44,181,44.4959
-5,1797-05-15,F000313,Theodore Foster,RI,1,Republican,Republican,1752-04-29,45,16,45.0438
+5,1797-05-15,F000313,Theodore Foster,RI,1,Democratic-Republican,Republican,1752-04-29,45,16,45.0438
 5,1797-05-15,L000115,Henry Latimer,DE,1,Federalist,Federalist,1752-04-24,45,21,45.0575
-5,1797-05-15,M000226,Stevens Thomson Mason,VA,1,Republican,Republican,1760-12-29,36,137,36.3753
+5,1797-05-15,M000226,Stevens Thomson Mason,VA,1,Democratic-Republican,Republican,1760-12-29,36,137,36.3753
 5,1797-05-15,R000448,James Ross,PA,1,Federalist,Federalist,1762-07-12,34,307,34.8411
 5,1797-05-15,R000550,John Rutherfurd,NJ,1,Federalist,Federalist,1760-09-20,36,237,36.6493
 5,1797-05-15,S000154,Philip John Schuyler,NY,1,Federalist,Federalist,1733-11-20,63,176,63.4822
-5,1797-05-15,B000929,John Brown,KY,2,Republican,Republican,1757-09-12,39,245,39.6712
+5,1797-05-15,B000929,John Brown,KY,2,Democratic-Republican,Republican,1757-09-12,39,245,39.6712
 5,1797-05-15,G000427,Ray Greene,RI,2,Federalist,Federalist,1765-02-02,32,102,32.2795
 5,1797-05-15,L000364,Samuel Livermore,NH,2,Federalist,Federalist,1732-05-14,65,1,65.0027
 5,1797-05-15,S000222,Theodore Sedgwick,MA,2,Federalist,Federalist,1746-05-09,51,6,51.0164
 5,1797-05-15,T000348,Uriah Tracy,CT,3,Federalist,Federalist,1755-02-02,42,102,42.2795
-5,1797-05-15,A000197,Joseph Anderson,TN,2,Republican,Republican,1757-11-05,39,191,39.5233
+5,1797-05-15,A000197,Joseph Anderson,TN,2,Democratic-Republican,Republican,1757-11-05,39,191,39.5233
 5,1797-05-15,H000618,James Hillhouse,CT,1,Federalist,Federalist,1754-10-20,42,207,42.5671
 5,1797-05-15,S000941,Richard Stockton,NJ,2,Federalist,Federalist,1764-04-17,33,28,33.0767
-5,1797-05-15,J000005,Andrew Jackson,TN,1,Republican,Republican,1767-03-15,30,61,30.1671
+5,1797-05-15,J000005,Andrew Jackson,TN,1,Democratic-Republican,Republican,1767-03-15,30,61,30.1671
 6,1799-12-02,B000474,William Bingham,PA,3,Federalist,Federalist,1752-03-08,47,269,47.737
 6,1799-12-02,G000526,James Gunn,GA,3,Federalist,Federalist,1753-03-13,46,264,46.7233
-6,1799-12-02,L000067,John Langdon,NH,3,Republican,Republican,1741-06-26,58,159,58.4356
+6,1799-12-02,L000067,John Langdon,NH,3,Democratic-Republican,Republican,1741-06-26,58,159,58.4356
 6,1799-12-02,P000026,Elijah Paine,VT,3,Federalist,Federalist,1757-01-21,42,315,42.863
 6,1799-12-02,G000286,Benjamin Goodhue,MA,1,Federalist,Federalist,1748-09-20,51,73,51.2
 6,1799-12-02,H000841,John Eager Howard,MD,1,Federalist,Federalist,1752-06-04,47,181,47.4959
 6,1799-12-02,C000369,Nathaniel Chipman,VT,1,Federalist,Federalist,1752-11-15,47,17,47.0466
-6,1799-12-02,F000313,Theodore Foster,RI,1,Republican,Republican,1752-04-29,47,217,47.5945
+6,1799-12-02,F000313,Theodore Foster,RI,1,Democratic-Republican,Republican,1752-04-29,47,217,47.5945
 6,1799-12-02,L000115,Henry Latimer,DE,1,Federalist,Federalist,1752-04-24,47,222,47.6082
-6,1799-12-02,M000226,Stevens Thomson Mason,VA,1,Republican,Republican,1760-12-29,38,338,38.926
+6,1799-12-02,M000226,Stevens Thomson Mason,VA,1,Democratic-Republican,Republican,1760-12-29,38,338,38.926
 6,1799-12-02,R000448,James Ross,PA,1,Federalist,Federalist,1762-07-12,37,143,37.3918
 6,1799-12-02,W000202,James Watson,NY,1,Federalist,Federalist,1750-04-06,49,240,49.6575
-6,1799-12-02,B000929,John Brown,KY,2,Republican,Republican,1757-09-12,42,81,42.2219
+6,1799-12-02,B000929,John Brown,KY,2,Democratic-Republican,Republican,1757-09-12,42,81,42.2219
 6,1799-12-02,D000165,Jonathan Dayton,NJ,2,Federalist,Federalist,1760-10-16,39,47,39.1288
 6,1799-12-02,D000296,Samuel Dexter,MA,2,Federalist,Federalist,1761-05-14,38,202,38.5534
 6,1799-12-02,G000427,Ray Greene,RI,2,Federalist,Federalist,1765-02-02,34,303,34.8301
 6,1799-12-02,L000364,Samuel Livermore,NH,2,Federalist,Federalist,1732-05-14,67,202,67.5534
 6,1799-12-02,T000348,Uriah Tracy,CT,3,Federalist,Federalist,1755-02-02,44,303,44.8301
-6,1799-12-02,B000084,Abraham Baldwin,GA,2,Republican,Republican,1754-11-22,45,10,45.0274
-6,1799-12-02,S000524,Daniel Smith,TN,1,Republican,Republican,1748-10-29,51,34,51.0932
-6,1799-12-02,F000344,Jesse Franklin,NC,2,Republican,Republican,1760-03-24,39,253,39.6932
-6,1799-12-02,A000197,Joseph Anderson,TN,1,Republican,Republican,1757-11-05,42,27,42.074
+6,1799-12-02,B000084,Abraham Baldwin,GA,2,Democratic-Republican,Republican,1754-11-22,45,10,45.0274
+6,1799-12-02,S000524,Daniel Smith,TN,1,Democratic-Republican,Republican,1748-10-29,51,34,51.0932
+6,1799-12-02,F000344,Jesse Franklin,NC,2,Democratic-Republican,Republican,1760-03-24,39,253,39.6932
+6,1799-12-02,A000197,Joseph Anderson,TN,1,Democratic-Republican,Republican,1757-11-05,42,27,42.074
 6,1799-12-02,H000618,James Hillhouse,CT,1,Federalist,Federalist,1754-10-20,45,43,45.1178
-6,1799-12-02,N000086,Wilson Cary Nicholas,VA,2,Republican,Republican,1761-01-31,38,305,38.8356
+6,1799-12-02,N000086,Wilson Cary Nicholas,VA,2,Democratic-Republican,Republican,1761-01-31,38,305,38.8356
 6,1799-12-02,S000150,James Schureman,NJ,1,Federalist,Federalist,1756-02-12,43,293,43.8027
 6,1799-12-02,W000287,William Hill Wells,DE,2,Federalist,Federalist,1769-01-07,30,329,30.9014
-6,1799-12-02,P000354,Charles Pinckney,SC,2,Republican,Republican,1757-10-26,42,37,42.1014
+6,1799-12-02,P000354,Charles Pinckney,SC,2,Democratic-Republican,Republican,1757-10-26,42,37,42.1014
 7,1801-12-07,H000841,John Eager Howard,MD,1,Federalist,Federalist,1752-06-04,49,186,49.5096
 7,1801-12-07,C000369,Nathaniel Chipman,VT,1,Federalist,Federalist,1752-11-15,49,22,49.0603
-7,1801-12-07,F000313,Theodore Foster,RI,1,Republican,Republican,1752-04-29,49,222,49.6082
+7,1801-12-07,F000313,Theodore Foster,RI,1,Democratic-Republican,Republican,1752-04-29,49,222,49.6082
 7,1801-12-07,L000115,Henry Latimer,DE,1,Federalist,Federalist,1752-04-24,49,227,49.6219
-7,1801-12-07,M000226,Stevens Thomson Mason,VA,1,Republican,Republican,1760-12-29,40,343,40.9397
+7,1801-12-07,M000226,Stevens Thomson Mason,VA,1,Democratic-Republican,Republican,1760-12-29,40,343,40.9397
 7,1801-12-07,R000448,James Ross,PA,1,Federalist,Federalist,1762-07-12,39,148,39.4055
-7,1801-12-07,B000929,John Brown,KY,2,Republican,Republican,1757-09-12,44,86,44.2356
+7,1801-12-07,B000929,John Brown,KY,2,Democratic-Republican,Republican,1757-09-12,44,86,44.2356
 7,1801-12-07,D000165,Jonathan Dayton,NJ,2,Federalist,Federalist,1760-10-16,41,52,41.1425
 7,1801-12-07,G000427,Ray Greene,RI,2,Federalist,Federalist,1765-02-02,36,308,36.8438
 7,1801-12-07,L000364,Samuel Livermore,NH,2,Federalist,Federalist,1732-05-14,69,207,69.5671
 7,1801-12-07,F000301,Dwight Foster,MA,2,Federalist,Federalist,1757-12-07,44,0,44.0
 7,1801-12-07,M000976,Gouverneur Morris,NY,1,Federalist,Federalist,1752-01-31,49,310,49.8493
-7,1801-12-07,B000787,John Breckinridge,KY,3,Republican,Republican,1760-12-02,41,5,41.0137
-7,1801-12-07,E000114,Christopher Ellery,RI,2,Republican,Republican,1768-11-01,33,36,33.0986
-7,1801-12-07,J000017,James Jackson,GA,3,Republican,Republican,1757-09-21,44,77,44.211
-7,1801-12-07,L000401,George Logan,PA,3,Republican,Republican,1753-09-09,48,89,48.2438
+7,1801-12-07,B000787,John Breckinridge,KY,3,Democratic-Republican,Republican,1760-12-02,41,5,41.0137
+7,1801-12-07,E000114,Christopher Ellery,RI,2,Democratic-Republican,Republican,1768-11-01,33,36,33.0986
+7,1801-12-07,J000017,James Jackson,GA,3,Democratic-Republican,Republican,1757-09-21,44,77,44.211
+7,1801-12-07,L000401,George Logan,PA,3,Democratic-Republican,Republican,1753-09-09,48,89,48.2438
 7,1801-12-07,M001066,John Peter Gabriel Muhlenberg,PA,3,Democratic-Republican,Democratic Republican,1746-10-01,55,67,55.1836
 7,1801-12-07,O000041,Aaron Ogden,NJ,1,Federalist,Federalist,1756-12-03,45,4,45.011
 7,1801-12-07,O000060,Simeon Olcott,NH,2,Federalist,Federalist,1735-10-01,66,67,66.1836
 7,1801-12-07,S000312,James Sheafe,NH,3,Federalist,Federalist,1755-11-16,46,21,46.0575
 7,1801-12-07,T000348,Uriah Tracy,CT,3,Federalist,Federalist,1755-02-02,46,308,46.8438
-7,1801-12-07,A000282,John Armstrong,NY,3,Republican,Republican,1758-11-25,43,12,43.0329
-7,1801-12-07,B000084,Abraham Baldwin,GA,2,Republican,Republican,1754-11-22,47,15,47.0411
-7,1801-12-07,B000745,Stephen Row Bradley,VT,3,Republican,Republican,1754-02-20,47,290,47.7945
-7,1801-12-07,F000344,Jesse Franklin,NC,2,Republican,Republican,1760-03-24,41,258,41.7068
-7,1801-12-07,A000197,Joseph Anderson,TN,1,Republican,Republican,1757-11-05,44,32,44.0877
+7,1801-12-07,A000282,John Armstrong,NY,3,Democratic-Republican,Republican,1758-11-25,43,12,43.0329
+7,1801-12-07,B000084,Abraham Baldwin,GA,2,Democratic-Republican,Republican,1754-11-22,47,15,47.0411
+7,1801-12-07,B000745,Stephen Row Bradley,VT,3,Democratic-Republican,Republican,1754-02-20,47,290,47.7945
+7,1801-12-07,F000344,Jesse Franklin,NC,2,Democratic-Republican,Republican,1760-03-24,41,258,41.7068
+7,1801-12-07,A000197,Joseph Anderson,TN,1,Democratic-Republican,Republican,1757-11-05,44,32,44.0877
 7,1801-12-07,H000618,James Hillhouse,CT,1,Federalist,Federalist,1754-10-20,47,48,47.1315
-7,1801-12-07,N000086,Wilson Cary Nicholas,VA,2,Republican,Republican,1761-01-31,40,310,40.8493
+7,1801-12-07,N000086,Wilson Cary Nicholas,VA,2,Democratic-Republican,Republican,1761-01-31,40,310,40.8493
 7,1801-12-07,S000150,James Schureman,NJ,1,Federalist,Federalist,1756-02-12,45,298,45.8164
-7,1801-12-07,S000955,David Stone,NC,3,Republican,Republican,1770-02-17,31,293,31.8027
+7,1801-12-07,S000955,David Stone,NC,3,Democratic-Republican,Republican,1770-02-17,31,293,31.8027
 7,1801-12-07,W000287,William Hill Wells,DE,2,Federalist,Federalist,1769-01-07,32,334,32.9151
 7,1801-12-07,M000221,Jonathan Mason,MA,1,Federalist,Federalist,1756-09-12,45,86,45.2356
-7,1801-12-07,W000768,Robert Wright,MD,3,Republican,Republican,1752-11-20,49,17,49.0466
-8,1803-10-17,B000929,John Brown,KY,2,Republican,Republican,1757-09-12,46,35,46.0956
+7,1801-12-07,W000768,Robert Wright,MD,3,Democratic-Republican,Republican,1752-11-20,49,17,49.0466
+8,1803-10-17,B000929,John Brown,KY,2,Democratic-Republican,Republican,1757-09-12,46,35,46.0956
 8,1803-10-17,D000165,Jonathan Dayton,NJ,2,Federalist,Federalist,1760-10-16,43,1,43.0027
 8,1803-10-17,F000301,Dwight Foster,MA,2,Federalist,Federalist,1757-12-07,45,314,45.8603
-8,1803-10-17,B000787,John Breckinridge,KY,3,Republican,Republican,1760-12-02,42,319,42.874
-8,1803-10-17,E000114,Christopher Ellery,RI,2,Republican,Republican,1768-11-01,34,350,34.9589
-8,1803-10-17,J000017,James Jackson,GA,3,Republican,Republican,1757-09-21,46,26,46.071
-8,1803-10-17,L000401,George Logan,PA,3,Republican,Republican,1753-09-09,50,38,50.1038
+8,1803-10-17,B000787,John Breckinridge,KY,3,Democratic-Republican,Republican,1760-12-02,42,319,42.874
+8,1803-10-17,E000114,Christopher Ellery,RI,2,Democratic-Republican,Republican,1768-11-01,34,350,34.9589
+8,1803-10-17,J000017,James Jackson,GA,3,Democratic-Republican,Republican,1757-09-21,46,26,46.071
+8,1803-10-17,L000401,George Logan,PA,3,Democratic-Republican,Republican,1753-09-09,50,38,50.1038
 8,1803-10-17,O000060,Simeon Olcott,NH,2,Federalist,Federalist,1735-10-01,68,16,68.0437
 8,1803-10-17,T000348,Uriah Tracy,CT,3,Federalist,Federalist,1755-02-02,48,257,48.7041
-8,1803-10-17,B001186,Pierce Butler,SC,3,Republican,Republican,1744-07-11,59,98,59.2678
-8,1803-10-17,C000525,De Witt Clinton,NY,3,Republican,Republican,1769-03-02,34,229,34.6257
+8,1803-10-17,B001186,Pierce Butler,SC,3,Democratic-Republican,Republican,1744-07-11,59,98,59.2678
+8,1803-10-17,C000525,De Witt Clinton,NY,3,Democratic-Republican,Republican,1769-03-02,34,229,34.6257
 8,1803-10-17,P000393,William Plumer,NH,3,Federalist,Federalist,1759-06-25,44,114,44.3115
-8,1803-10-17,B000049,Theodorus Bailey,NY,1,Republican,Republican,1758-10-12,45,5,45.0137
-8,1803-10-17,M000029,Samuel Maclay,PA,1,Republican,Republican,1741-06-17,62,122,62.3333
-8,1803-10-17,P000468,Samuel John Potter,RI,1,Republican,Republican,1753-06-29,50,110,50.3005
-8,1803-10-17,S000557,Israel Smith,VT,1,Republican,Republican,1759-04-04,44,196,44.5355
-8,1803-10-17,V000083,Abraham Bedford Venable,VA,1,Republican,Republican,1758-11-20,44,331,44.9068
-8,1803-10-17,B000084,Abraham Baldwin,GA,2,Republican,Republican,1754-11-22,48,329,48.9014
-8,1803-10-17,S001073,Thomas Sumter,SC,2,Republican,Republican,1734-08-14,69,64,69.1749
-8,1803-10-17,B000745,Stephen Row Bradley,VT,3,Republican,Republican,1754-02-20,49,239,49.6548
-8,1803-10-17,F000344,Jesse Franklin,NC,2,Republican,Republican,1760-03-24,43,207,43.5656
-8,1803-10-17,A000197,Joseph Anderson,TN,1,Republican,Republican,1757-11-05,45,346,45.9479
+8,1803-10-17,B000049,Theodorus Bailey,NY,1,Democratic-Republican,Republican,1758-10-12,45,5,45.0137
+8,1803-10-17,M000029,Samuel Maclay,PA,1,Democratic-Republican,Republican,1741-06-17,62,122,62.3333
+8,1803-10-17,P000468,Samuel John Potter,RI,1,Democratic-Republican,Republican,1753-06-29,50,110,50.3005
+8,1803-10-17,S000557,Israel Smith,VT,1,Democratic-Republican,Republican,1759-04-04,44,196,44.5355
+8,1803-10-17,V000083,Abraham Bedford Venable,VA,1,Democratic-Republican,Republican,1758-11-20,44,331,44.9068
+8,1803-10-17,B000084,Abraham Baldwin,GA,2,Democratic-Republican,Republican,1754-11-22,48,329,48.9014
+8,1803-10-17,S001073,Thomas Sumter,SC,2,Democratic-Republican,Republican,1734-08-14,69,64,69.1749
+8,1803-10-17,B000745,Stephen Row Bradley,VT,3,Democratic-Republican,Republican,1754-02-20,49,239,49.6548
+8,1803-10-17,F000344,Jesse Franklin,NC,2,Democratic-Republican,Republican,1760-03-24,43,207,43.5656
+8,1803-10-17,A000197,Joseph Anderson,TN,1,Democratic-Republican,Republican,1757-11-05,45,346,45.9479
 8,1803-10-17,H000618,James Hillhouse,CT,1,Federalist,Federalist,1754-10-20,48,362,48.9918
-8,1803-10-17,N000086,Wilson Cary Nicholas,VA,2,Republican,Republican,1761-01-31,42,259,42.7096
-8,1803-10-17,W000750,Thomas Worthington,OH,3,Republican,Republican,1773-07-16,30,93,30.2541
-8,1803-10-17,S000955,David Stone,NC,3,Republican,Republican,1770-02-17,33,242,33.663
+8,1803-10-17,N000086,Wilson Cary Nicholas,VA,2,Democratic-Republican,Republican,1761-01-31,42,259,42.7096
+8,1803-10-17,W000750,Thomas Worthington,OH,3,Democratic-Republican,Republican,1773-07-16,30,93,30.2541
+8,1803-10-17,S000955,David Stone,NC,3,Democratic-Republican,Republican,1770-02-17,33,242,33.663
 8,1803-10-17,W000287,William Hill Wells,DE,2,Federalist,Federalist,1769-01-07,34,283,34.7753
 8,1803-10-17,P000324,Timothy Pickering,MA,2,Federalist,Federalist,1745-07-17,58,92,58.2514
-8,1803-10-17,C000671,John Condit,NJ,1,Republican,Republican,1755-07-08,48,101,48.276
-8,1803-10-17,W000768,Robert Wright,MD,3,Republican,Republican,1752-11-20,50,331,50.9068
-8,1803-10-17,T000086,John Taylor,VA,1,Republican,Republican,1753-12-19,49,302,49.8274
-8,1803-10-17,S000609,Samuel Smith,MD,1,Republican,Republican,1752-07-27,51,82,51.224
+8,1803-10-17,C000671,John Condit,NJ,1,Democratic-Republican,Republican,1755-07-08,48,101,48.276
+8,1803-10-17,W000768,Robert Wright,MD,3,Democratic-Republican,Republican,1752-11-20,50,331,50.9068
+8,1803-10-17,T000086,John Taylor,VA,1,Democratic-Republican,Republican,1753-12-19,49,302,49.8274
+8,1803-10-17,S000609,Samuel Smith,MD,1,Democratic-Republican,Republican,1752-07-27,51,82,51.224
 8,1803-10-17,A000041,John Quincy Adams,MA,1,Federalist,Federalist,1767-07-11,36,98,36.2678
-9,1805-12-02,B000787,John Breckinridge,KY,3,Republican,Republican,1760-12-02,45,0,45.0
-9,1805-12-02,J000017,James Jackson,GA,3,Republican,Republican,1757-09-21,48,72,48.1973
-9,1805-12-02,L000401,George Logan,PA,3,Republican,Republican,1753-09-09,52,84,52.2301
+9,1805-12-02,B000787,John Breckinridge,KY,3,Democratic-Republican,Republican,1760-12-02,45,0,45.0
+9,1805-12-02,J000017,James Jackson,GA,3,Democratic-Republican,Republican,1757-09-21,48,72,48.1973
+9,1805-12-02,L000401,George Logan,PA,3,Democratic-Republican,Republican,1753-09-09,52,84,52.2301
 9,1805-12-02,T000348,Uriah Tracy,CT,3,Federalist,Federalist,1755-02-02,50,303,50.8301
 9,1805-12-02,P000393,William Plumer,NH,3,Federalist,Federalist,1759-06-25,46,160,46.4384
-9,1805-12-02,M000029,Samuel Maclay,PA,1,Republican,Republican,1741-06-17,64,168,64.4603
-9,1805-12-02,S000557,Israel Smith,VT,1,Republican,Republican,1759-04-04,46,242,46.663
-9,1805-12-02,H000870,Benjamin Howland,RI,1,Republican,Republican,1755-07-27,50,128,50.3507
-9,1805-12-02,B000084,Abraham Baldwin,GA,2,Republican,Republican,1754-11-22,51,10,51.0274
-9,1805-12-02,F000074,James Fenner,RI,2,Republican,Republican,1771-01-22,34,314,34.8603
-9,1805-12-02,K000246,Aaron Kitchell,NJ,2,Republican,Republican,1744-07-10,61,145,61.3973
-9,1805-12-02,S000524,Daniel Smith,TN,2,Republican,Republican,1748-10-29,57,34,57.0932
-9,1805-12-02,S001073,Thomas Sumter,SC,2,Republican,Republican,1734-08-14,71,110,71.3014
-9,1805-12-02,T000249,Buckner Thruston,KY,2,Republican,Republican,1763-02-09,42,296,42.811
-9,1805-12-02,B000745,Stephen Row Bradley,VT,3,Republican,Republican,1754-02-20,51,285,51.7808
-9,1805-12-02,S000566,John Smith,NY,3,Republican,Republican,1752-02-12,53,293,53.8027
-9,1805-12-02,A000197,Joseph Anderson,TN,1,Republican,Republican,1757-11-05,48,27,48.074
+9,1805-12-02,M000029,Samuel Maclay,PA,1,Democratic-Republican,Republican,1741-06-17,64,168,64.4603
+9,1805-12-02,S000557,Israel Smith,VT,1,Democratic-Republican,Republican,1759-04-04,46,242,46.663
+9,1805-12-02,H000870,Benjamin Howland,RI,1,Democratic-Republican,Republican,1755-07-27,50,128,50.3507
+9,1805-12-02,B000084,Abraham Baldwin,GA,2,Democratic-Republican,Republican,1754-11-22,51,10,51.0274
+9,1805-12-02,F000074,James Fenner,RI,2,Democratic-Republican,Republican,1771-01-22,34,314,34.8603
+9,1805-12-02,K000246,Aaron Kitchell,NJ,2,Democratic-Republican,Republican,1744-07-10,61,145,61.3973
+9,1805-12-02,S000524,Daniel Smith,TN,2,Democratic-Republican,Republican,1748-10-29,57,34,57.0932
+9,1805-12-02,S001073,Thomas Sumter,SC,2,Democratic-Republican,Republican,1734-08-14,71,110,71.3014
+9,1805-12-02,T000249,Buckner Thruston,KY,2,Democratic-Republican,Republican,1763-02-09,42,296,42.811
+9,1805-12-02,B000745,Stephen Row Bradley,VT,3,Democratic-Republican,Republican,1754-02-20,51,285,51.7808
+9,1805-12-02,S000566,John Smith,NY,3,Democratic-Republican,Republican,1752-02-12,53,293,53.8027
+9,1805-12-02,A000197,Joseph Anderson,TN,1,Democratic-Republican,Republican,1757-11-05,48,27,48.074
 9,1805-12-02,H000618,James Hillhouse,CT,1,Federalist,Federalist,1754-10-20,51,43,51.1178
-9,1805-12-02,W000750,Thomas Worthington,OH,3,Republican,Republican,1773-07-16,32,139,32.3808
+9,1805-12-02,W000750,Thomas Worthington,OH,3,Democratic-Republican,Republican,1773-07-16,32,139,32.3808
 9,1805-12-02,B000249,James Asheton Bayard,DE,2,Federalist,Federalist,1767-07-28,38,127,38.3479
-9,1805-12-02,G000183,William Branch Giles,VA,2,Republican,Republican,1762-08-12,43,112,43.3068
-9,1805-12-02,G000215,Nicholas Gilman,NH,2,Republican,Republican,1755-08-03,50,121,50.3315
-9,1805-12-02,M000831,Samuel Latham Mitchill,NY,1,Republican,Republican,1764-08-20,41,104,41.2849
-9,1805-12-02,T000423,James Turner,NC,2,Republican,Republican,1766-12-20,38,347,38.9507
-9,1805-12-02,S000955,David Stone,NC,3,Republican,Republican,1770-02-17,35,288,35.789
+9,1805-12-02,G000183,William Branch Giles,VA,2,Democratic-Republican,Republican,1762-08-12,43,112,43.3068
+9,1805-12-02,G000215,Nicholas Gilman,NH,2,Democratic-Republican,Republican,1755-08-03,50,121,50.3315
+9,1805-12-02,M000831,Samuel Latham Mitchill,NY,1,Democratic-Republican,Republican,1764-08-20,41,104,41.2849
+9,1805-12-02,T000423,James Turner,NC,2,Democratic-Republican,Republican,1766-12-20,38,347,38.9507
+9,1805-12-02,S000955,David Stone,NC,3,Democratic-Republican,Republican,1770-02-17,35,288,35.789
 9,1805-12-02,P000324,Timothy Pickering,MA,2,Federalist,Federalist,1745-07-17,60,138,60.3781
-9,1805-12-02,C000671,John Condit,NJ,1,Republican,Republican,1755-07-08,50,147,50.4027
-9,1805-12-02,W000768,Robert Wright,MD,3,Republican,Republican,1752-11-20,53,12,53.0329
-9,1805-12-02,G000005,John Gaillard,SC,3,Republican,Republican,1765-09-05,40,88,40.2411
-9,1805-12-02,S000609,Samuel Smith,MD,1,Republican,Republican,1752-07-27,53,128,53.3507
-9,1805-12-02,A000026,John Adair,KY,3,Republican,Republican,1757-01-09,48,327,48.8959
+9,1805-12-02,C000671,John Condit,NJ,1,Democratic-Republican,Republican,1755-07-08,50,147,50.4027
+9,1805-12-02,W000768,Robert Wright,MD,3,Democratic-Republican,Republican,1752-11-20,53,12,53.0329
+9,1805-12-02,G000005,John Gaillard,SC,3,Democratic-Republican,Republican,1765-09-05,40,88,40.2411
+9,1805-12-02,S000609,Samuel Smith,MD,1,Democratic-Republican,Republican,1752-07-27,53,128,53.3507
+9,1805-12-02,A000026,John Adair,KY,3,Democratic-Republican,Republican,1757-01-09,48,327,48.8959
 9,1805-12-02,A000041,John Quincy Adams,MA,1,Federalist,Federalist,1767-07-11,38,144,38.3945
-10,1807-10-26,M000029,Samuel Maclay,PA,1,Republican,Republican,1741-06-17,66,131,66.3579
-10,1807-10-26,S000557,Israel Smith,VT,1,Republican,Republican,1759-04-04,48,205,48.5601
-10,1807-10-26,H000870,Benjamin Howland,RI,1,Republican,Republican,1755-07-27,52,91,52.2486
-10,1807-10-26,F000074,James Fenner,RI,2,Republican,Republican,1771-01-22,36,277,36.7589
-10,1807-10-26,K000246,Aaron Kitchell,NJ,2,Republican,Republican,1744-07-10,63,108,63.2951
-10,1807-10-26,S000524,Daniel Smith,TN,2,Republican,Republican,1748-10-29,58,362,58.9918
-10,1807-10-26,S001073,Thomas Sumter,SC,2,Republican,Republican,1734-08-14,73,73,73.1995
-10,1807-10-26,T000249,Buckner Thruston,KY,2,Republican,Republican,1763-02-09,44,259,44.7096
-10,1807-10-26,B000745,Stephen Row Bradley,VT,3,Republican,Republican,1754-02-20,53,248,53.6795
-10,1807-10-26,F000344,Jesse Franklin,NC,3,Republican,Republican,1760-03-24,47,216,47.5902
+10,1807-10-26,M000029,Samuel Maclay,PA,1,Democratic-Republican,Republican,1741-06-17,66,131,66.3579
+10,1807-10-26,S000557,Israel Smith,VT,1,Democratic-Republican,Republican,1759-04-04,48,205,48.5601
+10,1807-10-26,H000870,Benjamin Howland,RI,1,Democratic-Republican,Republican,1755-07-27,52,91,52.2486
+10,1807-10-26,F000074,James Fenner,RI,2,Democratic-Republican,Republican,1771-01-22,36,277,36.7589
+10,1807-10-26,K000246,Aaron Kitchell,NJ,2,Democratic-Republican,Republican,1744-07-10,63,108,63.2951
+10,1807-10-26,S000524,Daniel Smith,TN,2,Democratic-Republican,Republican,1748-10-29,58,362,58.9918
+10,1807-10-26,S001073,Thomas Sumter,SC,2,Democratic-Republican,Republican,1734-08-14,73,73,73.1995
+10,1807-10-26,T000249,Buckner Thruston,KY,2,Democratic-Republican,Republican,1763-02-09,44,259,44.7096
+10,1807-10-26,B000745,Stephen Row Bradley,VT,3,Democratic-Republican,Republican,1754-02-20,53,248,53.6795
+10,1807-10-26,F000344,Jesse Franklin,NC,3,Democratic-Republican,Republican,1760-03-24,47,216,47.5902
 10,1807-10-26,G000293,Chauncey Goodrich,CT,3,Federalist,Federalist,1759-10-20,48,6,48.0164
-10,1807-10-26,G000442,Andrew Gregg,PA,3,Republican,Republican,1755-06-10,52,138,52.377
-10,1807-10-26,J000220,George Jones,GA,2,Republican,Republican,1766-02-25,41,243,41.6658
-10,1807-10-26,M000240,Elisha Mathewson,RI,2,Republican,Republican,1767-04-18,40,191,40.5219
-10,1807-10-26,P000067,Nahum Parker,NH,3,Republican,Republican,1760-03-04,47,236,47.6448
-10,1807-10-26,S000566,John Smith,NY,3,Republican,Republican,1752-02-12,55,256,55.7014
-10,1807-10-26,T000268,Edward Tiffin,OH,3,Republican,Republican,1766-06-19,41,129,41.3525
-10,1807-10-26,A000197,Joseph Anderson,TN,1,Republican,Republican,1757-11-05,49,355,49.9726
+10,1807-10-26,G000442,Andrew Gregg,PA,3,Democratic-Republican,Republican,1755-06-10,52,138,52.377
+10,1807-10-26,J000220,George Jones,GA,2,Democratic-Republican,Republican,1766-02-25,41,243,41.6658
+10,1807-10-26,M000240,Elisha Mathewson,RI,2,Democratic-Republican,Republican,1767-04-18,40,191,40.5219
+10,1807-10-26,P000067,Nahum Parker,NH,3,Democratic-Republican,Republican,1760-03-04,47,236,47.6448
+10,1807-10-26,S000566,John Smith,NY,3,Democratic-Republican,Republican,1752-02-12,55,256,55.7014
+10,1807-10-26,T000268,Edward Tiffin,OH,3,Democratic-Republican,Republican,1766-06-19,41,129,41.3525
+10,1807-10-26,A000197,Joseph Anderson,TN,1,Democratic-Republican,Republican,1757-11-05,49,355,49.9726
 10,1807-10-26,H000618,James Hillhouse,CT,1,Federalist,Federalist,1754-10-20,53,6,53.0164
-10,1807-10-26,R000346,Jonathan Robinson,VT,1,Republican,Republican,1756-08-11,51,76,51.2077
+10,1807-10-26,R000346,Jonathan Robinson,VT,1,Democratic-Republican,Republican,1756-08-11,51,76,51.2077
 10,1807-10-26,B000249,James Asheton Bayard,DE,2,Federalist,Federalist,1767-07-28,40,90,40.2459
-10,1807-10-26,C000895,William Harris Crawford,GA,2,Republican,Republican,1772-02-24,35,244,35.6685
-10,1807-10-26,G000183,William Branch Giles,VA,2,Republican,Republican,1762-08-12,45,75,45.2049
-10,1807-10-26,G000215,Nicholas Gilman,NH,2,Republican,Republican,1755-08-03,52,84,52.2295
-10,1807-10-26,M000831,Samuel Latham Mitchill,NY,1,Republican,Republican,1764-08-20,43,67,43.1831
-10,1807-10-26,T000423,James Turner,NC,2,Republican,Republican,1766-12-20,40,310,40.8493
+10,1807-10-26,C000895,William Harris Crawford,GA,2,Democratic-Republican,Republican,1772-02-24,35,244,35.6685
+10,1807-10-26,G000183,William Branch Giles,VA,2,Democratic-Republican,Republican,1762-08-12,45,75,45.2049
+10,1807-10-26,G000215,Nicholas Gilman,NH,2,Democratic-Republican,Republican,1755-08-03,52,84,52.2295
+10,1807-10-26,M000831,Samuel Latham Mitchill,NY,1,Democratic-Republican,Republican,1764-08-20,43,67,43.1831
+10,1807-10-26,T000423,James Turner,NC,2,Democratic-Republican,Republican,1766-12-20,40,310,40.8493
 10,1807-10-26,P000324,Timothy Pickering,MA,2,Federalist,Federalist,1745-07-17,62,101,62.276
-10,1807-10-26,C000671,John Condit,NJ,1,Republican,Republican,1755-07-08,52,110,52.3005
-10,1807-10-26,G000005,John Gaillard,SC,3,Republican,Republican,1765-09-05,42,51,42.1393
-10,1807-10-26,S000609,Samuel Smith,MD,1,Republican,Republican,1752-07-27,55,91,55.2486
+10,1807-10-26,C000671,John Condit,NJ,1,Democratic-Republican,Republican,1755-07-08,52,110,52.3005
+10,1807-10-26,G000005,John Gaillard,SC,3,Democratic-Republican,Republican,1765-09-05,42,51,42.1393
+10,1807-10-26,S000609,Samuel Smith,MD,1,Democratic-Republican,Republican,1752-07-27,55,91,55.2486
 10,1807-10-26,A000041,John Quincy Adams,MA,1,Federalist,Federalist,1767-07-11,40,107,40.2923
-11,1809-05-22,K000246,Aaron Kitchell,NJ,2,Republican,Republican,1744-07-10,64,316,64.8658
-11,1809-05-22,S000524,Daniel Smith,TN,2,Republican,Republican,1748-10-29,60,205,60.5616
-11,1809-05-22,S001073,Thomas Sumter,SC,2,Republican,Republican,1734-08-14,74,281,74.7699
-11,1809-05-22,T000249,Buckner Thruston,KY,2,Republican,Republican,1763-02-09,46,102,46.2795
-11,1809-05-22,B000745,Stephen Row Bradley,VT,3,Republican,Republican,1754-02-20,55,91,55.2493
-11,1809-05-22,F000344,Jesse Franklin,NC,3,Republican,Republican,1760-03-24,49,59,49.1616
+11,1809-05-22,K000246,Aaron Kitchell,NJ,2,Democratic-Republican,Republican,1744-07-10,64,316,64.8658
+11,1809-05-22,S000524,Daniel Smith,TN,2,Democratic-Republican,Republican,1748-10-29,60,205,60.5616
+11,1809-05-22,S001073,Thomas Sumter,SC,2,Democratic-Republican,Republican,1734-08-14,74,281,74.7699
+11,1809-05-22,T000249,Buckner Thruston,KY,2,Democratic-Republican,Republican,1763-02-09,46,102,46.2795
+11,1809-05-22,B000745,Stephen Row Bradley,VT,3,Democratic-Republican,Republican,1754-02-20,55,91,55.2493
+11,1809-05-22,F000344,Jesse Franklin,NC,3,Democratic-Republican,Republican,1760-03-24,49,59,49.1616
 11,1809-05-22,G000293,Chauncey Goodrich,CT,3,Federalist,Federalist,1759-10-20,49,214,49.5863
-11,1809-05-22,G000442,Andrew Gregg,PA,3,Republican,Republican,1755-06-10,53,346,53.9479
-11,1809-05-22,M000240,Elisha Mathewson,RI,2,Republican,Republican,1767-04-18,42,34,42.0932
-11,1809-05-22,P000067,Nahum Parker,NH,3,Republican,Republican,1760-03-04,49,79,49.2164
-11,1809-05-22,S000566,John Smith,NY,3,Republican,Republican,1752-02-12,57,99,57.2712
-11,1809-05-22,T000268,Edward Tiffin,OH,3,Republican,Republican,1766-06-19,42,337,42.9233
-11,1809-05-22,M000633,Return Jonathan Meigs,OH,1,Republican,Republican,1764-11-17,44,186,44.5096
-11,1809-05-22,A000197,Joseph Anderson,TN,1,Republican,Republican,1757-11-05,51,198,51.5425
+11,1809-05-22,G000442,Andrew Gregg,PA,3,Democratic-Republican,Republican,1755-06-10,53,346,53.9479
+11,1809-05-22,M000240,Elisha Mathewson,RI,2,Democratic-Republican,Republican,1767-04-18,42,34,42.0932
+11,1809-05-22,P000067,Nahum Parker,NH,3,Democratic-Republican,Republican,1760-03-04,49,79,49.2164
+11,1809-05-22,S000566,John Smith,NY,3,Democratic-Republican,Republican,1752-02-12,57,99,57.2712
+11,1809-05-22,T000268,Edward Tiffin,OH,3,Democratic-Republican,Republican,1766-06-19,42,337,42.9233
+11,1809-05-22,M000633,Return Jonathan Meigs,OH,1,Democratic-Republican,Republican,1764-11-17,44,186,44.5096
+11,1809-05-22,A000197,Joseph Anderson,TN,1,Democratic-Republican,Republican,1757-11-05,51,198,51.5425
 11,1809-05-22,C000289,Christopher Grant Champlin,RI,1,Federalist,Federalist,1768-04-12,41,40,41.1096
-11,1809-05-22,G000136,Obadiah German,NY,1,Republican,Republican,1766-04-22,43,30,43.0822
-11,1809-05-22,G000489,Stanley Griswold,OH,3,Republican,Republican,1763-11-14,45,189,45.5178
+11,1809-05-22,G000136,Obadiah German,NY,1,Democratic-Republican,Republican,1766-04-22,43,30,43.0822
+11,1809-05-22,G000489,Stanley Griswold,OH,3,Democratic-Republican,Republican,1763-11-14,45,189,45.5178
 11,1809-05-22,H000618,James Hillhouse,CT,1,Federalist,Federalist,1754-10-20,54,214,54.5863
-11,1809-05-22,L000036,John Lambert,NJ,1,Republican,Republican,1746-02-24,63,87,63.2384
-11,1809-05-22,L000229,Michael Leib,PA,1,Republican,Republican,1760-01-08,49,134,49.3671
+11,1809-05-22,L000036,John Lambert,NJ,1,Democratic-Republican,Republican,1746-02-24,63,87,63.2384
+11,1809-05-22,L000229,Michael Leib,PA,1,Democratic-Republican,Republican,1760-01-08,49,134,49.3671
 11,1809-05-22,M000076,Francis Malbone,RI,1,Federalist,Federalist,1759-03-20,50,63,50.1726
-11,1809-05-22,R000346,Jonathan Robinson,VT,1,Republican,Republican,1756-08-11,52,284,52.7781
+11,1809-05-22,R000346,Jonathan Robinson,VT,1,Democratic-Republican,Republican,1756-08-11,52,284,52.7781
 11,1809-05-22,B000249,James Asheton Bayard,DE,2,Federalist,Federalist,1767-07-28,41,298,41.8164
-11,1809-05-22,C000895,William Harris Crawford,GA,2,Republican,Republican,1772-02-24,37,87,37.2384
-11,1809-05-22,G000183,William Branch Giles,VA,2,Republican,Republican,1762-08-12,46,283,46.7753
-11,1809-05-22,G000215,Nicholas Gilman,NH,2,Republican,Republican,1755-08-03,53,292,53.8
-11,1809-05-22,T000423,James Turner,NC,2,Republican,Republican,1766-12-20,42,153,42.4192
-11,1809-05-22,T000015,Charles Tait,GA,3,Republican,Republican,1768-02-01,41,110,41.3014
+11,1809-05-22,C000895,William Harris Crawford,GA,2,Democratic-Republican,Republican,1772-02-24,37,87,37.2384
+11,1809-05-22,G000183,William Branch Giles,VA,2,Democratic-Republican,Republican,1762-08-12,46,283,46.7753
+11,1809-05-22,G000215,Nicholas Gilman,NH,2,Democratic-Republican,Republican,1755-08-03,53,292,53.8
+11,1809-05-22,T000423,James Turner,NC,2,Democratic-Republican,Republican,1766-12-20,42,153,42.4192
+11,1809-05-22,T000015,Charles Tait,GA,3,Democratic-Republican,Republican,1768-02-01,41,110,41.3014
 11,1809-05-22,P000324,Timothy Pickering,MA,2,Federalist,Federalist,1745-07-17,63,309,63.8466
-11,1809-05-22,C000671,John Condit,NJ,2,Republican,Republican,1755-07-08,53,318,53.8712
-11,1809-05-22,G000005,John Gaillard,SC,3,Republican,Republican,1765-09-05,43,259,43.7096
-11,1809-05-22,S000609,Samuel Smith,MD,1,Republican,Republican,1752-07-27,56,299,56.8192
-12,1811-11-04,B000745,Stephen Row Bradley,VT,3,Republican,Republican,1754-02-20,57,257,57.7041
-12,1811-11-04,F000344,Jesse Franklin,NC,3,Republican,Republican,1760-03-24,51,225,51.6148
+11,1809-05-22,C000671,John Condit,NJ,2,Democratic-Republican,Republican,1755-07-08,53,318,53.8712
+11,1809-05-22,G000005,John Gaillard,SC,3,Democratic-Republican,Republican,1765-09-05,43,259,43.7096
+11,1809-05-22,S000609,Samuel Smith,MD,1,Democratic-Republican,Republican,1752-07-27,56,299,56.8192
+12,1811-11-04,B000745,Stephen Row Bradley,VT,3,Democratic-Republican,Republican,1754-02-20,57,257,57.7041
+12,1811-11-04,F000344,Jesse Franklin,NC,3,Democratic-Republican,Republican,1760-03-24,51,225,51.6148
 12,1811-11-04,G000293,Chauncey Goodrich,CT,3,Federalist,Federalist,1759-10-20,52,15,52.041
-12,1811-11-04,G000442,Andrew Gregg,PA,3,Republican,Republican,1755-06-10,56,147,56.4016
-12,1811-11-04,S000566,John Smith,NY,3,Republican,Republican,1752-02-12,59,265,59.726
-12,1811-11-04,A000197,Joseph Anderson,TN,1,Republican,Republican,1757-11-05,53,364,53.9973
+12,1811-11-04,G000442,Andrew Gregg,PA,3,Democratic-Republican,Republican,1755-06-10,56,147,56.4016
+12,1811-11-04,S000566,John Smith,NY,3,Democratic-Republican,Republican,1752-02-12,59,265,59.726
+12,1811-11-04,A000197,Joseph Anderson,TN,1,Democratic-Republican,Republican,1757-11-05,53,364,53.9973
 12,1811-11-04,C000289,Christopher Grant Champlin,RI,1,Federalist,Federalist,1768-04-12,43,206,43.5628
-12,1811-11-04,G000136,Obadiah German,NY,1,Republican,Republican,1766-04-22,45,196,45.5355
-12,1811-11-04,L000036,John Lambert,NJ,1,Republican,Republican,1746-02-24,65,253,65.6932
-12,1811-11-04,L000229,Michael Leib,PA,1,Republican,Republican,1760-01-08,51,300,51.8219
-12,1811-11-04,R000346,Jonathan Robinson,VT,1,Republican,Republican,1756-08-11,55,85,55.2322
-12,1811-11-04,C001031,Charles Cutts,NH,3,Republican,Republican,1769-01-31,42,277,42.7589
-12,1811-11-04,T000085,John Taylor,SC,2,Republican,Republican,1770-05-04,41,184,41.5027
-12,1811-11-04,W000750,Thomas Worthington,OH,1,Republican,Republican,1773-07-16,38,111,38.3033
+12,1811-11-04,G000136,Obadiah German,NY,1,Democratic-Republican,Republican,1766-04-22,45,196,45.5355
+12,1811-11-04,L000036,John Lambert,NJ,1,Democratic-Republican,Republican,1746-02-24,65,253,65.6932
+12,1811-11-04,L000229,Michael Leib,PA,1,Democratic-Republican,Republican,1760-01-08,51,300,51.8219
+12,1811-11-04,R000346,Jonathan Robinson,VT,1,Democratic-Republican,Republican,1756-08-11,55,85,55.2322
+12,1811-11-04,C001031,Charles Cutts,NH,3,Democratic-Republican,Republican,1769-01-31,42,277,42.7589
+12,1811-11-04,T000085,John Taylor,SC,2,Democratic-Republican,Republican,1770-05-04,41,184,41.5027
+12,1811-11-04,W000750,Thomas Worthington,OH,1,Democratic-Republican,Republican,1773-07-16,38,111,38.3033
 12,1811-11-04,B000249,James Asheton Bayard,DE,2,Federalist,Federalist,1767-07-28,44,99,44.2705
-12,1811-11-04,C000895,William Harris Crawford,GA,2,Republican,Republican,1772-02-24,39,253,39.6932
-12,1811-11-04,G000183,William Branch Giles,VA,2,Republican,Republican,1762-08-12,49,84,49.2295
-12,1811-11-04,G000215,Nicholas Gilman,NH,2,Republican,Republican,1755-08-03,56,93,56.2541
-12,1811-11-04,H000865,Jeremiah Brown Howell,RI,2,Republican,Republican,1771-08-28,40,68,40.1858
-12,1811-11-04,T000423,James Turner,NC,2,Republican,Republican,1766-12-20,44,319,44.874
+12,1811-11-04,C000895,William Harris Crawford,GA,2,Democratic-Republican,Republican,1772-02-24,39,253,39.6932
+12,1811-11-04,G000183,William Branch Giles,VA,2,Democratic-Republican,Republican,1762-08-12,49,84,49.2295
+12,1811-11-04,G000215,Nicholas Gilman,NH,2,Democratic-Republican,Republican,1755-08-03,56,93,56.2541
+12,1811-11-04,H000865,Jeremiah Brown Howell,RI,2,Democratic-Republican,Republican,1771-08-28,40,68,40.1858
+12,1811-11-04,T000423,James Turner,NC,2,Democratic-Republican,Republican,1766-12-20,44,319,44.874
 12,1811-11-04,V000074,Joseph Bradley Varnum,MA,2,Democratic-Republican,Democratic Republican,1750-01-29,61,279,61.7644
-12,1811-11-04,T000015,Charles Tait,GA,3,Republican,Republican,1768-02-01,43,276,43.7562
-12,1811-11-04,C000083,George Washington Campbell,TN,2,Republican,Republican,1769-02-09,42,268,42.7342
+12,1811-11-04,T000015,Charles Tait,GA,3,Democratic-Republican,Republican,1768-02-01,43,276,43.7562
+12,1811-11-04,C000083,George Washington Campbell,TN,2,Democratic-Republican,Republican,1769-02-09,42,268,42.7342
 12,1811-11-04,D000024,Samuel Whittlesey Dana,CT,1,Federalist,Federalist,1760-02-13,51,264,51.7233
 12,1811-11-04,H000795,Outerbridge Horsey,DE,1,Federalist,Federalist,1777-03-05,34,244,34.6667
 12,1811-11-04,H000991,William Hunter,RI,1,Federalist,Federalist,1774-11-26,36,343,36.9397
-12,1811-11-04,C000671,John Condit,NJ,2,Republican,Republican,1755-07-08,56,119,56.3251
-12,1811-11-04,G000005,John Gaillard,SC,3,Republican,Republican,1765-09-05,46,60,46.1639
-12,1811-11-04,S000609,Samuel Smith,MD,1,Republican,Republican,1752-07-27,59,100,59.2732
-12,1811-11-04,B000433,George Mortimer Bibb,KY,2,Republican,Republican,1776-10-30,35,5,35.0137
-13,1813-05-24,A000197,Joseph Anderson,TN,1,Republican,Republican,1757-11-05,55,200,55.5479
-13,1813-05-24,G000136,Obadiah German,NY,1,Republican,Republican,1766-04-22,47,32,47.0877
-13,1813-05-24,L000036,John Lambert,NJ,1,Republican,Republican,1746-02-24,67,89,67.2438
-13,1813-05-24,L000229,Michael Leib,PA,1,Republican,Republican,1760-01-08,53,136,53.3726
-13,1813-05-24,R000346,Jonathan Robinson,VT,1,Republican,Republican,1756-08-11,56,286,56.7836
-13,1813-05-24,T000085,John Taylor,SC,2,Republican,Republican,1770-05-04,43,20,43.0548
-13,1813-05-24,W000750,Thomas Worthington,OH,1,Republican,Republican,1773-07-16,39,312,39.8548
-13,1813-05-24,C000895,William Harris Crawford,GA,2,Republican,Republican,1772-02-24,41,89,41.2438
-13,1813-05-24,G000183,William Branch Giles,VA,2,Republican,Republican,1762-08-12,50,285,50.7808
-13,1813-05-24,G000215,Nicholas Gilman,NH,2,Republican,Republican,1755-08-03,57,294,57.8055
-13,1813-05-24,H000865,Jeremiah Brown Howell,RI,2,Republican,Republican,1771-08-28,41,269,41.737
-13,1813-05-24,T000423,James Turner,NC,2,Republican,Republican,1766-12-20,46,155,46.4247
+12,1811-11-04,C000671,John Condit,NJ,2,Democratic-Republican,Republican,1755-07-08,56,119,56.3251
+12,1811-11-04,G000005,John Gaillard,SC,3,Democratic-Republican,Republican,1765-09-05,46,60,46.1639
+12,1811-11-04,S000609,Samuel Smith,MD,1,Democratic-Republican,Republican,1752-07-27,59,100,59.2732
+12,1811-11-04,B000433,George Mortimer Bibb,KY,2,Democratic-Republican,Republican,1776-10-30,35,5,35.0137
+13,1813-05-24,A000197,Joseph Anderson,TN,1,Democratic-Republican,Republican,1757-11-05,55,200,55.5479
+13,1813-05-24,G000136,Obadiah German,NY,1,Democratic-Republican,Republican,1766-04-22,47,32,47.0877
+13,1813-05-24,L000036,John Lambert,NJ,1,Democratic-Republican,Republican,1746-02-24,67,89,67.2438
+13,1813-05-24,L000229,Michael Leib,PA,1,Democratic-Republican,Republican,1760-01-08,53,136,53.3726
+13,1813-05-24,R000346,Jonathan Robinson,VT,1,Democratic-Republican,Republican,1756-08-11,56,286,56.7836
+13,1813-05-24,T000085,John Taylor,SC,2,Democratic-Republican,Republican,1770-05-04,43,20,43.0548
+13,1813-05-24,W000750,Thomas Worthington,OH,1,Democratic-Republican,Republican,1773-07-16,39,312,39.8548
+13,1813-05-24,C000895,William Harris Crawford,GA,2,Democratic-Republican,Republican,1772-02-24,41,89,41.2438
+13,1813-05-24,G000183,William Branch Giles,VA,2,Democratic-Republican,Republican,1762-08-12,50,285,50.7808
+13,1813-05-24,G000215,Nicholas Gilman,NH,2,Democratic-Republican,Republican,1755-08-03,57,294,57.8055
+13,1813-05-24,H000865,Jeremiah Brown Howell,RI,2,Democratic-Republican,Republican,1771-08-28,41,269,41.737
+13,1813-05-24,T000423,James Turner,NC,2,Democratic-Republican,Republican,1766-12-20,46,155,46.4247
 13,1813-05-24,V000074,Joseph Bradley Varnum,MA,2,Democratic-Republican,Democratic Republican,1750-01-29,63,115,63.3151
-13,1813-05-24,P000450,Thomas Posey,LA,2,Republican,Republican,1750-07-09,62,319,62.874
-13,1813-05-24,B000554,Jesse Bledsoe,KY,3,Republican,Republican,1776-04-06,37,48,37.1315
+13,1813-05-24,P000450,Thomas Posey,LA,2,Democratic-Republican,Republican,1750-07-09,62,319,62.874
+13,1813-05-24,B000554,Jesse Bledsoe,KY,3,Democratic-Republican,Republican,1776-04-06,37,48,37.1315
 13,1813-05-24,D000002,David Daggett,CT,3,Federalist,Federalist,1764-12-31,48,144,48.3945
-13,1813-05-24,L000011,Abner Lacock,PA,3,Republican,Republican,1770-07-09,42,319,42.874
+13,1813-05-24,L000011,Abner Lacock,PA,3,Democratic-Republican,Republican,1770-07-09,42,319,42.874
 13,1813-05-24,M000217,Jeremiah Mason,NH,3,Federalist,Federalist,1768-04-27,45,27,45.074
-13,1813-05-24,S000955,David Stone,NC,3,Republican,Republican,1770-02-17,43,96,43.263
-13,1813-05-24,T000015,Charles Tait,GA,3,Republican,Republican,1768-02-01,45,112,45.3068
+13,1813-05-24,S000955,David Stone,NC,3,Democratic-Republican,Republican,1770-02-17,43,96,43.263
+13,1813-05-24,T000015,Charles Tait,GA,3,Democratic-Republican,Republican,1768-02-01,45,112,45.3068
 13,1813-05-24,W000287,William Hill Wells,DE,2,Federalist,Federalist,1769-01-07,44,137,44.3753
-13,1813-05-24,C000083,George Washington Campbell,TN,2,Republican,Republican,1769-02-09,44,104,44.2849
+13,1813-05-24,C000083,George Washington Campbell,TN,2,Democratic-Republican,Republican,1769-02-09,44,104,44.2849
 13,1813-05-24,D000024,Samuel Whittlesey Dana,CT,1,Federalist,Federalist,1760-02-13,53,100,53.274
 13,1813-05-24,G000322,Christopher Gore,MA,1,Federalist,Federalist,1758-09-21,54,245,54.6712
 13,1813-05-24,H000795,Outerbridge Horsey,DE,1,Federalist,Federalist,1777-03-05,36,80,36.2192
 13,1813-05-24,H000991,William Hunter,RI,1,Federalist,Federalist,1774-11-26,38,179,38.4904
-13,1813-05-24,B000921,James Brown,LA,2,Republican,Republican,1766-09-11,46,255,46.6986
-13,1813-05-24,C000671,John Condit,NJ,2,Republican,Republican,1755-07-08,57,320,57.8767
+13,1813-05-24,B000921,James Brown,LA,2,Democratic-Republican,Republican,1766-09-11,46,255,46.6986
+13,1813-05-24,C000671,John Condit,NJ,2,Democratic-Republican,Republican,1755-07-08,57,320,57.8767
 13,1813-05-24,K000212,Rufus King,NY,3,Federalist,Federalist,1755-03-24,58,61,58.1671
-13,1813-05-24,G000005,John Gaillard,SC,3,Republican,Republican,1765-09-05,47,261,47.7151
-13,1813-05-24,S000609,Samuel Smith,MD,1,Republican,Republican,1752-07-27,60,301,60.8247
-13,1813-05-24,B000433,George Mortimer Bibb,KY,2,Republican,Republican,1776-10-30,36,206,36.5644
+13,1813-05-24,G000005,John Gaillard,SC,3,Democratic-Republican,Republican,1765-09-05,47,261,47.7151
+13,1813-05-24,S000609,Samuel Smith,MD,1,Democratic-Republican,Republican,1752-07-27,60,301,60.8247
+13,1813-05-24,B000433,George Mortimer Bibb,KY,2,Democratic-Republican,Republican,1776-10-30,36,206,36.5644
 13,1813-05-24,G000264,Robert Henry Goldsborough,MD,3,Federalist,Federalist,1779-01-04,34,140,34.3836
-13,1813-05-24,M001003,Jeremiah Morrow,OH,3,Republican,Republican,1771-10-06,41,230,41.6301
-13,1813-05-24,C000325,Dudley Chase,VT,3,Republican,Republican,1771-12-30,41,145,41.3973
-14,1815-12-04,T000085,John Taylor,SC,2,Republican,Republican,1770-05-04,45,214,45.5847
-14,1815-12-04,H000865,Jeremiah Brown Howell,RI,2,Republican,Republican,1771-08-28,44,98,44.2678
-14,1815-12-04,T000423,James Turner,NC,2,Republican,Republican,1766-12-20,48,349,48.9562
+13,1813-05-24,M001003,Jeremiah Morrow,OH,3,Democratic-Republican,Republican,1771-10-06,41,230,41.6301
+13,1813-05-24,C000325,Dudley Chase,VT,3,Democratic-Republican,Republican,1771-12-30,41,145,41.3973
+14,1815-12-04,T000085,John Taylor,SC,2,Democratic-Republican,Republican,1770-05-04,45,214,45.5847
+14,1815-12-04,H000865,Jeremiah Brown Howell,RI,2,Democratic-Republican,Republican,1771-08-28,44,98,44.2678
+14,1815-12-04,T000423,James Turner,NC,2,Democratic-Republican,Republican,1766-12-20,48,349,48.9562
 14,1815-12-04,V000074,Joseph Bradley Varnum,MA,2,Democratic-Republican,Democratic Republican,1750-01-29,65,309,65.8466
-14,1815-12-04,B000434,William Wyatt Bibb,GA,2,Republican,Republican,1781-10-02,34,63,34.1721
+14,1815-12-04,B000434,William Wyatt Bibb,GA,2,Democratic-Republican,Republican,1781-10-02,34,63,34.1721
 14,1815-12-04,D000002,David Daggett,CT,3,Federalist,Federalist,1764-12-31,50,338,50.926
-14,1815-12-04,L000011,Abner Lacock,PA,3,Republican,Republican,1770-07-09,45,148,45.4044
+14,1815-12-04,L000011,Abner Lacock,PA,3,Democratic-Republican,Republican,1770-07-09,45,148,45.4044
 14,1815-12-04,M000217,Jeremiah Mason,NH,3,Federalist,Federalist,1768-04-27,47,221,47.6038
-14,1815-12-04,T000015,Charles Tait,GA,3,Republican,Republican,1768-02-01,47,306,47.8384
+14,1815-12-04,T000015,Charles Tait,GA,3,Democratic-Republican,Republican,1768-02-01,47,306,47.8384
 14,1815-12-04,W000287,William Hill Wells,DE,2,Federalist,Federalist,1769-01-07,46,331,46.9068
-14,1815-12-04,B000192,William Taylor Barry,KY,2,Republican,Republican,1784-02-05,31,302,31.8274
+14,1815-12-04,B000192,William Taylor Barry,KY,2,Democratic-Republican,Republican,1784-02-05,31,302,31.8274
 14,1815-12-04,L000387,Francis Locke,NC,3,Other,Unknown,1776-10-31,39,34,39.0929
-14,1815-12-04,R000313,Jonathan Roberts,PA,1,Republican,Republican,1771-08-16,44,110,44.3005
+14,1815-12-04,R000313,Jonathan Roberts,PA,1,Democratic-Republican,Republican,1771-08-16,44,110,44.3005
 14,1815-12-04,T000220,Thomas Weston Thompson,NH,2,Federalist,Federalist,1766-03-15,49,264,49.7213
-14,1815-12-04,W000324,Jesse Wharton,TN,2,Republican,Republican,1782-07-29,33,128,33.3497
-14,1815-12-04,C000083,George Washington Campbell,TN,1,Republican,Republican,1769-02-09,46,298,46.8164
+14,1815-12-04,W000324,Jesse Wharton,TN,2,Democratic-Republican,Republican,1782-07-29,33,128,33.3497
+14,1815-12-04,C000083,George Washington Campbell,TN,1,Democratic-Republican,Republican,1769-02-09,46,298,46.8164
 14,1815-12-04,D000024,Samuel Whittlesey Dana,CT,1,Federalist,Federalist,1760-02-13,55,294,55.8055
 14,1815-12-04,G000322,Christopher Gore,MA,1,Federalist,Federalist,1758-09-21,57,74,57.2022
 14,1815-12-04,H000795,Outerbridge Horsey,DE,1,Federalist,Federalist,1777-03-05,38,274,38.7486
 14,1815-12-04,H000991,William Hunter,RI,1,Federalist,Federalist,1774-11-26,41,8,41.0219
 14,1815-12-04,T000264,Isaac Tichenor,VT,1,Federalist,Federalist,1754-02-08,61,299,61.8192
-14,1815-12-04,W000516,John Williams,TN,2,Republican,Republican,1778-01-29,37,309,37.8466
-14,1815-12-04,B000921,James Brown,LA,2,Republican,Republican,1766-09-11,49,84,49.2295
-14,1815-12-04,C000671,John Condit,NJ,2,Republican,Republican,1755-07-08,60,149,60.4071
+14,1815-12-04,W000516,John Williams,TN,2,Democratic-Republican,Republican,1778-01-29,37,309,37.8466
+14,1815-12-04,B000921,James Brown,LA,2,Democratic-Republican,Republican,1766-09-11,49,84,49.2295
+14,1815-12-04,C000671,John Condit,NJ,2,Democratic-Republican,Republican,1755-07-08,60,149,60.4071
 14,1815-12-04,K000212,Rufus King,NY,3,Federalist,Federalist,1755-03-24,60,255,60.6967
-14,1815-12-04,B000127,James Barbour,VA,1,Republican,Republican,1775-06-10,40,177,40.4836
-14,1815-12-04,G000005,John Gaillard,SC,3,Republican,Republican,1765-09-05,50,90,50.2459
-14,1815-12-04,S000052,Nathan Sanford,NY,1,Republican,Republican,1777-11-05,38,29,38.0792
-14,1815-12-04,R000500,Benjamin Ruggles,OH,1,Republican,Republican,1783-02-21,32,286,32.7836
+14,1815-12-04,B000127,James Barbour,VA,1,Democratic-Republican,Republican,1775-06-10,40,177,40.4836
+14,1815-12-04,G000005,John Gaillard,SC,3,Democratic-Republican,Republican,1765-09-05,50,90,50.2459
+14,1815-12-04,S000052,Nathan Sanford,NY,1,Democratic-Republican,Republican,1777-11-05,38,29,38.0792
+14,1815-12-04,R000500,Benjamin Ruggles,OH,1,Democratic-Republican,Republican,1783-02-21,32,286,32.7836
 14,1815-12-04,G000264,Robert Henry Goldsborough,MD,3,Federalist,Federalist,1779-01-04,36,334,36.9151
-14,1815-12-04,M001003,Jeremiah Morrow,OH,3,Republican,Republican,1771-10-06,44,59,44.1612
-14,1815-12-04,C000325,Dudley Chase,VT,3,Republican,Republican,1771-12-30,43,339,43.9288
+14,1815-12-04,M001003,Jeremiah Morrow,OH,3,Democratic-Republican,Republican,1771-10-06,44,59,44.1612
+14,1815-12-04,C000325,Dudley Chase,VT,3,Democratic-Republican,Republican,1771-12-30,43,339,43.9288
 15,1817-12-01,D000002,David Daggett,CT,3,Federalist,Federalist,1764-12-31,52,335,52.9178
-15,1817-12-01,L000011,Abner Lacock,PA,3,Republican,Republican,1770-07-09,47,145,47.3973
+15,1817-12-01,L000011,Abner Lacock,PA,3,Democratic-Republican,Republican,1770-07-09,47,145,47.3973
 15,1817-12-01,M000217,Jeremiah Mason,NH,3,Federalist,Federalist,1768-04-27,49,218,49.5973
-15,1817-12-01,T000015,Charles Tait,GA,3,Republican,Republican,1768-02-01,49,303,49.8301
-15,1817-12-01,R000313,Jonathan Roberts,PA,1,Republican,Republican,1771-08-16,46,107,46.2932
-15,1817-12-01,C000083,George Washington Campbell,TN,1,Republican,Republican,1769-02-09,48,295,48.8082
+15,1817-12-01,T000015,Charles Tait,GA,3,Democratic-Republican,Republican,1768-02-01,49,303,49.8301
+15,1817-12-01,R000313,Jonathan Roberts,PA,1,Democratic-Republican,Republican,1771-08-16,46,107,46.2932
+15,1817-12-01,C000083,George Washington Campbell,TN,1,Democratic-Republican,Republican,1769-02-09,48,295,48.8082
 15,1817-12-01,D000024,Samuel Whittlesey Dana,CT,1,Federalist,Federalist,1760-02-13,57,291,57.7973
 15,1817-12-01,H000795,Outerbridge Horsey,DE,1,Federalist,Federalist,1777-03-05,40,271,40.7425
 15,1817-12-01,H000991,William Hunter,RI,1,Federalist,Federalist,1774-11-26,43,5,43.0137
 15,1817-12-01,T000264,Isaac Tichenor,VT,1,Federalist,Federalist,1754-02-08,63,296,63.811
 15,1817-12-01,A000317,Eli Porter Ashmun,MA,1,Federalist,Federalist,1770-06-24,47,160,47.4384
 15,1817-12-01,H000176,Alexander Contee Hanson,MD,1,Federalist,Federalist,1786-02-27,31,277,31.7589
-15,1817-12-01,S000949,Montfort Stokes,NC,2,Republican,Republican,1762-03-12,55,264,55.7233
+15,1817-12-01,S000949,Montfort Stokes,NC,2,Democratic-Republican,Republican,1762-03-12,55,264,55.7233
 15,1817-12-01,B001137,James Burrill,RI,2,Federalist,Federalist,1772-04-25,45,220,45.6027
-15,1817-12-01,E000197,John Wayles Eppes,VA,2,Republican,Republican,1773-04-19,44,226,44.6192
-15,1817-12-01,F000154,James Fisk,VT,3,Republican,Republican,1763-10-04,54,58,54.1589
-15,1817-12-01,L000177,Walter Leake,MS,1,Republican,Republican,1762-05-25,55,190,55.5205
-15,1817-12-01,M000966,David Lawrence Morril,NH,2,Republican,Republican,1772-06-10,45,174,45.4767
+15,1817-12-01,E000197,John Wayles Eppes,VA,2,Democratic-Republican,Republican,1773-04-19,44,226,44.6192
+15,1817-12-01,F000154,James Fisk,VT,3,Democratic-Republican,Republican,1763-10-04,54,58,54.1589
+15,1817-12-01,L000177,Walter Leake,MS,1,Democratic-Republican,Republican,1762-05-25,55,190,55.5205
+15,1817-12-01,M000966,David Lawrence Morril,NH,2,Democratic-Republican,Republican,1772-06-10,45,174,45.4767
 15,1817-12-01,O000127,Harrison Gray Otis,MA,2,Federalist,Federalist,1765-10-08,52,54,52.1479
-15,1817-12-01,S000972,Clement Storer,NH,3,Republican,Republican,1760-09-20,57,72,57.1973
-15,1817-12-01,W000516,John Williams,TN,2,Republican,Republican,1778-01-29,39,306,39.8384
+15,1817-12-01,S000972,Clement Storer,NH,3,Democratic-Republican,Republican,1760-09-20,57,72,57.1973
+15,1817-12-01,W000516,John Williams,TN,2,Democratic-Republican,Republican,1778-01-29,39,306,39.8384
 15,1817-12-01,K000212,Rufus King,NY,3,Federalist,Federalist,1755-03-24,62,252,62.6904
-15,1817-12-01,B000127,James Barbour,VA,1,Republican,Republican,1775-06-10,42,174,42.4767
+15,1817-12-01,B000127,James Barbour,VA,1,Democratic-Republican,Republican,1775-06-10,42,174,42.4767
 15,1817-12-01,V000037,Nicholas Van Dyke,DE,2,Federalist,Federalist,1770-12-20,46,346,46.9479
-15,1817-12-01,W000540,Thomas Hill Williams,MS,2,Republican,Republican,1773-01-14,44,321,44.8795
-15,1817-12-01,G000005,John Gaillard,SC,3,Republican,Republican,1765-09-05,52,87,52.2384
-15,1817-12-01,M000034,Nathaniel Macon,NC,3,Republican,Republican,1757-12-17,59,349,59.9562
-15,1817-12-01,S000052,Nathan Sanford,NY,1,Republican,Republican,1777-11-05,40,26,40.0712
-15,1817-12-01,N000118,James Noble,IN,1,Republican,Republican,1785-12-16,31,350,31.9589
-15,1817-12-01,R000500,Benjamin Ruggles,OH,1,Republican,Republican,1783-02-21,34,283,34.7753
-15,1817-12-01,D000308,Mahlon Dickerson,NJ,2,Republican,Republican,1770-04-17,47,228,47.6247
-15,1817-12-01,T000382,George Michael Troup,GA,2,Republican,Republican,1780-09-08,37,84,37.2301
+15,1817-12-01,W000540,Thomas Hill Williams,MS,2,Democratic-Republican,Republican,1773-01-14,44,321,44.8795
+15,1817-12-01,G000005,John Gaillard,SC,3,Democratic-Republican,Republican,1765-09-05,52,87,52.2384
+15,1817-12-01,M000034,Nathaniel Macon,NC,3,Democratic-Republican,Republican,1757-12-17,59,349,59.9562
+15,1817-12-01,S000052,Nathan Sanford,NY,1,Democratic-Republican,Republican,1777-11-05,40,26,40.0712
+15,1817-12-01,N000118,James Noble,IN,1,Democratic-Republican,Republican,1785-12-16,31,350,31.9589
+15,1817-12-01,R000500,Benjamin Ruggles,OH,1,Democratic-Republican,Republican,1783-02-21,34,283,34.7753
+15,1817-12-01,D000308,Mahlon Dickerson,NJ,2,Democratic-Republican,Republican,1770-04-17,47,228,47.6247
+15,1817-12-01,T000382,George Michael Troup,GA,2,Democratic-Republican,Republican,1780-09-08,37,84,37.2301
 15,1817-12-01,G000264,Robert Henry Goldsborough,MD,3,Federalist,Federalist,1779-01-04,38,331,38.9068
-15,1817-12-01,M001003,Jeremiah Morrow,OH,3,Republican,Republican,1771-10-06,46,56,46.1534
-15,1817-12-01,C000325,Dudley Chase,VT,3,Republican,Republican,1771-12-30,45,336,45.9205
-15,1817-12-01,C000912,John Jordan Crittenden,KY,2,Republican,Republican,1786-09-10,31,82,31.2247
-16,1819-12-06,R000313,Jonathan Roberts,PA,1,Republican,Republican,1771-08-16,48,112,48.306
+15,1817-12-01,M001003,Jeremiah Morrow,OH,3,Democratic-Republican,Republican,1771-10-06,46,56,46.1534
+15,1817-12-01,C000325,Dudley Chase,VT,3,Democratic-Republican,Republican,1771-12-30,45,336,45.9205
+15,1817-12-01,C000912,John Jordan Crittenden,KY,2,Democratic-Republican,Republican,1786-09-10,31,82,31.2247
+16,1819-12-06,R000313,Jonathan Roberts,PA,1,Democratic-Republican,Republican,1771-08-16,48,112,48.306
 16,1819-12-06,D000024,Samuel Whittlesey Dana,CT,1,Federalist,Federalist,1760-02-13,59,296,59.811
 16,1819-12-06,H000795,Outerbridge Horsey,DE,1,Federalist,Federalist,1777-03-05,42,276,42.7541
 16,1819-12-06,H000991,William Hunter,RI,1,Federalist,Federalist,1774-11-26,45,10,45.0273
 16,1819-12-06,T000264,Isaac Tichenor,VT,1,Federalist,Federalist,1754-02-08,65,301,65.8247
-16,1819-12-06,S000949,Montfort Stokes,NC,2,Republican,Republican,1762-03-12,57,269,57.735
+16,1819-12-06,S000949,Montfort Stokes,NC,2,Democratic-Republican,Republican,1762-03-12,57,269,57.735
 16,1819-12-06,B001137,James Burrill,RI,2,Federalist,Federalist,1772-04-25,47,225,47.6148
-16,1819-12-06,E000197,John Wayles Eppes,VA,2,Republican,Republican,1773-04-19,46,231,46.6311
-16,1819-12-06,L000177,Walter Leake,MS,1,Republican,Republican,1762-05-25,57,195,57.5328
-16,1819-12-06,M000966,David Lawrence Morril,NH,2,Republican,Republican,1772-06-10,47,179,47.4891
+16,1819-12-06,E000197,John Wayles Eppes,VA,2,Democratic-Republican,Republican,1773-04-19,46,231,46.6311
+16,1819-12-06,L000177,Walter Leake,MS,1,Democratic-Republican,Republican,1762-05-25,57,195,57.5328
+16,1819-12-06,M000966,David Lawrence Morril,NH,2,Democratic-Republican,Republican,1772-06-10,47,179,47.4891
 16,1819-12-06,O000127,Harrison Gray Otis,MA,2,Federalist,Federalist,1765-10-08,54,59,54.1612
-16,1819-12-06,W000516,John Williams,TN,2,Republican,Republican,1778-01-29,41,311,41.8521
-16,1819-12-06,E000078,Ninian Edwards,IL,3,Republican,Republican,1775-03-17,44,264,44.7213
+16,1819-12-06,W000516,John Williams,TN,2,Democratic-Republican,Republican,1778-01-29,41,311,41.8521
+16,1819-12-06,E000078,Ninian Edwards,IL,3,Democratic-Republican,Republican,1775-03-17,44,264,44.7213
 16,1819-12-06,M000636,Prentiss Mellen,MA,1,Federalist,Federalist,1764-10-11,55,56,55.153
-16,1819-12-06,P000045,William Adams Palmer,VT,3,Republican,Republican,1781-09-12,38,85,38.2322
-16,1819-12-06,B000921,James Brown,LA,3,Republican,Republican,1766-09-11,53,86,53.235
-16,1819-12-06,E000124,John Elliott,GA,3,Republican,Republican,1773-10-24,46,43,46.1175
+16,1819-12-06,P000045,William Adams Palmer,VT,3,Democratic-Republican,Republican,1781-09-12,38,85,38.2322
+16,1819-12-06,B000921,James Brown,LA,3,Democratic-Republican,Republican,1766-09-11,53,86,53.235
+16,1819-12-06,E000124,John Elliott,GA,3,Democratic-Republican,Republican,1773-10-24,46,43,46.1175
 16,1819-12-06,K000212,Rufus King,NY,3,Federalist,Federalist,1755-03-24,64,257,64.7022
-16,1819-12-06,L000083,James Lanman,CT,3,Republican,Republican,1767-06-14,52,175,52.4781
-16,1819-12-06,L000405,William Logan,KY,3,Republican,Republican,1776-12-08,42,363,42.9945
-16,1819-12-06,L000485,Walter Lowrie,PA,3,Republican,Republican,1784-12-10,34,361,34.989
-16,1819-12-06,P000084,John Fabyan Parrott,NH,3,Republican,Republican,1767-08-08,52,120,52.3279
-16,1819-12-06,P000386,James Pleasants,VA,2,Republican,Republican,1769-10-24,50,43,50.1175
-16,1819-12-06,T000377,William Allen Trimble,OH,3,Republican,Republican,1786-04-04,33,246,33.6721
-16,1819-12-06,W000052,Freeman Walker,GA,2,Republican,Republican,1780-10-25,39,42,39.1148
-16,1819-12-06,B000127,James Barbour,VA,1,Republican,Republican,1775-06-10,44,179,44.4891
-16,1819-12-06,P000362,William Pinkney,MD,1,Republican,Republican,1764-03-17,55,264,55.7213
+16,1819-12-06,L000083,James Lanman,CT,3,Democratic-Republican,Republican,1767-06-14,52,175,52.4781
+16,1819-12-06,L000405,William Logan,KY,3,Democratic-Republican,Republican,1776-12-08,42,363,42.9945
+16,1819-12-06,L000485,Walter Lowrie,PA,3,Democratic-Republican,Republican,1784-12-10,34,361,34.989
+16,1819-12-06,P000084,John Fabyan Parrott,NH,3,Democratic-Republican,Republican,1767-08-08,52,120,52.3279
+16,1819-12-06,P000386,James Pleasants,VA,2,Democratic-Republican,Republican,1769-10-24,50,43,50.1175
+16,1819-12-06,T000377,William Allen Trimble,OH,3,Democratic-Republican,Republican,1786-04-04,33,246,33.6721
+16,1819-12-06,W000052,Freeman Walker,GA,2,Democratic-Republican,Republican,1780-10-25,39,42,39.1148
+16,1819-12-06,B000127,James Barbour,VA,1,Democratic-Republican,Republican,1775-06-10,44,179,44.4891
+16,1819-12-06,P000362,William Pinkney,MD,1,Democratic-Republican,Republican,1764-03-17,55,264,55.7213
 16,1819-12-06,V000037,Nicholas Van Dyke,DE,2,Federalist,Federalist,1770-12-20,48,351,48.9616
-16,1819-12-06,W000540,Thomas Hill Williams,MS,2,Republican,Republican,1773-01-14,46,326,46.8932
-16,1819-12-06,G000005,John Gaillard,SC,3,Republican,Republican,1765-09-05,54,92,54.2514
-16,1819-12-06,L000376,Edward Lloyd,MD,3,Republican,Republican,1779-07-22,40,137,40.3743
-16,1819-12-06,M000034,Nathaniel Macon,NC,3,Republican,Republican,1757-12-17,61,354,61.9699
-16,1819-12-06,S000052,Nathan Sanford,NY,1,Republican,Republican,1777-11-05,42,31,42.0847
-16,1819-12-06,E000024,John Henry Eaton,TN,1,Republican,Republican,1790-06-18,29,171,29.4672
-16,1819-12-06,N000118,James Noble,IN,1,Republican,Republican,1785-12-16,33,355,33.9726
-16,1819-12-06,R000500,Benjamin Ruggles,OH,1,Republican,Republican,1783-02-21,36,288,36.789
-16,1819-12-06,D000308,Mahlon Dickerson,NJ,2,Republican,Republican,1770-04-17,49,233,49.6366
-16,1819-12-06,J000170,Richard Mentor Johnson,KY,2,Republican,Republican,1780-10-17,39,50,39.1366
-16,1819-12-06,J000137,Henry Johnson,LA,2,Republican,Republican,1783-09-14,36,83,36.2268
-17,1821-12-03,S000949,Montfort Stokes,NC,2,Republican,Republican,1762-03-12,59,266,59.7288
-17,1821-12-03,M000966,David Lawrence Morril,NH,2,Republican,Republican,1772-06-10,49,176,49.4822
+16,1819-12-06,W000540,Thomas Hill Williams,MS,2,Democratic-Republican,Republican,1773-01-14,46,326,46.8932
+16,1819-12-06,G000005,John Gaillard,SC,3,Democratic-Republican,Republican,1765-09-05,54,92,54.2514
+16,1819-12-06,L000376,Edward Lloyd,MD,3,Democratic-Republican,Republican,1779-07-22,40,137,40.3743
+16,1819-12-06,M000034,Nathaniel Macon,NC,3,Democratic-Republican,Republican,1757-12-17,61,354,61.9699
+16,1819-12-06,S000052,Nathan Sanford,NY,1,Democratic-Republican,Republican,1777-11-05,42,31,42.0847
+16,1819-12-06,E000024,John Henry Eaton,TN,1,Democratic-Republican,Republican,1790-06-18,29,171,29.4672
+16,1819-12-06,N000118,James Noble,IN,1,Democratic-Republican,Republican,1785-12-16,33,355,33.9726
+16,1819-12-06,R000500,Benjamin Ruggles,OH,1,Democratic-Republican,Republican,1783-02-21,36,288,36.789
+16,1819-12-06,D000308,Mahlon Dickerson,NJ,2,Democratic-Republican,Republican,1770-04-17,49,233,49.6366
+16,1819-12-06,J000170,Richard Mentor Johnson,KY,2,Democratic-Republican,Republican,1780-10-17,39,50,39.1366
+16,1819-12-06,J000137,Henry Johnson,LA,2,Democratic-Republican,Republican,1783-09-14,36,83,36.2268
+17,1821-12-03,S000949,Montfort Stokes,NC,2,Democratic-Republican,Republican,1762-03-12,59,266,59.7288
+17,1821-12-03,M000966,David Lawrence Morril,NH,2,Democratic-Republican,Republican,1772-06-10,49,176,49.4822
 17,1821-12-03,O000127,Harrison Gray Otis,MA,2,Federalist,Federalist,1765-10-08,56,56,56.1534
-17,1821-12-03,W000516,John Williams,TN,2,Republican,Republican,1778-01-29,43,308,43.8438
-17,1821-12-03,E000078,Ninian Edwards,IL,3,Republican,Republican,1775-03-17,46,261,46.7151
-17,1821-12-03,P000045,William Adams Palmer,VT,3,Republican,Republican,1781-09-12,40,82,40.2247
-17,1821-12-03,B000921,James Brown,LA,3,Republican,Republican,1766-09-11,55,83,55.2274
-17,1821-12-03,E000124,John Elliott,GA,3,Republican,Republican,1773-10-24,48,40,48.1096
+17,1821-12-03,W000516,John Williams,TN,2,Democratic-Republican,Republican,1778-01-29,43,308,43.8438
+17,1821-12-03,E000078,Ninian Edwards,IL,3,Democratic-Republican,Republican,1775-03-17,46,261,46.7151
+17,1821-12-03,P000045,William Adams Palmer,VT,3,Democratic-Republican,Republican,1781-09-12,40,82,40.2247
+17,1821-12-03,B000921,James Brown,LA,3,Democratic-Republican,Republican,1766-09-11,55,83,55.2274
+17,1821-12-03,E000124,John Elliott,GA,3,Democratic-Republican,Republican,1773-10-24,48,40,48.1096
 17,1821-12-03,K000212,Rufus King,NY,3,Federalist,Federalist,1755-03-24,66,254,66.6959
-17,1821-12-03,L000083,James Lanman,CT,3,Republican,Republican,1767-06-14,54,172,54.4712
-17,1821-12-03,L000485,Walter Lowrie,PA,3,Republican,Republican,1784-12-10,36,358,36.9808
-17,1821-12-03,P000084,John Fabyan Parrott,NH,3,Republican,Republican,1767-08-08,54,117,54.3205
-17,1821-12-03,P000386,James Pleasants,VA,2,Republican,Republican,1769-10-24,52,40,52.1096
-17,1821-12-03,T000377,William Allen Trimble,OH,3,Republican,Republican,1786-04-04,35,243,35.6658
-17,1821-12-03,W000052,Freeman Walker,GA,2,Republican,Republican,1780-10-25,41,39,41.1068
-17,1821-12-03,W000061,John Williams Walker,AL,3,Republican,Republican,1783-08-12,38,113,38.3096
-17,1821-12-03,H000735,David Holmes,MS,1,Republican,Republican,1769-03-10,52,268,52.7342
+17,1821-12-03,L000083,James Lanman,CT,3,Democratic-Republican,Republican,1767-06-14,54,172,54.4712
+17,1821-12-03,L000485,Walter Lowrie,PA,3,Democratic-Republican,Republican,1784-12-10,36,358,36.9808
+17,1821-12-03,P000084,John Fabyan Parrott,NH,3,Democratic-Republican,Republican,1767-08-08,54,117,54.3205
+17,1821-12-03,P000386,James Pleasants,VA,2,Democratic-Republican,Republican,1769-10-24,52,40,52.1096
+17,1821-12-03,T000377,William Allen Trimble,OH,3,Democratic-Republican,Republican,1786-04-04,35,243,35.6658
+17,1821-12-03,W000052,Freeman Walker,GA,2,Democratic-Republican,Republican,1780-10-25,41,39,41.1068
+17,1821-12-03,W000061,John Williams Walker,AL,3,Democratic-Republican,Republican,1783-08-12,38,113,38.3096
+17,1821-12-03,H000735,David Holmes,MS,1,Democratic-Republican,Republican,1769-03-10,52,268,52.7342
 17,1821-12-03,M000774,Elijah Hunt Mills,MA,1,Whig,Adams,1776-12-01,45,2,45.0055
-17,1821-12-03,B000127,James Barbour,VA,1,Republican,Republican,1775-06-10,46,176,46.4822
-17,1821-12-03,B000577,Elijah Boardman,CT,1,Republican,Republican,1760-03-07,61,271,61.7425
-17,1821-12-03,D000295,James De Wolf,RI,1,Republican,Republican,1764-03-18,57,260,57.7123
+17,1821-12-03,B000127,James Barbour,VA,1,Democratic-Republican,Republican,1775-06-10,46,176,46.4822
+17,1821-12-03,B000577,Elijah Boardman,CT,1,Democratic-Republican,Republican,1760-03-07,61,271,61.7425
+17,1821-12-03,D000295,James De Wolf,RI,1,Democratic-Republican,Republican,1764-03-18,57,260,57.7123
 17,1821-12-03,F000122,William Findlay,PA,1,Democratic,Jackson,1768-06-20,53,166,53.4548
-17,1821-12-03,P000362,William Pinkney,MD,1,Republican,Republican,1764-03-17,57,261,57.7151
-17,1821-12-03,C000291,John Chandler,ME,2,Republican,Republican,1762-02-01,59,305,59.8356
+17,1821-12-03,P000362,William Pinkney,MD,1,Democratic-Republican,Republican,1764-03-17,57,261,57.7151
+17,1821-12-03,C000291,John Chandler,ME,2,Democratic-Republican,Republican,1762-02-01,59,305,59.8356
 17,1821-12-03,V000037,Nicholas Van Dyke,DE,2,Federalist,Federalist,1770-12-20,50,348,50.9534
-17,1821-12-03,W000148,Nicholas Ware,GA,2,Republican,Republican,1776-02-16,45,290,45.7945
-17,1821-12-03,W000540,Thomas Hill Williams,MS,2,Republican,Republican,1773-01-14,48,323,48.8849
-17,1821-12-03,B000212,David Barton,MO,3,Republican,Republican,1783-12-14,37,354,37.9699
-17,1821-12-03,G000005,John Gaillard,SC,3,Republican,Republican,1765-09-05,56,89,56.2438
-17,1821-12-03,L000376,Edward Lloyd,MD,3,Republican,Republican,1779-07-22,42,134,42.3671
-17,1821-12-03,M000034,Nathaniel Macon,NC,3,Republican,Republican,1757-12-17,63,351,63.9616
+17,1821-12-03,W000148,Nicholas Ware,GA,2,Democratic-Republican,Republican,1776-02-16,45,290,45.7945
+17,1821-12-03,W000540,Thomas Hill Williams,MS,2,Democratic-Republican,Republican,1773-01-14,48,323,48.8849
+17,1821-12-03,B000212,David Barton,MO,3,Democratic-Republican,Republican,1783-12-14,37,354,37.9699
+17,1821-12-03,G000005,John Gaillard,SC,3,Democratic-Republican,Republican,1765-09-05,56,89,56.2438
+17,1821-12-03,L000376,Edward Lloyd,MD,3,Democratic-Republican,Republican,1779-07-22,42,134,42.3671
+17,1821-12-03,M000034,Nathaniel Macon,NC,3,Democratic-Republican,Republican,1757-12-17,63,351,63.9616
 17,1821-12-03,E000024,John Henry Eaton,TN,1,Other,,1790-06-18,31,168,31.4603
 17,1821-12-03,N000118,James Noble,IN,1,Whig,Adams,1785-12-16,35,352,35.9644
 17,1821-12-03,R000500,Benjamin Ruggles,OH,1,Whig,Adams,1783-02-21,38,285,38.7808
 17,1821-12-03,S000268,Horatio Seymour,VT,1,Whig,Adams,1778-05-31,43,186,43.5096
-17,1821-12-03,D000308,Mahlon Dickerson,NJ,2,Republican,Republican,1770-04-17,51,230,51.6301
+17,1821-12-03,D000308,Mahlon Dickerson,NJ,2,Democratic-Republican,Republican,1770-04-17,51,230,51.6301
 17,1821-12-03,H000739,John Holmes,ME,1,Democratic-Republican,Democratic Republican,1773-03-14,48,264,48.7233
-17,1821-12-03,J000170,Richard Mentor Johnson,KY,2,Republican,Republican,1780-10-17,41,47,41.1288
-17,1821-12-03,K000287,Nehemiah Rice Knight,RI,2,Republican,Republican,1780-12-31,40,337,40.9233
+17,1821-12-03,J000170,Richard Mentor Johnson,KY,2,Democratic-Republican,Republican,1780-10-17,41,47,41.1288
+17,1821-12-03,K000287,Nehemiah Rice Knight,RI,2,Democratic-Republican,Republican,1780-12-31,40,337,40.9233
 17,1821-12-03,V000009,Martin Van Buren,NY,1,Democratic,Jackson,1782-12-05,38,363,38.9945
-17,1821-12-03,S000689,Samuel Lewis Southard,NJ,1,Republican,Republican,1787-06-09,34,177,34.4849
-17,1821-12-03,J000137,Henry Johnson,LA,2,Republican,Republican,1783-09-14,38,80,38.2192
-17,1821-12-03,K000217,William Rufus de Vane King,AL,2,Republican,Republican,1786-04-07,35,240,35.6575
+17,1821-12-03,S000689,Samuel Lewis Southard,NJ,1,Democratic-Republican,Republican,1787-06-09,34,177,34.4849
+17,1821-12-03,J000137,Henry Johnson,LA,2,Democratic-Republican,Republican,1783-09-14,38,80,38.2192
+17,1821-12-03,K000217,William Rufus de Vane King,AL,2,Democratic-Republican,Republican,1786-04-07,35,240,35.6575
 17,1821-12-03,B000398,Thomas Hart Benton,MO,1,Democratic,Jackson,1782-03-14,39,264,39.7233
-18,1823-12-01,E000078,Ninian Edwards,IL,3,Republican,Republican,1775-03-17,48,259,48.7077
-18,1823-12-01,P000045,William Adams Palmer,VT,3,Republican,Republican,1781-09-12,42,80,42.2186
-18,1823-12-01,B000921,James Brown,LA,3,Republican,Republican,1766-09-11,57,81,57.2213
-18,1823-12-01,E000124,John Elliott,GA,3,Republican,Republican,1773-10-24,50,38,50.1038
+18,1823-12-01,E000078,Ninian Edwards,IL,3,Democratic-Republican,Republican,1775-03-17,48,259,48.7077
+18,1823-12-01,P000045,William Adams Palmer,VT,3,Democratic-Republican,Republican,1781-09-12,42,80,42.2186
+18,1823-12-01,B000921,James Brown,LA,3,Democratic-Republican,Republican,1766-09-11,57,81,57.2213
+18,1823-12-01,E000124,John Elliott,GA,3,Democratic-Republican,Republican,1773-10-24,50,38,50.1038
 18,1823-12-01,K000212,Rufus King,NY,3,Federalist,Federalist,1755-03-24,68,252,68.6885
-18,1823-12-01,L000083,James Lanman,CT,3,Republican,Republican,1767-06-14,56,170,56.4645
-18,1823-12-01,L000485,Walter Lowrie,PA,3,Republican,Republican,1784-12-10,38,356,38.9753
-18,1823-12-01,P000084,John Fabyan Parrott,NH,3,Republican,Republican,1767-08-08,56,115,56.3142
-18,1823-12-01,H000735,David Holmes,MS,1,Republican,Republican,1769-03-10,54,266,54.7268
+18,1823-12-01,L000083,James Lanman,CT,3,Democratic-Republican,Republican,1767-06-14,56,170,56.4645
+18,1823-12-01,L000485,Walter Lowrie,PA,3,Democratic-Republican,Republican,1784-12-10,38,356,38.9753
+18,1823-12-01,P000084,John Fabyan Parrott,NH,3,Democratic-Republican,Republican,1767-08-08,56,115,56.3142
+18,1823-12-01,H000735,David Holmes,MS,1,Democratic-Republican,Republican,1769-03-10,54,266,54.7268
 18,1823-12-01,M000774,Elijah Hunt Mills,MA,1,Whig,Adams,1776-12-01,47,0,47.0
-18,1823-12-01,B000127,James Barbour,VA,1,Republican,Republican,1775-06-10,48,174,48.4754
-18,1823-12-01,D000295,James De Wolf,RI,1,Republican,Republican,1764-03-18,59,258,59.7049
+18,1823-12-01,B000127,James Barbour,VA,1,Democratic-Republican,Republican,1775-06-10,48,174,48.4754
+18,1823-12-01,D000295,James De Wolf,RI,1,Democratic-Republican,Republican,1764-03-18,59,258,59.7049
 18,1823-12-01,F000122,William Findlay,PA,1,Democratic,Jackson,1768-06-20,55,164,55.4481
-18,1823-12-01,B000914,Ethan Allen Brown,OH,3,Republican,Republican,1776-07-04,47,150,47.4098
-18,1823-12-01,K000079,William Kelly,AL,3,Republican,Republican,1786-09-22,37,70,37.1913
-18,1823-12-01,T000086,John Taylor,VA,2,Republican,Republican,1753-12-19,69,347,69.9507
+18,1823-12-01,B000914,Ethan Allen Brown,OH,3,Democratic-Republican,Republican,1776-07-04,47,150,47.4098
+18,1823-12-01,K000079,William Kelly,AL,3,Democratic-Republican,Republican,1786-09-22,37,70,37.1913
+18,1823-12-01,T000086,John Taylor,VA,2,Democratic-Republican,Republican,1753-12-19,69,347,69.9507
 18,1823-12-01,C000291,John Chandler,ME,2,Democratic,Jackson,1762-02-01,61,303,61.8301
 18,1823-12-01,M000475,Joseph McIlvaine,NJ,1,Whig,Adams,1769-10-02,54,60,54.1639
 18,1823-12-01,V000037,Nicholas Van Dyke,DE,2,Whig,Adams,1770-12-20,52,346,52.9479
 18,1823-12-01,W000148,Nicholas Ware,GA,2,Other,,1776-02-16,47,288,47.789
 18,1823-12-01,W000540,Thomas Hill Williams,MS,2,Democratic,Jackson,1773-01-14,50,321,50.8795
-18,1823-12-01,B000212,David Barton,MO,3,Republican,Republican,1783-12-14,39,352,39.9644
-18,1823-12-01,G000005,John Gaillard,SC,3,Republican,Republican,1765-09-05,58,87,58.2377
-18,1823-12-01,L000376,Edward Lloyd,MD,3,Republican,Republican,1779-07-22,44,132,44.3607
-18,1823-12-01,M000034,Nathaniel Macon,NC,3,Republican,Republican,1757-12-17,65,349,65.9562
+18,1823-12-01,B000212,David Barton,MO,3,Democratic-Republican,Republican,1783-12-14,39,352,39.9644
+18,1823-12-01,G000005,John Gaillard,SC,3,Democratic-Republican,Republican,1765-09-05,58,87,58.2377
+18,1823-12-01,L000376,Edward Lloyd,MD,3,Democratic-Republican,Republican,1779-07-22,44,132,44.3607
+18,1823-12-01,M000034,Nathaniel Macon,NC,3,Democratic-Republican,Republican,1757-12-17,65,349,65.9562
 18,1823-12-01,E000024,John Henry Eaton,TN,1,Other,,1790-06-18,33,166,33.4536
 18,1823-12-01,N000118,James Noble,IN,1,Whig,Adams,1785-12-16,37,350,37.9589
 18,1823-12-01,R000500,Benjamin Ruggles,OH,1,Whig,Adams,1783-02-21,40,283,40.7753
@@ -570,8 +570,8 @@ congress,convened,bioguide,name,state,senate_class,party,party_raw,birthday,age_
 18,1823-12-01,K000217,William Rufus de Vane King,AL,2,Democratic,Jackson,1786-04-07,37,238,37.6503
 18,1823-12-01,B000398,Thomas Hart Benton,MO,1,Democratic,Jackson,1782-03-14,41,262,41.7158
 19,1825-12-05,M000774,Elijah Hunt Mills,MA,1,Whig,Adams,1776-12-01,49,4,49.011
-19,1825-12-05,B000127,James Barbour,VA,1,Republican,Republican,1775-06-10,50,178,50.4877
-19,1825-12-05,D000295,James De Wolf,RI,1,Republican,Republican,1764-03-18,61,262,61.7178
+19,1825-12-05,B000127,James Barbour,VA,1,Democratic-Republican,Republican,1775-06-10,50,178,50.4877
+19,1825-12-05,D000295,James De Wolf,RI,1,Democratic-Republican,Republican,1764-03-18,61,262,61.7178
 19,1825-12-05,F000122,William Findlay,PA,1,Democratic,Jackson,1768-06-20,57,168,57.4603
 19,1825-12-05,C000291,John Chandler,ME,2,Democratic,Jackson,1762-02-01,63,307,63.8411
 19,1825-12-05,M000475,Joseph McIlvaine,NJ,1,Whig,Adams,1769-10-02,56,64,56.1753

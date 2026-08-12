@@ -69,6 +69,20 @@ PARTY_MAP = {
 }
 OTHER = "Other"
 
+# "Republican" names two unrelated parties in this source. It is the bare label
+# for Jefferson's Democratic-Republicans through the 19th Congress (1825), then
+# does not appear at all until the modern party arrives in the 34th (1855). The
+# fourteen-Congress gap makes the cutoff a fact about the data rather than a
+# judgment call — without it, Andrew Jackson comes out coloured as a modern
+# Republican.
+JEFFERSONIAN_REPUBLICAN_THROUGH = 19
+
+
+def fold_party(raw, congress):
+    if raw == "Republican" and congress <= JEFFERSONIAN_REPUBLICAN_THROUGH:
+        return "Democratic-Republican"
+    return PARTY_MAP.get(raw, OTHER)
+
 # ---------------------------------------------------------------------------
 
 
@@ -200,7 +214,7 @@ def main(refresh=False):
         when = dates[n]
         for p, t in roster(terms, when):
             raw = t.get("party") or ""
-            party = PARTY_MAP.get(raw, OTHER)
+            party = fold_party(raw, n)
             if raw and raw not in PARTY_MAP:
                 unmapped[raw] += 1
 
