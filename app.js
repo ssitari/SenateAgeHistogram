@@ -312,14 +312,9 @@ function renderChart() {
   const cx = d => binLeft(d.age) + ((d.slot % k) + 0.5) * pitch;
   const cy = d => baseline - (Math.floor(d.slot / k) + 0.5) * pitch;
 
-  // Selecting every Congress puts 9,299 dots on screen. One <g> plus three
-  // circles apiece would be nearly 37,000 nodes, which costs seconds to build
-  // and makes every hover repaint the whole chart. So: one circle per senator,
-  // a single shared hover ring instead of one per dot, and hit targets only
-  // when the dots are big enough to aim at.
-  const INTERACTIVE_AT = 7;                 // dot diameter, px
-  const interactive = size >= INTERACTIVE_AT;
-
+  // Selecting every Congress puts 9,299 dots on screen, so one <g> plus three
+  // circles apiece would be nearly 37,000 nodes. Instead: one circle per
+  // senator, and a single shared hover ring rather than one per dot.
   const g = svg.append('g').attr('class', 'dots');
   const ringW = Math.min(1.6, Math.max(0.8, r * 0.34));
 
@@ -331,26 +326,58 @@ function renderChart() {
     .attr('stroke', d => d.approx ? partyColor(d.party) : 'none')
     .attr('stroke-width', d => d.approx ? ringW : 0);
 
+  // Dots occupy a regular grid, so the one under the pointer can be computed
+  // rather than hit-tested. That keeps picking a senator working at every
+  // selection size — the alternative, a hit circle each, stops being
+  // affordable exactly when the dots get too small to aim at anyway. The whole
+  // cell is the target, which is what makes a 5px dot pickable at all.
+  const bySlot = new Map(dots.map(d => [`${d.age}|${d.slot}`, d]));
+
+  const at = (mx, my) => {
+    const age = ageDomain[0] + Math.floor((mx - left) / stepX);
+    if (age < ageDomain[0] || age > ageDomain[ageDomain.length - 1]) return null;
+    const col = Math.floor((mx - binLeft(age)) / pitch);
+    const row = Math.floor((baseline - my) / pitch);
+    if (col < 0 || col >= k || row < 0) return null;
+    return bySlot.get(`${age}|${row * k + col}`) ?? null;
+  };
+
+  svg.append('rect')
+    .attr('x', left).attr('y', baseline - plotH)
+    .attr('width', innerW).attr('height', plotH)
+    .attr('fill', 'transparent')
+    .style('cursor', 'crosshair')
+    .on('mousemove', event => {
+      const [mx, my] = d3.pointer(event, svg.node());
+      const d = at(mx, my);
+      if (d) { setHover(d); showTip(event, d); }
+      else { setHover(null); hideTip(); }
+    })
+    .on('mouseleave', () => { setHover(null); hideTip(); });
+
+  // Kept clear of the tiny-dot radius so the highlight stays visible when a
+  // dot is only a few pixels across.
   const ring = svg.append('circle')
     .attr('class', 'dot-ring')
-    .attr('r', r + 1)
+    .attr('r', Math.max(r + 1, 5))
     .attr('stroke', HOVER_COLOR)
+    .style('pointer-events', 'none')
     .style('display', 'none');
 
-  if (interactive) {
-    g.selectAll('circle.dot-hit').data(dots).join('circle')
-      .attr('class', 'dot-hit')
-      .attr('cx', cx).attr('cy', cy)
-      .attr('r', Math.max(r, 7))
-      .on('mousemove', (event, d) => { setHover(d); showTip(event, d); })
-      .on('mouseleave', () => { setHover(null); hideTip(); });
-  }
-
+  // Dimming every other dot is a per-move pass over the whole selection, which
+  // is fine for a few hundred and not for nine thousand. The ring carries the
+  // highlight on its own above that.
+  const dim = dots.length <= 2500;
+  let dimmed = false;
   chartPaint = () => {
     const h = state.hovered;
-    if (!h) { ring.style('display', 'none'); dot.attr('opacity', 1); return; }
+    if (!h) {
+      ring.style('display', 'none');
+      if (dimmed) { dot.attr('opacity', 1); dimmed = false; }
+      return;
+    }
     ring.attr('cx', cx(h)).attr('cy', cy(h)).style('display', null);
-    dot.attr('opacity', d => d.id === h.id ? 1 : 0.45);
+    if (dim) { dot.attr('opacity', d => d === h ? 1 : 0.45); dimmed = true; }
   };
   chartPaint();
 

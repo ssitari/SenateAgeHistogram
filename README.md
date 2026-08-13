@@ -37,10 +37,18 @@ countable rather than approximate; the readout names the range and the count. A
 dashed rule marks the all-time median, the same number the chart uses as its
 comparison when the baseline is set to every Congress.
 
-Hovering any dot gives the senator's name, party, state and age. Below about
-seven pixels a dot is too small to aim at, so hit targets are dropped and the
-chart draws one plain circle per senator — otherwise the all-selected view
-would be nearly 37,000 SVG nodes and would take seconds to paint.
+**Hovering any dot names the senator**, at every selection size including the
+9,299-dot landing view — being able to pick out one person is the thing that
+shows a reader these are individuals rather than a shape.
+
+That works because dots sit on a regular grid, so the one under the pointer is
+computed rather than hit-tested: a single transparent rect over the plot, and a
+constant-time lookup by bin and slot. A hit circle per dot would have been the
+obvious approach and it fails exactly where it is needed, since it stops being
+affordable at the same moment the dots get too small to aim at. Picking targets
+the whole grid cell rather than the dot itself, which is what makes a
+three-pixel dot selectable at all, and the highlight ring keeps a minimum radius
+so it stays visible around one.
 
 **Compare with** switches the silhouette between all 119 Congresses and the 20
 immediately preceding the selection. This matters more than it sounds: the
