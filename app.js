@@ -20,7 +20,7 @@ const state = {
   lo: null, hi: null,        // inclusive Congress range currently selected
   baseline: DEFAULT_BASELINE,
   view: 'chart',
-  hovered: null,             // bioguide id of the dot under the cursor
+  hovered: null,             // the dot datum under the cursor, or null
 };
 
 let all = [];                // every senator-Congress observation
@@ -86,8 +86,11 @@ function shape(ageRows, congressRows) {
   const tally = d3.rollup(all, v => v.length, d => d.age);
   for (const a of ageDomain) allShares.set(a, (tally.get(a) ?? 0) / all.length);
 
+  const first = congresses[0].n;
   const last = congresses[congresses.length - 1].n;
-  state.lo = state.hi = DEFAULT_SELECTION === 'last' ? last : +DEFAULT_SELECTION;
+  if (DEFAULT_SELECTION === 'all') { state.lo = first; state.hi = last; }
+  else if (DEFAULT_SELECTION === 'last') { state.lo = state.hi = last; }
+  else { state.lo = state.hi = +DEFAULT_SELECTION; }
 }
 
 const selection = () => all.filter(d => d.congress >= state.lo && d.congress <= state.hi);
@@ -306,36 +309,48 @@ function renderChart() {
 
   const r = size / 2;
   const binLeft = a => left + (a - ageDomain[0]) * stepX;
-  const g = svg.append('g').attr('class', 'dots');
-  const dot = g.selectAll('g.dot').data(dots, d => `${d.congress}|${d.id}`).join('g')
-    .attr('class', 'dot')
-    .attr('transform', d => {
-      const col = d.slot % k, row = Math.floor(d.slot / k);
-      return `translate(${binLeft(d.age) + (col + 0.5) * pitch},` +
-             `${baseline - (row + 0.5) * pitch})`;
-    });
+  const cx = d => binLeft(d.age) + ((d.slot % k) + 0.5) * pitch;
+  const cy = d => baseline - (Math.floor(d.slot / k) + 0.5) * pitch;
 
+  // Selecting every Congress puts 9,299 dots on screen. One <g> plus three
+  // circles apiece would be nearly 37,000 nodes, which costs seconds to build
+  // and makes every hover repaint the whole chart. So: one circle per senator,
+  // a single shared hover ring instead of one per dot, and hit targets only
+  // when the dots are big enough to aim at.
+  const INTERACTIVE_AT = 7;                 // dot diameter, px
+  const interactive = size >= INTERACTIVE_AT;
+
+  const g = svg.append('g').attr('class', 'dots');
   const ringW = Math.min(1.6, Math.max(0.8, r * 0.34));
-  dot.append('circle')
+
+  const dot = g.selectAll('circle.dot-fill').data(dots).join('circle')
     .attr('class', 'dot-fill')
+    .attr('cx', cx).attr('cy', cy)
     .attr('r', d => d.approx ? Math.max(0.5, r - ringW / 2) : r)
     .attr('fill', d => d.approx ? 'none' : partyColor(d.party))
     .attr('stroke', d => d.approx ? partyColor(d.party) : 'none')
     .attr('stroke-width', d => d.approx ? ringW : 0);
 
-  dot.append('circle').attr('class', 'dot-ring').attr('r', r).attr('stroke', 'none');
+  const ring = svg.append('circle')
+    .attr('class', 'dot-ring')
+    .attr('r', r + 1)
+    .attr('stroke', HOVER_COLOR)
+    .style('display', 'none');
 
-  dot.append('circle')
-    .attr('class', 'dot-hit')
-    .attr('r', Math.max(r, 7))
-    .on('mousemove', (event, d) => { setHover(d.id); showTip(event, d); })
-    .on('mouseleave', () => { setHover(null); hideTip(); });
+  if (interactive) {
+    g.selectAll('circle.dot-hit').data(dots).join('circle')
+      .attr('class', 'dot-hit')
+      .attr('cx', cx).attr('cy', cy)
+      .attr('r', Math.max(r, 7))
+      .on('mousemove', (event, d) => { setHover(d); showTip(event, d); })
+      .on('mouseleave', () => { setHover(null); hideTip(); });
+  }
 
   chartPaint = () => {
-    dot.select('.dot-ring')
-      .attr('stroke', d => d.id === state.hovered ? HOVER_COLOR : 'none');
-    dot.select('.dot-fill')
-      .attr('opacity', d => !state.hovered || d.id === state.hovered ? 1 : 0.45);
+    const h = state.hovered;
+    if (!h) { ring.style('display', 'none'); dot.attr('opacity', 1); return; }
+    ring.attr('cx', cx(h)).attr('cy', cy(h)).style('display', null);
+    dot.attr('opacity', d => d.id === h.id ? 1 : 0.45);
   };
   chartPaint();
 
@@ -347,11 +362,13 @@ function renderChart() {
   // When the two medians are close their labels would collide, so the
   // comparison one steps down and reads away from the selection's line.
   const near = medSel != null && medBase != null && Math.abs(medSel - medBase) * stepX < 150;
+  const same = medSel != null && medSel === medBase;
   const gMed = svg.append('g');
-  for (const [value, label, dash] of [
-    [medSel, `this selection, median ${medSel ?? '—'}`, null],
-    [medBase, `comparison, median ${medBase ?? '—'}`, '3 3'],
-  ]) {
+  const markers = same
+    ? [[medSel, `both medians, ${medSel}`, null]]
+    : [[medSel, `this selection, median ${medSel ?? '—'}`, null],
+       [medBase, `comparison, median ${medBase ?? '—'}`, '3 3']];
+  for (const [value, label, dash] of markers) {
     if (!value) continue;
     const px = left + (value - ageDomain[0] + 0.5) * stepX;
     const flip = dash && near && medBase <= medSel;
@@ -369,11 +386,21 @@ function renderChart() {
       .text(label);
   }
 
+  // With everything selected against an all-Congress baseline the two layers
+  // are the same population, so the dots sit exactly on the grey and hide it.
+  // Say so, rather than referring to a shape the reader cannot yet see.
+  const coincide = state.baseline === 'all' &&
+                   state.lo === congresses[0].n &&
+                   state.hi === congresses[congresses.length - 1].n;
+
   svg.append('text')
     .attr('class', 'annot')
     .attr('x', left).attr('y', 16)
-    .text('Grey shape: the same number of seats, aged the way the comparison population was. ' +
-          'Dots: the senators actually sitting.');
+    .text(coincide
+      ? 'Every Congress is selected, so the dots cover the grey reference shape exactly. ' +
+        'Drag the timeline below to compare one era against it.'
+      : 'Grey shape: the same number of seats, aged the way the comparison population was. ' +
+        'Dots: the senators actually sitting.');
 
   caveats.forEach((c, i) => {
     svg.append('text')
@@ -388,6 +415,8 @@ function renderChart() {
 // ============================================================
 
 let tlBrush = null, tlX = null, tlWidth = 0;
+let brushAtStart = null;
+let tlPaint = () => {};
 let suppress = false;
 
 function renderTimeline() {
@@ -412,13 +441,43 @@ function renderTimeline() {
   const svg = el.tlSvg.attr('width', width).attr('height', H);
   svg.selectAll('*').remove();
 
+  // All-time reference, the same number the chart names as the comparison
+  // median when the baseline is set to every Congress.
+  const allTime = medianBin(allShares);
+  if (allTime != null && allTime >= y.domain()[0] && allTime <= y.domain()[1]) {
+    svg.append('line')
+      .attr('x1', m.left).attr('x2', m.left + innerW)
+      .attr('y1', Math.round(y(allTime)) + 0.5).attr('y2', Math.round(y(allTime)) + 0.5)
+      .attr('stroke', SILHOUETTE_STROKE)
+      .attr('stroke-width', 1.5)
+      .attr('stroke-dasharray', '3 3');
+    svg.append('text')
+      .attr('class', 'tl-label')
+      .attr('x', m.left + innerW).attr('y', y(allTime) - 4)
+      .attr('text-anchor', 'end')
+      .text(`all-time median ${allTime}`);
+  }
+
   // Median-age trace: the strip earns its space by showing the trend you are
   // brushing over, not just a bare slider.
   svg.append('path')
     .attr('d', d3.line().x(c => tlX(c.n)).y(c => y(c.median))(meds))
     .attr('fill', 'none')
     .attr('stroke', TREND_COLOR)
-    .attr('stroke-width', 1.5);
+    .attr('stroke-width', 1.25);
+
+  // One marker per Congress, so the strip reads as 119 discrete chambers
+  // rather than a continuous curve — and so the selection is countable.
+  const marks = svg.append('g').attr('class', 'tl-marks')
+    .selectAll('circle').data(meds).join('circle')
+    .attr('cx', c => tlX(c.n)).attr('cy', c => y(c.median))
+    .attr('r', Math.min(2.6, Math.max(1.4, (innerW / congresses.length) * 0.22)));
+
+  tlPaint = () => {
+    marks
+      .attr('fill', c => c.n >= state.lo && c.n <= state.hi ? '#3d5a80' : '#c9c7c2')
+      .attr('opacity', c => c.n >= state.lo && c.n <= state.hi ? 1 : 0.85);
+  };
 
   svg.append('g').selectAll('text').data(y.ticks(3)).join('text')
     .attr('class', 'tl-label')
@@ -441,9 +500,10 @@ function renderTimeline() {
 
   tlBrush = d3.brushX()
     .extent([[m.left, m.top], [m.left + innerW, m.top + innerH]])
-    .on('brush end', onBrush);
+    .on('start brush end', onBrush);
 
   svg.append('g').attr('class', 'tl-brush').call(tlBrush);
+  tlPaint();
   moveBrushToSelection();
 }
 
@@ -456,16 +516,36 @@ function congressAtPixel(px) {
   return best;
 }
 
+function pickOne(sourceEvent) {
+  const c = congressAtPixel(d3.pointer(sourceEvent, el.tlSvg.node())[0]);
+  if (!c) return false;
+  state.lo = state.hi = c.n;
+  redraw();
+  moveBrushToSelection();
+  return true;
+}
+
 function onBrush(event) {
   if (suppress) return;
 
-  if (!event.selection) {
-    if (event.type === 'end' && event.sourceEvent) {
-      const c = congressAtPixel(d3.pointer(event.sourceEvent, el.tlSvg.node())[0]);
-      if (c) { state.lo = state.hi = c.n; redraw(); }
-    }
+  if (event.type === 'start') {
+    brushAtStart = event.selection ? [...event.selection] : null;
     return;
   }
+
+  // A click on empty track clears the selection; a click *inside* an existing
+  // one is read by d3 as grabbing it, so the selection comes back unchanged.
+  // Both mean "just this Congress" — and with every Congress selected by
+  // default the second case is the only one a reader can even reach, since
+  // the brush rect then covers the whole strip.
+  if (event.type === 'end' && event.sourceEvent) {
+    const s = event.selection;
+    const unmoved = s && brushAtStart &&
+                    s[0] === brushAtStart[0] && s[1] === brushAtStart[1];
+    if ((!s || unmoved) && pickOne(event.sourceEvent)) return;
+  }
+
+  if (!event.selection) return;
 
   const [x0, x1] = event.selection;
   const hit = congresses.filter(c => tlX(c.n) >= x0 && tlX(c.n) <= x1);
@@ -518,9 +598,9 @@ function renderTable() {
 //  TOOLTIP / HOVER
 // ============================================================
 
-function setHover(id) {
-  if (state.hovered === id) return;
-  state.hovered = id;
+function setHover(d) {
+  if (state.hovered === d) return;
+  state.hovered = d;
   chartPaint();
 }
 
@@ -564,9 +644,11 @@ function updateReadout() {
   const sel = selection();
   const a = congresses.find(c => c.n === state.lo);
   const b = congresses.find(c => c.n === state.hi);
+  const count = state.hi - state.lo + 1;
   const span = state.lo === state.hi
     ? `<b>${ordinal(state.lo)} Congress</b> (${a.year})`
-    : `<b>${ordinal(state.lo)}–${ordinal(state.hi)}</b> (${a.year}–${b.year})`;
+    : `<b>${ordinal(state.lo)}–${ordinal(state.hi)}</b> (${a.year}–${b.year})` +
+      ` · ${count} Congresses`;
   const med = sel.length ? medianBin(sharesOf(sel)) : null;
   const { missing, share } = coverage();
   el.readout.innerHTML =
@@ -608,6 +690,7 @@ function renderPartyKey() {
 // ============================================================
 
 function redraw() {
+  tlPaint();
   renderChart();
   if (state.view === 'table') renderTable();
   updateReadout();

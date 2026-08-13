@@ -25,10 +25,22 @@ senators; the silhouette is simply the comparison population's shares
 multiplied by however many seats are selected, so the two are directly
 readable against each other.
 
+**Every Congress is selected on load.** With the comparison also set to all of
+them, the two layers are the same population and the dots cover the grey shape
+exactly — which shows what the comparison means before you have touched
+anything. Brushing then moves the dots off it.
+
 **Drag the timeline** at the bottom to select a run of Congresses, or click it
-for a single one. The strip plots median chamber age, so you are brushing over
-the trend rather than over a bare slider. Hovering any dot gives the senator's
-name, party, state and age.
+for a single one. The strip plots median chamber age with **one marker per
+Congress**, filled when selected and grey when not, so the selection is
+countable rather than approximate; the readout names the range and the count. A
+dashed rule marks the all-time median, the same number the chart uses as its
+comparison when the baseline is set to every Congress.
+
+Hovering any dot gives the senator's name, party, state and age. Below about
+seven pixels a dot is too small to aim at, so hit targets are dropped and the
+chart draws one plain circle per senator — otherwise the all-selected view
+would be nearly 37,000 SVG nodes and would take seconds to paint.
 
 **Compare with** switches the silhouette between all 119 Congresses and the 20
 immediately preceding the selection. This matters more than it sounds: the

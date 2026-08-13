@@ -44,8 +44,13 @@ export const COVERAGE_WARN = 0.97;
 //  DEFAULTS
 // ============================================================
 
-// Which Congresses are selected on load. 'last' = the most recent one.
-export const DEFAULT_SELECTION = 'last';
+// Which Congresses are selected on load.
+//   'all'  — every Congress. With DEFAULT_BASELINE 'all' the dots then fill
+//            the grey shape exactly, which shows what the two layers mean
+//            before the reader has touched anything.
+//   'last' — the most recent Congress only.
+//   a number — that Congress.
+export const DEFAULT_SELECTION = 'all';
 
 // 'all'  — compare against every Congress, 1789 to now
 // 'prior'— compare against the BASELINE_WINDOW Congresses before the selection
