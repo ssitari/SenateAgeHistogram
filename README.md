@@ -54,10 +54,11 @@ Stdlib only. Source is [unitedstates/congress-legislators][cl], public domain.
 
 | File | Rows | What it is |
 |---|---|---|
-| `senate_ages.csv` | 9,161 | One row per senator × Congress — the dots |
+| `senate_ages.csv` | 9,299 | One row per senator × Congress — the dots |
 | `senate_congresses.csv` | 119 | Per Congress: convening date, seats, age summary, coverage |
 | `senate_age_totals.csv` | 70 | Integer age × count, all Congresses collapsed — the envelope |
-| `senate_missing.csv` | 138 | Observations dropped for want of a birthday |
+| `senate_missing.csv` | 0 | Observations dropped for want of a birthday — now empty |
+| `birthdays_supplement.csv` | 51 | Hand-carried birth dates with a citation each (input, not output) |
 
 Ages come three ways, as in the presidents tables: `age_years` (integer, for
 binning), `age_days` (days past that birthday), `age_exact` (decimal).
@@ -123,26 +124,46 @@ comes to 162 observations, under 2%. `PARTY_MAP` is at the top of the script.
 
 ## Birthday coverage
 
-98.5% overall, but it is not evenly spread, and that decides how far left the
-chart can honestly reach:
+**100% in every era**, but only because of the supplement below. Out of the box,
+`congress-legislators` has no birth date at all for 51 senators — 138
+observations, almost entirely pre-1830, with the 5th Congress missing 9 of 35
+seats. Coverage from the 41st Congress (1869) forward was already complete.
 
-| Congresses | Years | Coverage |
-|---|---|---|
-| 1–20 | 1789–1827 | 88.0% |
-| 21–40 | 1829–1867 | 95.8% |
-| 41–60 | 1869–1907 | 100% |
-| 61–119 | 1909–2025 | 100% |
+### The supplement
 
-51 senators lack a birth date, costing 138 observations, and they are almost
-entirely pre-1830 — the 5th Congress is missing 9 of 35 seats. Everything from
-the 41st Congress (1869) forward is complete.
+All 51 have a Wikidata date of birth, so `birthdays_supplement.csv` carries them
+with a `wikidata_id`, a `source` URL and a `retrieved` date per row.
+`build_senate_ages.py` uses it only as a fallback, never overriding
+`congress-legislators`.
 
-**The chart says so on screen.** A senator with no birth date has no age, so
-there is nowhere on the axis to put them and they are simply absent — which is
-invisible unless stated. Any selection with a gap gets a note giving the count
-and share, in amber below 97% coverage, and the readout carries a short version.
-Selecting the 5th Congress reads *"9 of 35 seats (26%) have no recorded birth
-date."*
+It is a checked-in file rather than a live query on purpose. Fetching at build
+time would make the pipeline depend on a database that can change under it, and
+would make old runs unreproducible.
+
+Precision is the catch: **35 of the 51 are year-only**, 6 to the month, 10 to
+the exact day. A date is derived from the stated precision — mid-year, mid-month
+or as-given — so the age lands within a year of truth, and the precision travels
+with the row as `age_precision`. **The chart draws those dots outlined rather
+than filled**, with a note giving the count, so an approximate age is never
+mistaken for a measured one. Selecting the 5th Congress reads *"8 of 35 seats
+(23%) are dated from a birth year rather than a full date."*
+
+### Was the gap biased?
+
+Worth asking, because missingness correlating with age would bias the medians
+rather than just thin them. Within a Congress, older senators were born earlier,
+when records were worse, so the concern is real.
+
+Measured against Wikidata, the previously-missing senators run **+0.95 years
+older** than their chamber's median on average — but the split is **69 of 138
+older, 69 younger**, an exact 50/50. The mean is dragged by a few much-older
+outliers rather than by a systematic tilt, and a median does not care how far
+out a tail value sits, only which side it falls on.
+
+So the series held: across the 40 affected Congresses the median shifted by
+**+0.03 years on average**. Individual Congresses moved more — the 4th and 6th
+both up a full year, the 12th down 1.5 — which is why the fix was worth making
+before anyone quotes a single early Congress.
 
 ## Known artifacts
 

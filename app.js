@@ -64,6 +64,9 @@ function shape(ageRows, congressRows) {
     partyRaw: r[F.partyRaw],
     age:      +r[F.age],
     exact:    +r[F.ageExact],
+    // Dated from a birth year or month rather than a full date, so the age
+    // could fall one bin either way. Drawn outlined rather than filled.
+    approx:   (r[F.precision] || 'day') !== 'day',
   }));
 
   congresses = congressRows.map(r => ({
@@ -103,13 +106,32 @@ function coverage() {
   return { seats, missing, shown: seats - missing, share: seats ? (seats - missing) / seats : 1 };
 }
 
-function coverageNote() {
+/** Caveats that apply to the current selection, most serious first. */
+function notes() {
+  const out = [];
   const { seats, missing, shown } = coverage();
-  if (!missing) return null;
-  const pct = d3.format('.0%')(missing / seats);
-  return `${fmtInt(missing)} of ${fmtInt(seats)} seats (${pct}) have no recorded birth date. ` +
-         `They cannot be placed on an age axis, so they are not drawn, and the grey shape ` +
-         `is scaled to the ${fmtInt(shown)} shown.`;
+
+  if (missing) {
+    const pct = d3.format('.0%')(missing / seats);
+    out.push({
+      warn: true,
+      text: `${fmtInt(missing)} of ${fmtInt(seats)} seats (${pct}) have no recorded birth date. ` +
+            `They cannot be placed on an age axis, so they are not drawn, and the grey shape ` +
+            `is scaled to the ${fmtInt(shown)} shown.`,
+    });
+  }
+
+  const sel = selection();
+  const approx = sel.filter(d => d.approx).length;
+  if (approx) {
+    const pct = d3.format('.0%')(approx / sel.length);
+    out.push({
+      warn: false,
+      text: `${fmtInt(approx)} of ${fmtInt(sel.length)} seats (${pct}) are dated from a birth ` +
+            `year rather than a full date. Those dots are outlined and may sit one bin either way.`,
+    });
+  }
+  return out;
 }
 
 /**
@@ -169,8 +191,13 @@ function renderChart() {
   const height = el.chart.clientHeight;
   if (!width || !height || state.view !== 'chart') return;
 
+  // The header carries the standing explainer plus whatever caveats apply, so
+  // the top margin grows with them rather than letting text land in the plot.
+  const caveats = notes();
+  const topPad  = 30 + caveats.length * 14;
+
   const innerW = width  - MARGIN.left - MARGIN.right;
-  const innerH = height - MARGIN.top  - MARGIN.bottom;
+  const innerH = height - topPad - MARGIN.bottom;
   if (innerW <= 0 || innerH <= 0) return;
 
   const sel    = selection();
@@ -199,8 +226,8 @@ function renderChart() {
   // Seventy age bins against a column six senators tall is naturally a wide,
   // short chart. Rather than stranding it at the foot of a tall panel, the
   // svg takes only the height it needs and the panel centres it.
-  const svgH = Math.min(height, MARGIN.top + plotH + MARGIN.bottom);
-  const baseline = MARGIN.top + plotH;
+  const svgH = Math.min(height, topPad + plotH + MARGIN.bottom);
+  const baseline = topPad + plotH;
 
   const left = MARGIN.left;
   const x = a => left + (a - ageDomain[0] + 0.5) * stepX;
@@ -288,10 +315,13 @@ function renderChart() {
              `${baseline - (row + 0.5) * pitch})`;
     });
 
+  const ringW = Math.min(1.6, Math.max(0.8, r * 0.34));
   dot.append('circle')
     .attr('class', 'dot-fill')
-    .attr('r', r)
-    .attr('fill', d => partyColor(d.party));
+    .attr('r', d => d.approx ? Math.max(0.5, r - ringW / 2) : r)
+    .attr('fill', d => d.approx ? 'none' : partyColor(d.party))
+    .attr('stroke', d => d.approx ? partyColor(d.party) : 'none')
+    .attr('stroke-width', d => d.approx ? ringW : 0);
 
   dot.append('circle').attr('class', 'dot-ring').attr('r', r).attr('stroke', 'none');
 
@@ -345,13 +375,12 @@ function renderChart() {
     .text('Grey shape: the same number of seats, aged the way the comparison population was. ' +
           'Dots: the senators actually sitting.');
 
-  const note = coverageNote();
-  if (note) {
+  caveats.forEach((c, i) => {
     svg.append('text')
-      .attr('class', coverage().share < COVERAGE_WARN ? 'annot warn' : 'annot')
-      .attr('x', left).attr('y', 30)
-      .text(note);
-  }
+      .attr('class', c.warn ? 'annot warn' : 'annot')
+      .attr('x', left).attr('y', 30 + i * 14)
+      .text(c.text);
+  });
 }
 
 // ============================================================
@@ -502,8 +531,10 @@ function showTip(event, d) {
   placeTip(event, `
     <div class="tt-name"><span class="swatch" style="background:${partyColor(d.party)}"></span>${d.name}</div>
     <div class="tt-sub">${d.party}${raw} · ${d.state}</div>
-    <div class="tt-stat">Age <b>${d.age}</b> at the ${ordinal(d.congress)} Congress</div>
-    <div class="tt-meta">convened ${cg ? cg.convened : ''}</div>`);
+    <div class="tt-stat">Age <b>${d.age}</b> at the ${ordinal(d.congress)} Congress${
+      d.approx ? ' <i>(approx.)</i>' : ''}</div>
+    <div class="tt-meta">convened ${cg ? cg.convened : ''}${
+      d.approx ? '<br>birth year known, exact date not — the age may be one year either way' : ''}</div>`);
 }
 
 function placeTip(event, html) {
@@ -566,7 +597,10 @@ function renderPartyKey() {
     });
 
   if (key.select('#key-note').empty()) key.append('span').attr('id', 'key-note');
-  key.select('#key-note').text('Parties dimmed above are absent from this selection.');
+  const approx = selection().filter(d => d.approx).length;
+  key.select('#key-note').text(approx
+    ? `Outlined dots are approximate ages — ${fmtInt(approx)} in this selection.`
+    : 'Parties dimmed above are absent from this selection.');
 }
 
 // ============================================================

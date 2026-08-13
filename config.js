@@ -26,8 +26,9 @@ export const FIELDS = {
   state:    'state',
   party:    'party',
   partyRaw: 'party_raw',
-  age:      'age_years',
-  ageExact: 'age_exact',
+  age:       'age_years',
+  ageExact:  'age_exact',
+  precision: 'age_precision',   // 'day' | 'month' | 'year'
   seats:        'seats',            // seats filled on the convening date
   seatsWithAge: 'seats_with_age',   // ...of which we know a birth date
   missing:      'missing_birthday',

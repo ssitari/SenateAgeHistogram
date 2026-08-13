@@ -35,6 +35,43 @@ DATA_DIR = Path(__file__).parent / "data"
 OUT_DIR = Path(__file__).parent
 
 # ---------------------------------------------------------------------------
+#  BIRTHDAY SUPPLEMENT
+#
+#  congress-legislators has no birthday at all for 51 senators, almost all of
+#  them pre-1830. Every one has a Wikidata date of birth, so they are carried
+#  here as a checked-in file with a citation per row rather than fetched at
+#  build time — a live query would make the pipeline depend on a database that
+#  can change under it, and would make old runs unreproducible.
+#
+#  Most are year-only. A date is derived from the stated precision so the age
+#  lands within a year of truth, and the precision travels with the row so the
+#  chart can mark those ages as approximate:
+#
+#    day   - used as given
+#    month - placed mid-month
+#    year  - placed mid-year
+# ---------------------------------------------------------------------------
+
+SUPPLEMENT_FILE = OUT_DIR / "birthdays_supplement.csv"
+
+
+def load_supplement():
+    if not SUPPLEMENT_FILE.exists():
+        print("  no birthday supplement found; continuing without it")
+        return {}
+    out = {}
+    with open(SUPPLEMENT_FILE, encoding="utf-8") as fh:
+        for row in csv.DictReader(fh):
+            d = iso(row["birth_date"])
+            prec = row["precision"]
+            if prec == "month":
+                d = d.replace(day=15)
+            elif prec == "year":
+                d = d.replace(month=7, day=1)
+            out[row["bioguide"]] = (d.isoformat(), prec)
+    return out
+
+# ---------------------------------------------------------------------------
 #  PARTY FOLDING
 #
 #  Five families plus Other. The early-republic folds are the conventional
@@ -208,6 +245,10 @@ def main(refresh=False):
     dates = convening_dates(terms)
     print(f"  {len(dates)} Congresses, {dates[1]} through {dates[max(dates)]}")
 
+    supplement = load_supplement()
+    if supplement:
+        print(f"  {len(supplement)} birth dates from the supplement")
+
     rows, missing, unmapped = [], [], Counter()
 
     for n in sorted(dates):
@@ -230,6 +271,9 @@ def main(refresh=False):
             }
 
             born = p.get("bio", {}).get("birthday")
+            precision = "day"
+            if not born:
+                born, precision = supplement.get(p["id"]["bioguide"], (None, None))
             if not born:
                 missing.append(rec)
                 continue
@@ -240,12 +284,14 @@ def main(refresh=False):
                 "age_years": years,
                 "age_days": days,
                 "age_exact": exact,
+                "age_precision": precision,
             })
             rows.append(rec)
 
     # ── senate_ages.csv ──
     cols = ["congress", "convened", "bioguide", "name", "state", "senate_class",
-            "party", "party_raw", "birthday", "age_years", "age_days", "age_exact"]
+            "party", "party_raw", "birthday", "age_years", "age_days", "age_exact",
+            "age_precision"]
     write(OUT_DIR / "senate_ages.csv", cols, rows)
 
     # ── senate_congresses.csv ──
@@ -253,6 +299,7 @@ def main(refresh=False):
     for r in rows:
         by_congress[r["congress"]].append(r["age_years"])
     dropped = Counter(r["congress"] for r in missing)
+    approx = Counter(r["congress"] for r in rows if r["age_precision"] != "day")
 
     summary = []
     for n in sorted(dates):
@@ -265,6 +312,7 @@ def main(refresh=False):
             "seats": seats,
             "seats_with_age": len(ages),
             "missing_birthday": dropped.get(n, 0),
+            "approx_age": approx.get(n, 0),
             "median_age": f"{median(ages):.1f}" if ages else "",
             "mean_age": round(sum(ages) / len(ages), 1) if ages else "",
             "min_age": min(ages) if ages else "",
@@ -288,10 +336,17 @@ def main(refresh=False):
 
 
 def write(path, cols, rows):
-    with open(path, "w", newline="", encoding="utf-8") as fh:
-        w = csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore")
-        w.writeheader()
-        w.writerows(rows)
+    try:
+        with open(path, "w", newline="", encoding="utf-8") as fh:
+            w = csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore")
+            w.writeheader()
+            w.writerows(rows)
+    except PermissionError:
+        # Excel takes an exclusive lock on an open CSV. Losing a whole rebuild
+        # to that is a poor trade, so report it and keep going.
+        print(f"  SKIPPED {path.name:25s} locked by another process "
+              f"(Excel?) — close it and re-run")
+        return
     print(f"  wrote {path.name:26s} {len(rows):6,d} rows")
 
 
