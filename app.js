@@ -333,6 +333,15 @@ function renderChart() {
   // cell is the target, which is what makes a 5px dot pickable at all.
   const bySlot = new Map(dots.map(d => [`${d.age}|${d.slot}`, d]));
 
+  // A senator appears once per Congress they sat in, so highlighting reaches
+  // every instance rather than the one dot under the cursor — which is what
+  // makes a long career legible as a run of dots marching to the right.
+  const byPerson = d3.group(dots, d => d.id);
+  for (const [, ds] of byPerson) {
+    const lo = d3.min(ds, x => x.age), hi = d3.max(ds, x => x.age);
+    ds.forEach(x => { x.appearances = ds.length; x.ageLo = lo; x.ageHi = hi; });
+  }
+
   const at = (mx, my) => {
     const age = ageDomain[0] + Math.floor((mx - left) / stepX);
     if (age < ageDomain[0] || age > ageDomain[ageDomain.length - 1]) return null;
@@ -355,29 +364,29 @@ function renderChart() {
     })
     .on('mouseleave', () => { setHover(null); hideTip(); });
 
-  // Kept clear of the tiny-dot radius so the highlight stays visible when a
-  // dot is only a few pixels across.
-  const ring = svg.append('circle')
-    .attr('class', 'dot-ring')
-    .attr('r', Math.max(r + 1, 5))
-    .attr('stroke', HOVER_COLOR)
-    .style('pointer-events', 'none')
-    .style('display', 'none');
+  // Rings are kept clear of the tiny-dot radius so the highlight stays visible
+  // around a dot only a few pixels across.
+  const ringR = Math.max(r + 1, 5);
+  const rings = svg.append('g').style('pointer-events', 'none');
 
   // Dimming every other dot is a per-move pass over the whole selection, which
-  // is fine for a few hundred and not for nine thousand. The ring carries the
-  // highlight on its own above that.
+  // is fine for a few hundred and not for nine thousand. The rings carry the
+  // highlight on their own above that.
   const dim = dots.length <= 2500;
   let dimmed = false;
+
   chartPaint = () => {
     const h = state.hovered;
-    if (!h) {
-      ring.style('display', 'none');
-      if (dimmed) { dot.attr('opacity', 1); dimmed = false; }
-      return;
-    }
-    ring.attr('cx', cx(h)).attr('cy', cy(h)).style('display', null);
-    if (dim) { dot.attr('opacity', d => d === h ? 1 : 0.45); dimmed = true; }
+    const marked = h ? (byPerson.get(h.id) ?? []) : [];
+
+    rings.selectAll('circle').data(marked).join('circle')
+      .attr('class', 'dot-ring')
+      .attr('r', ringR)
+      .attr('cx', cx).attr('cy', cy)
+      .attr('stroke', HOVER_COLOR);
+
+    if (dim && h) { dot.attr('opacity', d => d.id === h.id ? 1 : 0.45); dimmed = true; }
+    else if (dimmed) { dot.attr('opacity', 1); dimmed = false; }
   };
   chartPaint();
 
@@ -640,6 +649,9 @@ function showTip(event, d) {
     <div class="tt-sub">${d.party}${raw} · ${d.state}</div>
     <div class="tt-stat">Age <b>${d.age}</b> at the ${ordinal(d.congress)} Congress${
       d.approx ? ' <i>(approx.)</i>' : ''}</div>
+    ${d.appearances > 1
+      ? `<div class="tt-stat">Ringed in <b>${d.appearances}</b> of the Congresses shown, ` +
+        `ages <b>${d.ageLo}–${d.ageHi}</b></div>` : ''}
     <div class="tt-meta">convened ${cg ? cg.convened : ''}${
       d.approx ? '<br>birth year known, exact date not — the age may be one year either way' : ''}</div>`);
 }

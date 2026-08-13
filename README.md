@@ -37,9 +37,12 @@ countable rather than approximate; the readout names the range and the count. A
 dashed rule marks the all-time median, the same number the chart uses as its
 comparison when the baseline is set to every Congress.
 
-**Hovering any dot names the senator**, at every selection size including the
-9,299-dot landing view — being able to pick out one person is the thing that
-shows a reader these are individuals rather than a shape.
+**Hovering any dot names the senator and rings every appearance they make** in
+the current selection, at every selection size including the 9,299-dot landing
+view. Being able to pick out one person is what shows a reader these are
+individuals rather than a shape — and since the unit is a senator-Congress, a
+long career surfaces as a run of rings marching rightward. Carl Hayden lights up
+21 of them, ages 50 to 89; Thurmond and Byrd do much the same.
 
 That works because dots sit on a regular grid, so the one under the pointer is
 computed rather than hit-tested: a single transparent rect over the plot, and a
