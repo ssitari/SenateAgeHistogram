@@ -71,12 +71,12 @@
       shape-rendering: crispEdges;
     }
     .tl-brush .handle { fill: #4466cc; fill-opacity: 0.35; }
-    /* d3 treats a drag inside an existing selection as moving it, which leaves
-       no way to start a new one once every Congress is selected and the rect
-       covers the whole strip. Letting pointer events fall through to the
-       overlay means a drag always begins a fresh selection; the edge handles
-       keep their own events, so resizing still works. */
-    .tl-brush .selection { pointer-events: none; }
+    /* d3 treats a drag inside an existing selection as moving it, which is
+       what makes a range pannable. But when the selection covers the whole
+       strip that leaves nowhere to start a new one from, so the app turns
+       pointer events off for that case only — see syncPan() in app.js. A
+       full-width selection has nowhere to pan to anyway. */
+    .tl-brush .selection { cursor: move; }
     .tl-hit { cursor: crosshair; }
 
     /* ── Table view ── */

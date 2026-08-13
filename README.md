@@ -36,7 +36,12 @@ means before the reader has touched anything, and brushing then moves the dots
 off it.
 
 **Drag the timeline** at the bottom to select a run of Congresses, or click it
-for a single one. The strip plots median chamber age with **one marker per
+for a single one. **Dragging inside an existing selection pans it**, keeping the
+width — sliding the same 27-Congress window from 1831–1883 to 1881–1933 walks
+the median from 50 to 57, which is that whole jump under a fixed-width lens. The
+one exception is a selection covering the entire strip, where there would be no
+empty track left to start a new selection from and panning could not go
+anywhere: there a drag begins a fresh selection instead. The strip plots median chamber age with **one marker per
 Congress**, filled when selected and grey when not, so the selection is
 countable rather than approximate; the readout names the range and the count. A
 dashed rule marks the all-time median, the same number the chart uses as its

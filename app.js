@@ -526,6 +526,7 @@ function renderTimeline() {
     marks
       .attr('fill', c => c.n >= state.lo && c.n <= state.hi ? '#3d5a80' : '#c9c7c2')
       .attr('opacity', c => c.n >= state.lo && c.n <= state.hi ? 1 : 0.85);
+    syncPan();
   };
 
   svg.append('g').selectAll('text').data(y.ticks(3)).join('text')
@@ -554,6 +555,21 @@ function renderTimeline() {
   svg.append('g').attr('class', 'tl-brush').call(tlBrush);
   tlPaint();
   moveBrushToSelection();
+}
+
+/**
+ * Dragging inside a selection pans it, which is how you walk a fixed-width era
+ * across the timeline. The exception is a selection covering the whole strip:
+ * there is then no empty track to start a fresh selection from, so a drag
+ * could only ever pan, and panning everything does nothing. In that one case
+ * the rect stops taking pointer events and a drag begins a new selection.
+ */
+function syncPan() {
+  const spansAll = state.lo === congresses[0].n &&
+                   state.hi === congresses[congresses.length - 1].n;
+  el.tlSvg.select('.tl-brush .selection')
+    .style('pointer-events', spansAll ? 'none' : null)
+    .style('cursor', spansAll ? 'crosshair' : 'move');
 }
 
 function congressAtPixel(px) {
