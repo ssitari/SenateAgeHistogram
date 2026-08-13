@@ -77,12 +77,13 @@ binning), `age_days` (days past that birthday), `age_exact` (decimal).
 
 ## What the numbers say
 
-Range is **29 to 98**, mode 57. Median age of the chamber has risen from **47
-in 1789 to 64 in 2025**, and almost all of that move happened in two steps —
-flat around 47–49 until the 1870s, a jump to 57 by 1891, then flat again at 57
-for a century before the recent climb.
+Range is **29 to 98**, mode **54**, all-time median **55**. Median age of the
+chamber has risen from **47 in 1789 to 64 in 2025**, and almost all of that move
+happened in two steps — flat around 47–50 until the 1870s, a jump to the
+mid-50s by the 1880s, then a long plateau through the middle of the twentieth
+century (it is back down to 51.5 as late as 1981) before the recent climb.
 
-The tallest single column is **339 observations** at age 57. That settles the
+The tallest single column is **341 observations** at age 54. That settles the
 layer question: the all-time distribution has to be drawn as a silhouette, not
 as countable dots, or one Congress's ~100 dots will be a sliver on the floor.
 
