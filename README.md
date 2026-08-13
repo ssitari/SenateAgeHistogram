@@ -30,9 +30,10 @@ multiplied by however many seats are selected, so the two are directly
 readable against each other.
 
 **Every Congress is selected on load.** With the comparison also set to all of
-them, the two layers are the same population and the dots cover the grey shape
-exactly — which shows what the comparison means before you have touched
-anything. Brushing then moves the dots off it.
+them, the two layers are the same population and the shapes coincide — the grey
+shows only through the gaps between round dots. That says what the comparison
+means before the reader has touched anything, and brushing then moves the dots
+off it.
 
 **Drag the timeline** at the bottom to select a run of Congresses, or click it
 for a single one. The strip plots median chamber age with **one marker per
