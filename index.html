@@ -10,56 +10,13 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #edecea;
+      background: #fff;
       height: 100vh;
       display: flex;
       flex-direction: column;
       overflow: hidden;
       color: #222;
     }
-
-    /* ── Toolbar ── */
-    #toolbar {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 0 14px;
-      height: 44px;
-      background: #fff;
-      border-bottom: 0.5px solid #ddd;
-      flex-shrink: 0;
-      z-index: 200;
-    }
-    #toolbar h1 { font-size: 13px; font-weight: 600; white-space: nowrap; }
-    .ctrl-group { display: flex; align-items: center; gap: 5px; }
-    .ctrl-label { font-size: 11px; color: #888; white-space: nowrap; }
-    .spacer { flex: 1; }
-
-    select, button {
-      font-family: inherit;
-      font-size: 12px;
-      white-space: nowrap;
-      flex-shrink: 0;
-      padding: 3px 6px;
-      border: 0.5px solid #ccc;
-      border-radius: 4px;
-      background: #fafafa;
-      color: #222;
-      cursor: pointer;
-      height: 26px;
-    }
-    select:hover, button:hover { border-color: #999; }
-    select:focus, button:focus { outline: none; border-color: #4466cc; }
-
-    #readout {
-      font-size: 11px;
-      color: #666;
-      white-space: nowrap;
-      font-variant-numeric: tabular-nums;
-    }
-    #readout b { color: #222; font-weight: 600; }
-    #readout .warn { color: #a05a1e; font-weight: 600; }
-    #readout .muted { color: #999; }
 
     /* ── Panels ── */
     #main { flex: 1; display: flex; flex-direction: column; min-height: 0; }
@@ -75,7 +32,7 @@
     #timeline {
       flex-shrink: 0;
       background: #fff;
-      border-top: 0.5px solid #ddd;
+      border-top: 0.5px solid #eee;
     }
     #timeline svg { display: block; }
 
@@ -83,8 +40,11 @@
     .tick-mark { stroke: #d4d2ce; stroke-width: 1; shape-rendering: crispEdges; }
     .tick-label { font-size: 10px; fill: #888; text-anchor: middle; }
     .count-label { font-size: 10px; fill: #aaa; text-anchor: end; dominant-baseline: middle; }
-    .count-rule { stroke: #e3e1dd; stroke-width: 1; shape-rendering: crispEdges; }
+    .count-rule { stroke: #ececea; stroke-width: 1; shape-rendering: crispEdges; }
     .axis-title { font-size: 11px; fill: #666; }
+    .chart-title { font-size: 14px; font-weight: 600; fill: #1a1a1a; }
+    .chart-readout { font-size: 11.5px; fill: #666; font-variant-numeric: tabular-nums; }
+    .chart-readout .strong { fill: #1a1a1a; font-weight: 600; }
 
     .dot-hit { fill: transparent; cursor: pointer; }
     .dot-ring { fill: none; stroke-width: 1.75; }
@@ -93,7 +53,7 @@
       font-size: 10px;
       fill: #8a8880;
       paint-order: stroke fill;
-      stroke: #edecea;
+      stroke: #fff;
       stroke-width: 3px;
       stroke-linejoin: round;
     }
@@ -142,20 +102,38 @@
       margin-right: 6px;
     }
 
-    /* ── Party key ── */
-    #party-key {
-      display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
-      padding: 6px 14px;
+    /* ── Footer: party key on the left, the two controls on the right ── */
+    #footer {
+      display: flex; align-items: center; gap: 18px;
+      padding: 7px 16px;
       background: #fff;
       border-top: 0.5px solid #eee;
       flex-shrink: 0;
+    }
+    #party-key {
+      display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+      flex: 1; min-width: 0;
     }
     #party-key .key-item {
       display: flex; align-items: center; gap: 5px;
       font-size: 11px; color: #555;
     }
     #party-key .key-item.is-out { opacity: 0.3; }
-    #key-note { font-size: 10.5px; color: #999; margin-left: auto; }
+    #key-note { font-size: 10.5px; color: #999; }
+
+    #controls { display: flex; gap: 14px; align-items: center; flex-shrink: 0; }
+    #controls label {
+      font-size: 10.5px; color: #999;
+      display: flex; align-items: center; gap: 4px; white-space: nowrap;
+    }
+    #controls select {
+      font-family: inherit; font-size: 11px; color: #333;
+      border: none; background: none; padding: 1px 2px;
+      border-bottom: 1px solid #ddd; border-radius: 0;
+      cursor: pointer;
+    }
+    #controls select:hover { border-bottom-color: #999; }
+    #controls select:focus { outline: none; border-bottom-color: #4466cc; }
 
     /* ── Tooltip ── */
     #tooltip {
@@ -185,33 +163,10 @@
     #loading.err { color: #b3261e; padding: 0 40px; text-align: center; line-height: 1.5; }
 
     @media (max-width: 1080px) { #key-note { display: none; } }
-    @media (max-width: 900px)  { .ctrl-label { display: none; } }
+    @media (max-width: 820px)  { #controls label { font-size: 0; gap: 0; } }
   </style>
 </head>
 <body>
-
-  <div id="toolbar">
-    <h1>Senate Ages by Congress</h1>
-
-    <div class="ctrl-group">
-      <span class="ctrl-label">Compare with</span>
-      <select id="baseline">
-        <option value="all">All 119 Congresses</option>
-        <option value="prior">The 20 Congresses before</option>
-      </select>
-    </div>
-
-    <div class="ctrl-group">
-      <span class="ctrl-label">View</span>
-      <select id="view">
-        <option value="chart">Chart</option>
-        <option value="table">Table</option>
-      </select>
-    </div>
-
-    <div class="spacer"></div>
-    <span id="readout"></span>
-  </div>
 
   <div id="main">
     <div id="chart">
@@ -222,7 +177,23 @@
     <div id="timeline"><svg id="tl-svg"></svg></div>
   </div>
 
-  <div id="party-key"></div>
+  <div id="footer">
+    <div id="party-key"></div>
+    <div id="controls">
+      <label>Compare with
+        <select id="baseline">
+          <option value="all">all 119 Congresses</option>
+          <option value="prior">the 20 before</option>
+        </select>
+      </label>
+      <label>View
+        <select id="view">
+          <option value="chart">chart</option>
+          <option value="table">table</option>
+        </select>
+      </label>
+    </div>
+  </div>
   <div id="tooltip"></div>
 
   <script type="module" src="./app.js"></script>

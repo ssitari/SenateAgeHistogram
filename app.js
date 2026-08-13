@@ -42,7 +42,6 @@ const el = {
   table:    d3.select('#table'),
   tooltip:  document.getElementById('tooltip'),
   loading:  document.getElementById('loading'),
-  readout:  document.getElementById('readout'),
   partyKey: document.getElementById('party-key'),
 };
 
@@ -194,10 +193,11 @@ function renderChart() {
   const height = el.chart.clientHeight;
   if (!width || !height || state.view !== 'chart') return;
 
-  // The header carries the standing explainer plus whatever caveats apply, so
-  // the top margin grows with them rather than letting text land in the plot.
+  // With the toolbar gone the chart labels itself: title, then what is
+  // currently selected, then the standing explainer, then any caveats. The top
+  // margin grows with them rather than letting text land in the plot.
   const caveats = notes();
-  const topPad  = 30 + caveats.length * 14;
+  const topPad  = 74 + caveats.length * 14;
 
   const innerW = width  - MARGIN.left - MARGIN.right;
   const innerH = height - topPad - MARGIN.bottom;
@@ -430,10 +430,23 @@ function renderChart() {
                    state.hi === congresses[congresses.length - 1].n;
 
   svg.append('text')
+    .attr('class', 'chart-title')
+    .attr('x', left).attr('y', 20)
+    .text('Senate ages by Congress');
+
+  const readout = svg.append('text')
+    .attr('class', 'chart-readout')
+    .attr('x', left).attr('y', 40);
+  readout.selectAll('tspan').data(readoutParts()).join('tspan')
+    .attr('class', d => d.strong ? 'strong' : null)
+    .text(d => d.text);
+
+  svg.append('text')
     .attr('class', 'annot')
-    .attr('x', left).attr('y', 16)
+    .attr('x', left).attr('y', 60)
     .text(coincide
-      ? 'Every Congress is selected, so the dots cover the grey reference shape exactly. ' +
+      ? 'Every Congress is selected, so the dots and the grey reference are the same ' +
+        'population and the two shapes coincide — the grey shows only between the dots. ' +
         'Drag the timeline below to compare one era against it.'
       : 'Grey shape: the same number of seats, aged the way the comparison population was. ' +
         'Dots: the senators actually sitting.');
@@ -441,7 +454,7 @@ function renderChart() {
   caveats.forEach((c, i) => {
     svg.append('text')
       .attr('class', c.warn ? 'annot warn' : 'annot')
-      .attr('x', left).attr('y', 30 + i * 14)
+      .attr('x', left).attr('y', 74 + i * 14)
       .text(c.text);
   });
 }
@@ -679,24 +692,30 @@ function ordinal(n) {
 //  READOUT / KEY
 // ============================================================
 
-function updateReadout() {
+/**
+ * What is currently selected, as tspan segments so the numbers can carry
+ * weight. Drawn inside the chart rather than in a chrome bar — it is the
+ * chart's subtitle, not a status line.
+ */
+function readoutParts() {
   const sel = selection();
   const a = congresses.find(c => c.n === state.lo);
   const b = congresses.find(c => c.n === state.hi);
   const count = state.hi - state.lo + 1;
-  const span = state.lo === state.hi
-    ? `<b>${ordinal(state.lo)} Congress</b> (${a.year})`
-    : `<b>${ordinal(state.lo)}–${ordinal(state.hi)}</b> (${a.year}–${b.year})` +
-      ` · ${count} Congresses`;
   const med = sel.length ? medianBin(sharesOf(sel)) : null;
-  const { missing, share } = coverage();
-  el.readout.innerHTML =
-    `${span} · ${fmtInt(sel.length)} senator${sel.length === 1 ? '' : 's'}` +
-    (med ? ` · median age <b>${med}</b>` : '') +
-    (missing
-      ? ` · <span class="${share < COVERAGE_WARN ? 'warn' : 'muted'}">` +
-        `${fmtInt(missing)} without a birth date</span>`
-      : '');
+
+  const out = [];
+  if (state.lo === state.hi) {
+    out.push({ text: `${ordinal(state.lo)} Congress`, strong: true },
+             { text: ` (${a.year})` });
+  } else {
+    out.push({ text: `${ordinal(state.lo)}–${ordinal(state.hi)} Congress`, strong: true },
+             { text: ` (${a.year}–${b.year}) · ${count} Congresses` });
+  }
+  out.push({ text: ' · ' }, { text: fmtInt(sel.length), strong: true },
+           { text: ` senator${sel.length === 1 ? '' : 's'}` });
+  if (med) out.push({ text: ' · median age ' }, { text: `${med}`, strong: true });
+  return out;
 }
 
 function renderPartyKey() {
@@ -732,7 +751,6 @@ function redraw() {
   tlPaint();
   renderChart();
   if (state.view === 'table') renderTable();
-  updateReadout();
   renderPartyKey();
 }
 

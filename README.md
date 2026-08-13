@@ -12,6 +12,10 @@ contributes fifteen observations at fifteen different ages.
 python3 -m http.server 8000
 ```
 
+The chart labels itself — title, what is selected, the explainer and any
+caveats are drawn inside the plot rather than in a chrome bar, and the only
+controls are two quiet selects in the footer. The surface is white throughout.
+
 Two layers on **one shared count axis**, which is the whole idea:
 
 - a **grey silhouette** — the number of seats you have selected, distributed
