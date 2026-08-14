@@ -214,3 +214,9 @@ really was seated under age.
 **The 1st Congress shows 24 seats.** North Carolina and Rhode Island had not
 yet ratified, and the chamber lacked a quorum until April 1789; the early
 roster is genuinely ragged rather than wrong.
+
+---
+
+## Acknowledgements
+
+Most of the code written with assistance from [Claude](https://claude.ai) (Anthropic).
