@@ -196,6 +196,23 @@
   </div>
   <div id="tooltip"></div>
 
+  <style>
+    /* Last flex child of a 100vh column layout, so it can't be clipped. */
+    .page-credit {
+      flex: 0 0 auto; padding: 5px 14px 7px; background: #fff;
+      font: 11px/1.35 -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #78766f; border-top: 1px solid #eceae5;
+    }
+    .page-credit a { color: #52514e; }
+  </style>
+  <footer class="page-credit">
+    Data:
+    <a href="https://github.com/unitedstates/congress-legislators" rel="noopener" target="_blank">unitedstates/congress-legislators</a>
+    (public domain).
+    Source code and method notes:
+    <a href="https://github.com/ssitari/SenateAgeHistogram" rel="noopener" target="_blank">ssitari/SenateAgeHistogram</a>.
+  </footer>
+
   <script type="module" src="./app.js"></script>
 </body>
 </html>
