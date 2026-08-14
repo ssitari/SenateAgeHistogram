@@ -4,6 +4,14 @@ Age of every sitting senator on the day each Congress convened, 1789–2025.
 Not the incoming class — the whole chamber, so a senator serving thirty years
 contributes fifteen observations at fifteen different ages.
 
+---
+
+## Live demo
+
+[View on GitHub Pages](https://ssitari.github.io/SenateAgeHistogram/)
+
+---
+
 ## The chart
 
 `index.html` + `app.js` + `config.js`. ES modules and `fetch`, so serve it:
