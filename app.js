@@ -43,6 +43,9 @@ const el = {
   tooltip:  document.getElementById('tooltip'),
   loading:  document.getElementById('loading'),
   partyKey: document.getElementById('party-key'),
+  readout:  document.getElementById('chart-readout'),
+  note:     document.getElementById('chart-note'),
+  caveats:  document.getElementById('chart-caveats'),
 };
 
 const fmtInt = d3.format(',');
@@ -74,7 +77,6 @@ function shape(ageRows, congressRows) {
     convened: r[F.convened],
     seats:    +r[F.seats],
     missing:  +r[F.missing] || 0,
-    median:   r[F.median] === '' ? null : +r[F.median],
   })).sort((a, b) => a.n - b.n);
 
   byCongress = d3.group(all, d => d.congress);
@@ -84,6 +86,15 @@ function shape(ageRows, congressRows) {
   // whatever number of seats is selected.
   const tally = d3.rollup(all, v => v.length, d => d.age);
   for (const a of ageDomain) allShares.set(a, (tally.get(a) ?? 0) / all.length);
+
+  // The timeline's median is computed here rather than read from the CSV so
+  // that one definition governs the whole page. median_age in the file is the
+  // interpolated median, which lands on a half-year for an even-sized chamber
+  // — it would put the strip's marker at 46.5 under a readout saying 46.
+  for (const c of congresses) {
+    const rows = byCongress.get(c.n);
+    c.median = rows && rows.length ? medianBin(sharesOf(rows)) : null;
+  }
 
   const first = congresses[0].n;
   const last = congresses[congresses.length - 1].n;
@@ -168,7 +179,12 @@ function medianBin(shares) {
   let cum = 0;
   for (const a of ageDomain) {
     cum += shares.get(a) ?? 0;
-    if (cum >= 0.5) return a;
+    // Summing k fractions of n rarely lands on 0.5 exactly, and an even-sized
+    // chamber lands there by definition — 14 shares of 1/28 accumulate to
+    // 0.49999999999999994, which without the tolerance steps the answer a
+    // whole year up. The nearest real cumulative share below a half is
+    // 0.5 - 1/(2n), so nothing legitimate is within reach of this epsilon.
+    if (cum >= 0.5 - 1e-9) return a;
   }
   return null;
 }
@@ -183,9 +199,13 @@ function sharesOf(rows) {
 //  CHART
 // ============================================================
 
-// Top margin carries two stacked annotation lines plus the median labels that
-// sit just above the plot, so it is deeper than it looks like it needs to be.
-const MARGIN = { top: 52, right: 24, bottom: 46, left: 50 };
+// Title, readout and caveats are HTML above the svg, so the only thing left
+// above the plot is the median labels sitting on top of the tallest column.
+const MARGIN = { right: 24, bottom: 46, left: 50 };
+// Headroom above the tallest column for the median labels. When the peak fills
+// the panel the plot starts exactly here, so this is also the only thing
+// keeping those labels off the explainer line above — hence the generosity.
+const TOP_PAD = 40;
 let chartPaint = () => {};
 
 function renderChart() {
@@ -193,14 +213,8 @@ function renderChart() {
   const height = el.chart.clientHeight;
   if (!width || !height || state.view !== 'chart') return;
 
-  // With the toolbar gone the chart labels itself: title, then what is
-  // currently selected, then the standing explainer, then any caveats. The top
-  // margin grows with them rather than letting text land in the plot.
-  const caveats = notes();
-  const topPad  = 74 + caveats.length * 14;
-
   const innerW = width  - MARGIN.left - MARGIN.right;
-  const innerH = height - topPad - MARGIN.bottom;
+  const innerH = height - TOP_PAD - MARGIN.bottom;
   if (innerW <= 0 || innerH <= 0) return;
 
   const sel    = selection();
@@ -229,8 +243,8 @@ function renderChart() {
   // Seventy age bins against a column six senators tall is naturally a wide,
   // short chart. Rather than stranding it at the foot of a tall panel, the
   // svg takes only the height it needs and the panel centres it.
-  const svgH = Math.min(height, topPad + plotH + MARGIN.bottom);
-  const baseline = topPad + plotH;
+  const svgH = Math.min(height, TOP_PAD + plotH + MARGIN.bottom);
+  const baseline = TOP_PAD + plotH;
 
   const left = MARGIN.left;
   const x = a => left + (a - ageDomain[0] + 0.5) * stepX;
@@ -421,42 +435,6 @@ function renderChart() {
       .attr('text-anchor', flip ? 'end' : 'start')
       .text(label);
   }
-
-  // With everything selected against an all-Congress baseline the two layers
-  // are the same population, so the dots sit exactly on the grey and hide it.
-  // Say so, rather than referring to a shape the reader cannot yet see.
-  const coincide = state.baseline === 'all' &&
-                   state.lo === congresses[0].n &&
-                   state.hi === congresses[congresses.length - 1].n;
-
-  svg.append('text')
-    .attr('class', 'chart-title')
-    .attr('x', left).attr('y', 20)
-    .text('Senate ages by Congress');
-
-  const readout = svg.append('text')
-    .attr('class', 'chart-readout')
-    .attr('x', left).attr('y', 40);
-  readout.selectAll('tspan').data(readoutParts()).join('tspan')
-    .attr('class', d => d.strong ? 'strong' : null)
-    .text(d => d.text);
-
-  svg.append('text')
-    .attr('class', 'annot')
-    .attr('x', left).attr('y', 60)
-    .text(coincide
-      ? 'Every Congress is selected, so the dots and the grey reference are the same ' +
-        'population and the two shapes coincide — the grey shows only between the dots. ' +
-        'Drag the timeline below to compare one era against it.'
-      : 'Grey shape: the same number of seats, aged the way the comparison population was. ' +
-        'Dots: the senators actually sitting.');
-
-  caveats.forEach((c, i) => {
-    svg.append('text')
-      .attr('class', c.warn ? 'annot warn' : 'annot')
-      .attr('x', left).attr('y', 74 + i * 14)
-      .text(c.text);
-  });
 }
 
 // ============================================================
@@ -709,8 +687,8 @@ function ordinal(n) {
 // ============================================================
 
 /**
- * What is currently selected, as tspan segments so the numbers can carry
- * weight. Drawn inside the chart rather than in a chrome bar — it is the
+ * What is currently selected, as segments so the numbers can carry weight.
+ * Sits directly under the title rather than in a chrome bar — it is the
  * chart's subtitle, not a status line.
  */
 function readoutParts() {
@@ -732,6 +710,41 @@ function readoutParts() {
            { text: ` senator${sel.length === 1 ? '' : 's'}` });
   if (med) out.push({ text: ' · median age ' }, { text: `${med}`, strong: true });
   return out;
+}
+
+/**
+ * The chart's own labelling: what is selected, what the two layers mean, and
+ * any caveats. HTML rather than svg <text>, because <text> cannot wrap — these
+ * lines used to run off the right edge of a narrow window and be clipped
+ * without so much as a scrollbar.
+ */
+function renderHead() {
+  const chartView = state.view === 'chart';
+
+  el.readout.innerHTML = readoutParts()
+    .map(p => p.strong ? `<b>${p.text}</b>` : p.text).join('');
+
+  // With everything selected against an all-Congress baseline the two layers
+  // are the same population, so the dots sit exactly on the grey and hide it.
+  // Say so, rather than referring to a shape the reader cannot yet see.
+  const coincide = state.baseline === 'all' &&
+                   state.lo === congresses[0].n &&
+                   state.hi === congresses[congresses.length - 1].n;
+
+  el.note.textContent = coincide
+    ? 'Every Congress is selected, so the dots and the grey reference are the same ' +
+      'population and the two shapes coincide — the grey shows only between the dots. ' +
+      'Drag the timeline below to compare one era against it.'
+    : 'Grey shape: the same number of seats, aged the way the comparison population was. ' +
+      'Dots: the senators actually sitting.';
+
+  // Both of these describe dots, so they belong to the chart, not the table.
+  el.note.hidden = !chartView;
+  el.caveats.hidden = !chartView;
+
+  d3.select(el.caveats).selectAll('p').data(notes()).join('p')
+    .attr('class', c => c.warn ? 'caveat warn' : 'caveat')
+    .text(c => c.text);
 }
 
 function renderPartyKey() {
@@ -765,6 +778,7 @@ function renderPartyKey() {
 
 function redraw() {
   tlPaint();
+  renderHead();          // before the chart, so it measures the height that is left
   renderChart();
   if (state.view === 'table') renderTable();
   renderPartyKey();

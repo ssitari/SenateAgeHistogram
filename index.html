@@ -42,9 +42,30 @@
     .count-label { font-size: 10px; fill: #aaa; text-anchor: end; dominant-baseline: middle; }
     .count-rule { stroke: #ececea; stroke-width: 1; shape-rendering: crispEdges; }
     .axis-title { font-size: 11px; fill: #666; }
-    .chart-title { font-size: 14px; font-weight: 600; fill: #1a1a1a; }
-    .chart-readout { font-size: 11.5px; fill: #666; font-variant-numeric: tabular-nums; }
-    .chart-readout .strong { fill: #1a1a1a; font-weight: 600; }
+
+    /* ── Chart header ──
+       HTML, not svg <text>: <text> cannot wrap, so on a narrow window these
+       lines ran past the right edge and were clipped without a scrollbar.
+       Left padding matches the plot's left margin so they align with the axis. */
+    #chart-head { flex-shrink: 0; padding: 16px 24px 14px 50px; }
+    /* Four descending steps: what this is, what it covers, what is selected,
+       and the caveats — each one quieter than the last. */
+    #chart-head h1 { font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: #1a1a1a; }
+    #chart-deck { font-size: 13px; color: #555; margin-top: 4px; max-width: 100ch; }
+    #chart-readout {
+      font-size: 12px; color: #666; margin-top: 11px;
+      font-variant-numeric: tabular-nums;
+    }
+    #chart-readout b { color: #1a1a1a; font-weight: 600; }
+    #chart-note {
+      font-size: 11px; line-height: 1.45; color: #8a8880;
+      margin-top: 6px; max-width: 100ch;
+    }
+    .caveat {
+      font-size: 10.5px; line-height: 1.45; color: #8a8880;
+      margin-top: 5px; max-width: 100ch;
+    }
+    .caveat.warn { color: #a05a1e; }
 
     .dot-hit { fill: transparent; cursor: pointer; }
     .dot-ring { fill: none; stroke-width: 1.75; }
@@ -115,11 +136,11 @@
       flex: 1; min-width: 0;
     }
     #party-key .key-item {
-      display: flex; align-items: center; gap: 5px;
-      font-size: 11px; color: #555;
+      display: flex; align-items: center; gap: 6px;
+      font-size: 12px; color: #444;
     }
     #party-key .key-item.is-out { opacity: 0.3; }
-    #key-note { font-size: 10.5px; color: #999; }
+    #key-note { font-size: 11px; color: #999; }
 
     #controls { display: flex; gap: 14px; align-items: center; flex-shrink: 0; }
     #controls label {
@@ -169,6 +190,13 @@
 <body>
 
   <div id="main">
+    <header id="chart-head">
+      <h1>Senate Ages by Congress</h1>
+      <p id="chart-deck">Age of every sitting senator when each Congress convened, 1789–2025</p>
+      <p id="chart-readout"></p>
+      <p id="chart-note"></p>
+      <div id="chart-caveats"></div>
+    </header>
     <div id="chart">
       <svg id="chart-svg"></svg>
       <div id="loading">Loading…</div>

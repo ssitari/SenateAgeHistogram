@@ -32,7 +32,6 @@ export const FIELDS = {
   seats:        'seats',            // seats filled on the convening date
   seatsWithAge: 'seats_with_age',   // ...of which we know a birth date
   missing:      'missing_birthday',
-  median:       'median_age',
 };
 
 // Below this share of seats with a known birth date, the coverage note is

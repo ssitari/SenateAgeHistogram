@@ -1,4 +1,4 @@
-# Senate ages by Congress
+# Senate Ages by Congress
 
 Age of every sitting senator on the day each Congress convened, 1789–2025.
 Not the incoming class — the whole chamber, so a senator serving thirty years
@@ -21,8 +21,11 @@ python3 -m http.server 8000
 ```
 
 The chart labels itself — title, what is selected, the explainer and any
-caveats are drawn inside the plot rather than in a chrome bar, and the only
+caveats sit directly above the plot rather than in a chrome bar, and the only
 controls are two quiet selects in the footer. The surface is white throughout.
+That header is HTML rather than svg `<text>`, which cannot wrap: as svg the
+explainer ran off the right edge of any window under about 1,150px and was
+clipped without so much as a scrollbar.
 
 Two layers on **one shared count axis**, which is the whole idea:
 
@@ -101,8 +104,11 @@ Stdlib only. Source is [unitedstates/congress-legislators][cl], public domain.
 | `senate_ages.csv` | 9,299 | One row per senator × Congress — the dots |
 | `senate_congresses.csv` | 119 | Per Congress: convening date, seats, age summary, coverage |
 | `senate_age_totals.csv` | 70 | Integer age × count, all Congresses collapsed — the envelope |
-| `senate_missing.csv` | 0 | Observations dropped for want of a birthday — now empty |
 | `birthdays_supplement.csv` | 51 | Hand-carried birth dates with a citation each (input, not output) |
+
+The script also writes `senate_missing.csv`, the senator-Congress rows dropped
+for want of a birth date. With the supplement in place it comes out empty, so it
+is a local diagnostic rather than a checked-in output and is gitignored.
 
 Ages come three ways, as in the presidents tables: `age_years` (integer, for
 binning), `age_days` (days past that birthday), `age_exact` (decimal).
@@ -165,7 +171,7 @@ build script applies it.
 The early-republic folds are conventional but they are a historiographical
 convenience, not a fact about how these men described themselves. Everything
 that falls through to Other is printed with counts when the script runs; it
-comes to 162 observations, under 2%. `PARTY_MAP` is at the top of the script.
+comes to 185 observations, under 2%. `PARTY_MAP` is at the top of the script.
 
 ## Birthday coverage
 

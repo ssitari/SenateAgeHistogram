@@ -1,2 +1,5 @@
 # cached source data (~15 MB, re-fetch with --refresh)
 data/
+
+# diagnostic output; empty once the birthday supplement is applied
+senate_missing.csv
