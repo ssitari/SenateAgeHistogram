@@ -706,8 +706,17 @@ function readoutParts() {
     out.push({ text: `${ordinal(state.lo)}–${ordinal(state.hi)} Congress`, strong: true },
              { text: ` (${a.year}–${b.year}) · ${count} Congresses` });
   }
-  out.push({ text: ' · ' }, { text: fmtInt(sel.length), strong: true },
-           { text: ` senator${sel.length === 1 ? '' : 's'}` });
+  // A senator sits once per Congress, so across several Congresses the dots
+  // outnumber the people. Count people first and give the seats alongside.
+  const people = new Set(sel.map(d => d.id)).size;
+  out.push({ text: ' · ' }, { text: fmtInt(people), strong: true });
+  if (people === sel.length) {
+    out.push({ text: ` senator${people === 1 ? '' : 's'}` });
+  } else {
+    out.push({ text: ` individual senator${people === 1 ? '' : 's'} (` },
+             { text: fmtInt(sel.length), strong: true },
+             { text: ` seat${sel.length === 1 ? '' : 's'})` });
+  }
   if (med) out.push({ text: ' · median age ' }, { text: `${med}`, strong: true });
   return out;
 }
