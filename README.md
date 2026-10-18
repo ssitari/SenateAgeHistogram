@@ -1,8 +1,7 @@
 # Senator Age Distribution: Age at every opening day, 1789–2025
 
-Age of every sitting senator on the day each Congress convened, 1789–2025.
-Not the incoming class — the whole chamber, so a senator serving thirty years
-contributes fifteen observations at fifteen different ages.
+This is an interactive data chart that allows users to investigate the age distribution of Senators over the history of the institution.  Every senator at the convening of each senate is included in an interactive Wilkinson dot plot. Users can select any range of contiguous senate sessions and see the age distribution in relation to the full distribution since 1789 (or the 20 Congresses before; I will update for future senates). The age of every member, incoming or incumbent, is included, so a senator serving thirty years
+contributes fifteen observations at fifteen different ages. Hovering over (or tapping) a senator in the chart highlights all of their entries in the current view.
 
 ---
 
