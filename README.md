@@ -1,4 +1,4 @@
-# Senate Ages by Congress
+# Senator Age Distribution: Age at every opening day, 1789–2025
 
 Age of every sitting senator on the day each Congress convened, 1789–2025.
 Not the incoming class — the whole chamber, so a senator serving thirty years
